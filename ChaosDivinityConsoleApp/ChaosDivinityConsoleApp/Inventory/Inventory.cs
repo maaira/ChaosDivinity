@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace ChaosDivinity.Inventory
 {
-    class BackPack
+    public class BackPack
     {
         private InventorySlot[,] backPack = new InventorySlot[4,4];
 

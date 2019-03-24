@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ChaosDivinity.Item
 { 
-    class Equipment : ItemGame
+    public class Equipment : ItemGame
     {
         private int def;
         private int dmg;

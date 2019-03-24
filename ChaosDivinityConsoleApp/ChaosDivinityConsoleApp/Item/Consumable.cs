@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ChaosDivinity.Item
 {
-    class Consumable :  ItemGame
+    public class Consumable :  ItemGame
     {
         private int hp, mp;
         public int HP { get => hp; set => hp = value; }

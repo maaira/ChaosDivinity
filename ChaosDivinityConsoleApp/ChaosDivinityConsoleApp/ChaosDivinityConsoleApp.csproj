@@ -43,6 +43,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Characters\Character.cs" />
+    <Compile Include="Characters\Hero.cs" />
+    <Compile Include="Characters\Rogue.cs" />
+    <Compile Include="Characters\Skill.cs" />
+    <Compile Include="Inventory\Equippped.cs" />
     <Compile Include="Market\MarketClass.cs" />
     <Compile Include="Item\DBItem.cs" />
     <Compile Include="Inventory\Inventory.cs" />

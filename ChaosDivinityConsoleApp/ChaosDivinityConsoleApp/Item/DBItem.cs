@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ChaosDivinity.Item
 {
-    class DBItem
+    public class DBItem
     {
         static private int id = 100;
         static private string[] person = { "Guerreiro", "Ladino", "Mago", "All" };

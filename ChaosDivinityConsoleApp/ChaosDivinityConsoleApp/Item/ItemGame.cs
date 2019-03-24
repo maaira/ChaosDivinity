@@ -7,7 +7,7 @@ using System.Windows;
 
 namespace ChaosDivinity.Item
 {
-    class ItemGame
+    public class ItemGame
     {
         
         /* ---------- Objetos da classe ------------- */

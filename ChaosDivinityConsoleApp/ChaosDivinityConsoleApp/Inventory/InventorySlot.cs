@@ -7,7 +7,7 @@ using ChaosDivinity.Item;
 
 namespace ChaosDivinity.Inventory
 {
-    class InventorySlot
+    public class InventorySlot
     {
         private Dictionary<string , ItemGame > slot = new Dictionary<string, ItemGame>();
         private string slotid =""; // variavel que cotrola o tipo de item do slot
