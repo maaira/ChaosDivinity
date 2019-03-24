@@ -8,7 +8,7 @@
     mc:Ignorable="d"
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
-    <Canvas Name ="Tela" HorizontalAlignment="Center" Height="1200" VerticalAlignment="Center" Width="1770">
+    <Canvas Name ="Tela" HorizontalAlignment="Center" Height="980" VerticalAlignment="Center" Width="1500">
         <Canvas Name ="Perso"  Height="100" Canvas.Left="660" Canvas.Top="439" Width="100">
             <Image 
                 Source="Assets\LockScreenLogo.scale-200.png"

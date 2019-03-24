@@ -24,16 +24,16 @@ namespace ChaosDivinity
     /// </summary>
     public sealed partial class MainPage : Page
     {
-        ItemGame p, p2, p3, p1;
+        Equipment p, p2, p3, p1;
         public MainPage()
         {
             
             this.InitializeComponent();
             Window.Current.Content.KeyDown += EventFunc;
-            p = new ItemGame("Rolinha", "", 10, 10, false, "", "", "", 0, 0);
-            p1 = new ItemGame("Rolinha Grande", "", 10, 10, false, "", "", "", 0, 0);
-            p2 = new ItemGame("Rolinha Pequena", "", 10, 10, false, "", "", "", 0, 0);
-            p3 = new ItemGame("Rolinha dos Seus Sonhos", "", 10, 10, false, "", "", "", 0, 0);
+            p = new Equipment("Rolinha", "", 10, 10, false, "", "", "", 0, 0, "");
+            p1 = new Equipment("Rolinha Grande", "", 10, 10, false, "", "", "", 0, 0, "");
+            p2 = new Equipment("Rolinha Pequena", "", 10, 10, false, "", "", "", 0, 0,"");
+            p3 = new Equipment("Rolinha dos Seus Sonhos", "", 10, 10, false, "", "", "", 0, 0,"");
         }
 
         public void EventFunc(object sender, KeyRoutedEventArgs e)

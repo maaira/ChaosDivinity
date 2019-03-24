@@ -120,6 +120,10 @@
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
     <Compile Include="Char\Character.cs" />
+    <Compile Include="Inventory\Inventory.cs" />
+    <Compile Include="Inventory\InventorySlot.cs" />
+    <Compile Include="Item\Consumable.cs" />
+    <Compile Include="Item\Equipment.cs" />
     <Compile Include="Item\ItemGame.cs" />
     <Compile Include="MainPage.xaml.cs">
       <DependentUpon>MainPage.xaml</DependentUpon>
