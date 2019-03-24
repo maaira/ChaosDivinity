@@ -10,7 +10,7 @@ namespace ChaosDivinity.Market
 {
     class MarketClass
     {
-        bool SellItem(ItemGame item, Character hero)
+        bool SellItem(ItemGame item, Hero hero)
         {
             if(item != null && hero != null)
             {
@@ -21,7 +21,7 @@ namespace ChaosDivinity.Market
             return false;
         }
 
-        bool BuyItem(ItemGame item, Character hero)
+        bool BuyItem(ItemGame item, Hero hero)
         {
             if(item != null && hero != null && hero.Draquimas >= item.MarketValue)
             {

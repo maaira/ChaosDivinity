@@ -5,7 +5,7 @@ namespace ChaosDivinity.Char
 {
     public class Rogue : Hero
     {
-        private List<Skill> listOfSkills;
+        
 
          public Rogue(string nomeChar, int hp_atual, int hp_total, int mp_atual, int mp_total, int dmg, int lvl, int power, int agility, int sort, int intelligence, int vitality) : base(nomeChar, hp_atual, hp_total, mp_atual, mp_total, dmg, lvl, power, agility, sort,intelligence, vitality)
         {            

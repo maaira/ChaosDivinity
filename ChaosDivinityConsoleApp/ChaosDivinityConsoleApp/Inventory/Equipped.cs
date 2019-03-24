@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ChaosDivinityConsoleApp.Inventory
+namespace ChaosDivinity.Inventory
 {
-    class Equippped
+    public class Equipped
     {
 
     }

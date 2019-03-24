@@ -13,7 +13,8 @@ namespace ChaosDivinity.Char
         protected BackPack mochila;
         protected int draquimas;
         protected int xp_atual, xp_total;
-        protected Skill listOfSkills;
+        protected List<Skill> listOfSkills;
+        protected Equipped armo;
 
 
         protected int power;
@@ -22,16 +23,19 @@ namespace ChaosDivinity.Char
         protected int sort;
         protected int vitality;
 
+
         public BackPack BackPack { get => mochila; }        
         public int Draquimas { get => draquimas; set => draquimas = value; }
         public int Xp_atual { get => xp_atual; set => xp_atual = value; }
         public int Xp_total { get => xp_total; set => xp_total = value; }
-        public Skill ListofSkill { get => listOfSkills; }
+        public List<Skill> ListofSkill { get => listOfSkills; }
+        
 
         public int Power { get => power; set => power = value; }
         public int Agility { get => agility; set => agility = value; }
         public int Sort { get => sort; set => sort = value; }
         public int Vitality { get => vitality; set => vitality = value; }
+        public int Intelligence { get => intelligence; set => intelligence = value; }
 
 
 
@@ -108,9 +112,9 @@ namespace ChaosDivinity.Char
                 return false; // Morreu
             }
         }
-
+        /*
         //Calcula o dano com base nos items equipados
-        /*public int Atk_base()
+        public int Atk_base()
         {
             int damage_add = 0;
             foreach ( i in mochila.InventoryOfBackPack)
@@ -138,7 +142,8 @@ namespace ChaosDivinity.Char
             {
                 return false;
             }
-        }*/
+        }
+        */
 
     }
 }

@@ -15,7 +15,6 @@ namespace ChaosDivinity.Item
 
         private static string IDCalculate(string person)
         {
-
             switch (person) { 
                 case "Guerreiro":
                     id += 1;

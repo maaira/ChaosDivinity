@@ -31,7 +31,7 @@ namespace ChaosDivinity.Char
 
         public Character(string nomeChar, int hp_atual, int hp_total, int mp_atual, int mp_total , int dmg, int lvl)
         {
-            this.nameChar = nameChar;
+            this.nameChar = nomeChar;
             this.hp_atual = hp_atual;
             this.hp_total = hp_total;
             this.mp_atual = mp_atual;

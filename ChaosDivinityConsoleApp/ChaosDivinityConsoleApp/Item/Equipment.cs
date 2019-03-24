@@ -11,22 +11,18 @@ namespace ChaosDivinity.Item
         private int def;
         private int dmg;
         private bool equipped;
-        private string type;
         private string category;
 
         public int Def { get => def; }
         public int Dmg { get => dmg; }
         public bool Equipped { get => equipped; set => equipped = value; }
-        public string Typo { get => type; }
         public string Category { get => category; }
 
         public Equipment(string name, string description, int def, int dmg, bool equipped, string classGroup,   int draqui, int cash, string id) : base(name, description, draqui, cash, id)
-        {
-            
+        {            
             this.def = def;
             this.dmg = dmg;
-            this.equipped = equipped;
-            this.category = category;           
+            this.equipped = equipped;           
 
         }
 

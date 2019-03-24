@@ -44,9 +44,12 @@
   <ItemGroup>
     <Compile Include="Characters\Character.cs" />
     <Compile Include="Characters\Hero.cs" />
+    <Compile Include="Characters\Mage.cs" />
     <Compile Include="Characters\Rogue.cs" />
     <Compile Include="Characters\Skill.cs" />
-    <Compile Include="Inventory\Equippped.cs" />
+    <Compile Include="Characters\Warior.cs" />
+    <Compile Include="ConsoleApp\ConsoleAux.cs" />
+    <Compile Include="Inventory\Equipped.cs" />
     <Compile Include="Market\MarketClass.cs" />
     <Compile Include="Item\DBItem.cs" />
     <Compile Include="Inventory\Inventory.cs" />
