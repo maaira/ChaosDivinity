@@ -5,31 +5,35 @@ using System.Text;
 using System.Threading.Tasks;
 using ChaosDivinity.Item;
 using ChaosDivinity.Char;
+using ChaosDivinity.Inventory;
 
 namespace ChaosDivinity.Market
 {
-    class MarketClass
+    public class MarketClass
     {
-        bool SellItem(ItemGame item, Hero hero)
+        public static bool SellItem(ItemGame item, Hero hero)
         {
             if(item != null && hero != null)
             {
-                hero.Draquimas += item.MarketValue;
-                hero.BackPack.AddItem(item);
+                hero.Draquimas += item.SellValue;
+                hero.BackPack.RemoveItem(item);
                 return true;
             }
             return false;
         }
 
-        bool BuyItem(ItemGame item, Hero hero)
+        public static bool BuyItem(ItemGame item, Hero hero)
         {
-            if(item != null && hero != null && hero.Draquimas >= item.MarketValue)
-            {
+            
+            if (item != null && hero != null && hero.Draquimas >= item.MarketValue)
+            { 
+                
+                hero.BackPack.AddItem(new InventorySlot (item));
                 hero.Draquimas -= item.MarketValue;
-                hero.BackPack.AddItem(item);
-            }
-            return false;
-
+                
+                return true;
+            }            
+            else return false;
         }
 
     }

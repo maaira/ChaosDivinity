@@ -29,7 +29,7 @@ namespace ChaosDivinity.Char
         
         
 
-        public Character(string nomeChar, int hp_atual, int hp_total, int mp_atual, int mp_total , int dmg, int lvl)
+        public Character(string nomeChar, int hp_atual, int hp_total, int mp_atual, int mp_total ,int lvl)
         {
             this.nameChar = nomeChar;
             this.hp_atual = hp_atual;

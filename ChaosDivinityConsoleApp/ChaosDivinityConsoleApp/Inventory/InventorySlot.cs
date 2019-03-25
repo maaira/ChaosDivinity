@@ -9,21 +9,36 @@ namespace ChaosDivinity.Inventory
 {
     public class InventorySlot
     {
-        private Dictionary<string , ItemGame > slot = new Dictionary<string, ItemGame>();
-        private string slotid =""; // variavel que cotrola o tipo de item do slot
-        public Dictionary<string, ItemGame> Slot { get => slot; }
-        public string ID { get => slotid; }
-        public bool AddItemToSlot(ItemGame item)
+        private ItemGame item;
+        private int tam;
+        private string slotid ; // variavel que cotrola o tipo de item do slot
+        private string type;
+        public ItemGame Slot { get => item; }
+        public string ID    { get => slotid; }
+        public string Type  { get => type; }
+        public int Tam { get => tam; set => tam = value; }
+        
+        public InventorySlot(ItemGame t)
         {
-            if(slot.Count == 0 )
+            this.tam = 0;
+            this.type = "";
+            this.slotid = "";
+            this.item = t;
+        }
+
+        public bool AddItemToSlot(ItemGame it)
+        {
+            if(tam == 0 )
             {
-                slot.Add(item.ID, item);
-                slotid = item.Name;
+                tam++;
+                this.item = it; 
+                                
                 return true;
             }
-            if(slot.Count <= 40 && slotid == item.ID)
+            if(tam != 0 && item!=null && item.Name == it.Name)
             {
-                slot.Add(item.ID, item);
+                tam++;
+                return true;
             }
             return false;
         }
@@ -32,12 +47,13 @@ namespace ChaosDivinity.Inventory
         {
             if(item != null)
             {
-                slot.Remove(item.ID);
-                if (slot.Count == 0)
-                {
-                    slotid = "";
-                }
-                return true;
+                tam--;
+            }
+            else if (tam == 0) return false;
+            else if(item!=null && tam ==1)
+            {
+                item = null;
+                tam-=1;
             }
             
 

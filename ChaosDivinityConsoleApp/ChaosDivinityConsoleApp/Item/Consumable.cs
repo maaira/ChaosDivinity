@@ -12,7 +12,7 @@ namespace ChaosDivinity.Item
         public int HP { get => hp; set => hp = value; }
         public int MP{ get => mp; set => mp = value; }
 
-        public Consumable(string name, string description, int draqui, int cash, int hp , int mp, string id) : base(name, description, draqui ,cash, id)
+        public Consumable(string name, string description, int draqui, int cash, int hp , int mp, int lvl, string id) : base(name, description, draqui ,cash, lvl, id)
         {
             this.hp = hp;
             this.mp = mp;

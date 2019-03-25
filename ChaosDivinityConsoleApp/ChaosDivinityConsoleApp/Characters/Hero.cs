@@ -8,13 +8,14 @@ using System.Threading.Tasks;
 
 namespace ChaosDivinity.Char
 {
-    public class Hero : Character
+    public abstract class Hero : Character
     {
-        protected BackPack mochila;
-        protected int draquimas;
+        protected BackPack mochila = new BackPack();
+        protected int draquimas = 500;
         protected int xp_atual, xp_total;
         protected List<Skill> listOfSkills;
-        protected Equipped armo;
+        protected EquippedSlot[] armo;
+        protected string className;
 
 
         protected int power;
@@ -22,13 +23,13 @@ namespace ChaosDivinity.Char
         protected int intelligence;
         protected int sort;
         protected int vitality;
-
-
-        public BackPack BackPack { get => mochila; }        
+        
+        public BackPack BackPack { get => mochila;  }        
         public int Draquimas { get => draquimas; set => draquimas = value; }
         public int Xp_atual { get => xp_atual; set => xp_atual = value; }
         public int Xp_total { get => xp_total; set => xp_total = value; }
         public List<Skill> ListofSkill { get => listOfSkills; }
+        public string ClassName { get => className; }
         
 
         public int Power { get => power; set => power = value; }
@@ -36,19 +37,26 @@ namespace ChaosDivinity.Char
         public int Sort { get => sort; set => sort = value; }
         public int Vitality { get => vitality; set => vitality = value; }
         public int Intelligence { get => intelligence; set => intelligence = value; }
-
-
-
-
-        public Hero(string nomeChar, int hp_atual, int hp_total, int mp_atual, int mp_total, int dmg , int lvl , int power , int agility , int sort, int intelligence, int vitality) : base(nomeChar, hp_atual, hp_total, mp_total, mp_atual, dmg, lvl)
+        
+        public Hero(string nomeChar, int hp_atual, int hp_total, int mp_atual, int mp_total , int lvl , int power , int agility , int sort, int intelligence, int vitality) : base(nomeChar, hp_atual, hp_total, mp_total, mp_atual, lvl)
         {
             this.power = power;
             this.agility = agility;
             this.sort = sort;
             this.intelligence = intelligence;
             this.vitality = vitality;
+            //this.mochila = new BackPack();
+            Armo();
         }
 
+        private void Armo()
+        {
+            this.armo = new EquippedSlot[4];
+            this.armo[0] = new EquippedSlot("Armadura", this);
+            this.armo[1] = new EquippedSlot("Acessorio", this);
+            this.armo[2] = new EquippedSlot("Acessorio", this);
+            this.armo[3] = new EquippedSlot("Equipamento", this);
+        }
         //Verifica se o ganho de experiência fez o personagem passar de level
         public bool IsLvUP()
         {
@@ -76,7 +84,24 @@ namespace ChaosDivinity.Char
             }
         }
 
+        public bool AddtemToEquip(ItemGame item)
+        {
 
+            foreach(EquippedSlot x in armo)
+            {
+                if(x.Type==item.Category && x.Equip == null)
+                {
+                    x.EquipItem(item);
+                    return true;
+                }
+                if (x.Type == item.Category)
+                {
+                    x.EquipItem(item);
+                    return true;
+                }
+            }
+            return false;
+        }
         //Realiza o aumento de experiência
         public void Gain_xp(int xp_gain)
         {
@@ -144,6 +169,11 @@ namespace ChaosDivinity.Char
             }
         }
         */
+
+        public bool Equip()
+        {
+            return false;
+        }
 
     }
 }
