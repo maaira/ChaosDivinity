@@ -4,13 +4,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace RPGTESTE.Char
+namespace ChaosDivinity.Char
 {
     abstract class Character
     {
         //public double skilllenght;
         //public double atacklenght;
         private string nameChar;
+        private int cash;
         private int hp_atual, hp_total;
         private int mp_atual, mp_total;
         private int xp_atual, xp_total, lvl;
@@ -21,6 +22,7 @@ namespace RPGTESTE.Char
 
 
         public string Nome { get => nome; set => nome = value; }
+        public int Cash {get => cash; set => value; }
         public int Hp_atual { get => hp_atual; set => hp_atual = value; }
         public int Hp_total { get => hp_total; set => hp_total = value; }
         public int Mp_atual { get => mp_atual; set => mp_atual = value; }

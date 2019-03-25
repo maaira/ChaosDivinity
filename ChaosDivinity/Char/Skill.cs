@@ -1,7 +1,7 @@
 ﻿using System;
 
 
-namespace RPGTESTE.Char { 
+namespace ChaosDivinity.Char { 
     public class Skill
     {
 
