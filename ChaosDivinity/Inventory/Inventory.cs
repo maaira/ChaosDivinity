@@ -7,37 +7,60 @@ using System.Threading.Tasks;
 
 namespace ChaosDivinity.Inventory
 {
-    class Inventory
+    public class BackPack
     {
-        private InventorySlot[,] backPack = new InventorySlot[4,4];
 
-        public InventorySlot[,] BackPack { get => backPack; }
+        private Dictionary<string, InventorySlot> backPack = new Dictionary<string, InventorySlot>();
 
-        public bool AddItem(ItemGame item)
+        public Dictionary<string, InventorySlot> InventoryOfBackPack { get => backPack; }
+
+        public BackPack()
         {
-            bool key = false;
-            foreach(InventorySlot slot in backPack)
-            {
-                if(slot.ID == item.ID)
-                {
-                    key = slot.AddItemToSlot(item);
-                }
-            }
-            return key;
 
+        }
+
+
+        public bool IsFull()
+        {
+            return false;
+        }
+
+        public bool ContainsItem()
+        {
+            if (backPack.Count == 0) return false;
+            else return true;
+        }
+
+
+        public bool AddItem(InventorySlot item)
+        {
+            if (item != null && backPack.ContainsValue(item))
+            {
+                backPack[item.ID].Tam += 1;
+                backPack[item.ID] = item;
+                return true;
+            }
+            else if (item != null)
+            {
+                backPack.Add(item.ID, item);
+                return true;
+            }
+            else
+            {
+                backPack.Add(item.ID, item);
+            }
+            return false;
         }
 
         public bool RemoveItem(ItemGame item)
         {
-            bool key = false;
-            foreach (InventorySlot slot in backPack)
+            if (item != null && backPack.ContainsKey(item.ID))
             {
-                if (slot.ID == item.ID)
-                {
-                    key = slot.RemoveItemFromSlot(item);
-                }
+                backPack.Remove(item.ID);
+                return true;
             }
-            return key;
+
+            return false;
         }
     }
 }

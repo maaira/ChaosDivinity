@@ -120,13 +120,21 @@
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
     <Compile Include="Char\Character.cs" />
-    <Compile Include="Inventory\Inventory.cs" />
+    <Compile Include="Char\Hero.cs" />
+    <Compile Include="Char\Mage.cs" />
+    <Compile Include="Char\Rogue.cs" />
+    <Compile Include="Char\Skill.cs" />
+    <Compile Include="Char\Warior.cs" />
     <Compile Include="Inventory\InventorySlot.cs" />
+    <Compile Include="Inventory\EquippedSlot.cs" />
+    <Compile Include="Inventory\Inventory.cs" />
     <Compile Include="Item\Consumable.cs" />
+    <Compile Include="Item\DBItem.cs" />
     <Compile Include="Item\Equipment.cs" />
     <Compile Include="Item\ItemGame.cs" />
-    <Compile Include="MainPage.xaml.cs">
-      <DependentUpon>MainPage.xaml</DependentUpon>
+    <Compile Include="Market\Market.cs" />
+    <Compile Include="Start.xaml.cs">
+      <DependentUpon>Start.xaml</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -137,6 +145,10 @@
     <None Include="ChaosDivinity_TemporaryKey.pfx" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Assets\975993.jpg" />
+    <Content Include="Assets\giphy.gif" />
+    <Content Include="Assets\Map004.png" />
+    <Content Include="Assets\Map007.png" />
     <Content Include="Properties\Default.rd.xml" />
     <Content Include="Assets\LockScreenLogo.scale-200.png" />
     <Content Include="Assets\SplashScreen.scale-200.png" />
@@ -151,7 +163,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Page Include="MainPage.xaml">
+    <Page Include="Start.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>

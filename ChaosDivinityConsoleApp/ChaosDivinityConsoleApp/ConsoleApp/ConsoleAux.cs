@@ -324,6 +324,8 @@ namespace ChaosDivinity.ConsoleApp
                             Console.ReadKey();
                             MenuPrincipal();
 
+
+
                         }
                         else Console.WriteLine("Hum...Não deu certo...");
                         Console.ReadKey();

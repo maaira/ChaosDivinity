@@ -1,10 +1,11 @@
 ﻿using System;
 
 
-namespace RPGTESTE.Char { 
+namespace ChaosDivinity.Char
+{
+
     public class Skill
     {
-
         private String skill_name;
         private int custo_mp, custo_hp, lv_requerido;
         private int hp_up, mp_up, base_dmg_up, base_def_up;
@@ -29,28 +30,28 @@ namespace RPGTESTE.Char {
         public int Base_dmg_up { get => base_dmg_up; set => base_dmg_up = value; }
         public int Base_def_up { get => base_def_up; set => base_def_up = value; }
         public int Skill_dmg { get => skill_dmg; set => skill_dmg = value; }
-    }
 
-    public int executar(Character p1)
-    {
-        if (p1.IsManaAvaliable(Custo_mp) == false)
+
+        public int Executar(Hero p1)
         {
-            return -1; //Código para quando o jogador não tiver mana para a skill
-        }
-        else if (p1.Lvl < Lv_requerido)
-        {
-            return -2; //Código para quando o jogador não tiver level para usar a skill
-        }
-        else
-        {
-            p1.Mp_atual += Mp_up;
-            p1.Mp_total += Mp_up;
-            p1.Hp_atual += Hp_up;
-            p1.Hp_total += Hp_up;
-            p1.Base_dmg += Base_dmg_up;
-            p1.Base_def += Base_def_up;
-            p1.Mp_atual -= Custo_mp;
-            return Skill_dmg;
+            if (p1.IsManaAvaliable(Custo_mp) == false)
+            {
+                return -1; //Código para quando o jogador não tiver mana para a skill
+            }
+            else if (p1.Lvl < Lv_requerido)
+            {
+                return -2; //Código para quando o jogador não tiver level para usar a skill
+            }
+            else
+            {
+                p1.Mp_atual += mp_up;
+                p1.Mp_total += mp_up;
+                p1.Hp_atual += hp_up;
+                p1.Hp_total += hp_up;
+                p1.Mp_atual -= custo_mp;
+                return Skill_dmg;
+            }
+
         }
     }
 

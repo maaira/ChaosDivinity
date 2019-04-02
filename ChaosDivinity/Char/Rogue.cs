@@ -1,28 +1,20 @@
 ﻿using System;
+using System.Collections.Generic;
 
-namespace RPGTESTE.Char
+namespace ChaosDivinity.Char
 {
-    public class Rogue : Character
+    public class Rogue : Hero
     {
 
-        //Construtor genérico
-        public Rogue(String nome)
+
+        public Rogue(string nomeChar, int hp_atual, int hp_total, int mp_atual, int mp_total, int lvl, int power, int agility, int sort, int intelligence, int vitality) : base(nomeChar, hp_atual, hp_total, mp_atual, mp_total, lvl, power, agility, sort, intelligence, vitality)
         {
-
-            //Inicializa atributos do personagem
-
-            this.Nome = nome;
-            Lvl = 1; Xp_atual = 0; Xp_total = 0;
-            Hp_total = 0; Hp_atual = Hp_total;
-            Mp_total = 0; Mp_atual = Mp_total;
-            Base_def = 0; Base_dmg = 0;
-            Nome_classe = "Rogue";
-            
-            //Cria e inicializa as skills da classe do personagem
-            Skills = new List<Skill>();
-            //(String skill_name, custo_mp, custo_hp, lv_requerido, hp_up, mp_up, base_dmg_up, base_def_up, skill_dmg)
-            Skills.Add(new Skill("NomeDaHabilidade", 20, 0, 1, 0, 0, 0, 0, 200));
-
+            listOfSkills = new List<Skill>();
+            listOfSkills.Add(new Skill("Sombras da Noite ", 5, 5, 1, 10, 0, 35, 0, 50));
+            listOfSkills.Add(new Skill("Mordida Feroz ", 20, 25, 3, 5, 0, 0, 0, 100));
+            listOfSkills.Add(new Skill("Apunhalar ", 30, 12, 7, 0, 0, 0, 0, 200));
+            listOfSkills.Add(new Skill("Combo Triplo ", 35, 10, 10, 50, 0, 0, 0, 300));
+            this.className = "Rogue";
         }
 
         public override void LvUp()
@@ -32,8 +24,7 @@ namespace RPGTESTE.Char
             Xp_total *= 2;
             Hp_total += 0;
             Mp_total += 0;
-            Base_def += 0;
-            Base_dmg += 0;
+            dmg += 0;
             Hp_atual = Hp_total;
             Mp_atual = Mp_total;
             if (IsLvUP() == true)
