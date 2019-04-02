@@ -1,3 +1,3 @@
-- Criar interaação entre as classes
+- Criar interaÃ§Ã£o entre as classes
 - Completar a classe do personagem
-- Qualquer coisa é só falar
+- Qualquer coisa Ã© sÃ³ falar
