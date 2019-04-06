@@ -18,7 +18,6 @@
     <ProjectTypeGuids>{A5A43C5B-DE2A-4C0C-9213-0A381AF9435A};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
     <WindowsXamlEnableOverview>true</WindowsXamlEnableOverview>
     <PackageCertificateKeyFile>ChaosDivinity_TemporaryKey.pfx</PackageCertificateKeyFile>
-    <PackageCertificateThumbprint>C89C6C421B98419A0AC8532F0A76092401FA99C9</PackageCertificateThumbprint>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
     <DebugSymbols>true</DebugSymbols>
@@ -140,131 +139,22 @@
       <DependentUpon>Start.xaml</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="VisualGame\Menu\MenuClass.xaml.cs">
-      <DependentUpon>MenuClass.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="VisualGame\Menu\MenuHome.xaml.cs">
-      <DependentUpon>MenuHome.xaml</DependentUpon>
-    </Compile>
   </ItemGroup>
   <ItemGroup>
     <AppxManifest Include="Package.appxmanifest">
       <SubType>Designer</SubType>
     </AppxManifest>
-    <None Include="Assets\Heroes\knight\Thumbs.db" />
     <None Include="ChaosDivinity_TemporaryKey.pfx" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Assets\Button\Button.png" />
-    <Content Include="Assets\Enemies\exqueleton\SkeletonAtaque.gif" />
-    <Content Include="Assets\Enemies\exqueleton\skeletonIdle.gif" />
-    <Content Include="Assets\Enemies\exqueleton\SkeletonMorre.gif" />
-    <Content Include="Assets\Enemies\goblin\GoblinAtaque.gif" />
-    <Content Include="Assets\Enemies\goblin\GoblinAtaqueLeft.gif" />
-    <Content Include="Assets\Enemies\goblin\GoblinMorte.gif" />
-    <Content Include="Assets\Enemies\goblin\GoblinMorteLeft.gif" />
-    <Content Include="Assets\Enemies\goblin\GoblinParado.gif" />
-    <Content Include="Assets\Enemies\goblin\GoblinParadoLeft.gif" />
-    <Content Include="Assets\Enemies\ogro\OgroAtaque.gif" />
-    <Content Include="Assets\Enemies\ogro\OgroMorte.gif" />
-    <Content Include="Assets\Enemies\ogro\OgroParado.gif" />
-    <Content Include="Assets\Enemies\ogro\OgroParado1.gif" />
+    <Content Include="Assets\975993.jpg" />
     <Content Include="Assets\giphy.gif" />
-    <Content Include="Assets\Heroes\knight\idleLeft.gif" />
-    <Content Include="Assets\Heroes\knight\idleRight.gif" />
-    <Content Include="Assets\Heroes\knight\walkLeft.gif" />
-    <Content Include="Assets\Heroes\knight\walkRight.gif" />
-    <Content Include="Assets\Heroes\knight\WarriorAtaque.gif" />
-    <Content Include="Assets\Heroes\knight\WarriorMorre.gif" />
-    <Content Include="Assets\Heroes\mage\MagoAndarLeft.gif" />
-    <Content Include="Assets\Heroes\mage\MagoAndarRight.gif" />
-    <Content Include="Assets\Heroes\mage\MagoAtaque.gif" />
-    <Content Include="Assets\Heroes\mage\MagoAtaqueLeft.gif" />
-    <Content Include="Assets\Heroes\mage\MagoMorre.gif" />
-    <Content Include="Assets\Heroes\mage\MagoParado.gif" />
-    <Content Include="Assets\Heroes\mage\MagoParadoLeft.gif" />
-    <Content Include="Assets\Heroes\mage\MagoParadoRight.gif" />
-    <Content Include="Assets\Heroes\rogue\RogueAndarLeft.gif" />
-    <Content Include="Assets\Heroes\rogue\RogueAndarRight.gif" />
-    <Content Include="Assets\Heroes\rogue\RogueAtaque.gif" />
-    <Content Include="Assets\Heroes\rogue\RogueParadaLeft.gif" />
-    <Content Include="Assets\Heroes\rogue\RogueParadaRight.gif" />
-    <Content Include="Assets\Menu\background.gif" />
-    <Content Include="Assets\Menu\Background.png" />
-    <Content Include="Assets\Menu\background1.png" />
-    <Content Include="Assets\Menu\home.jpg" />
-    <Content Include="Assets\Itens\Item__00.png" />
-    <Content Include="Assets\Itens\Item__01.png" />
-    <Content Include="Assets\Itens\Item__02.png" />
-    <Content Include="Assets\Itens\Item__03.png" />
-    <Content Include="Assets\Itens\Item__04.png" />
-    <Content Include="Assets\Itens\Item__05.png" />
-    <Content Include="Assets\Itens\Item__06.png" />
-    <Content Include="Assets\Itens\Item__07.png" />
-    <Content Include="Assets\Itens\Item__08.png" />
-    <Content Include="Assets\Itens\Item__09.png" />
-    <Content Include="Assets\Itens\Item__10.png" />
-    <Content Include="Assets\Itens\Item__11.png" />
-    <Content Include="Assets\Itens\Item__12.png" />
-    <Content Include="Assets\Itens\Item__13.png" />
-    <Content Include="Assets\Itens\Item__14.png" />
-    <Content Include="Assets\Itens\Item__15.png" />
-    <Content Include="Assets\Itens\Item__16.png" />
-    <Content Include="Assets\Itens\Item__17.png" />
-    <Content Include="Assets\Itens\Item__18.png" />
-    <Content Include="Assets\Itens\Item__19.png" />
-    <Content Include="Assets\Itens\Item__20.png" />
-    <Content Include="Assets\Itens\Item__21.png" />
-    <Content Include="Assets\Itens\Item__22.png" />
-    <Content Include="Assets\Itens\Item__23.png" />
-    <Content Include="Assets\Itens\Item__24.png" />
-    <Content Include="Assets\Itens\Item__25.png" />
-    <Content Include="Assets\Itens\Item__26.png" />
-    <Content Include="Assets\Itens\Item__27.png" />
-    <Content Include="Assets\Itens\Item__28.png" />
-    <Content Include="Assets\Itens\Item__29.png" />
-    <Content Include="Assets\Itens\Item__30.png" />
-    <Content Include="Assets\Itens\Item__31.png" />
-    <Content Include="Assets\Itens\Item__32.png" />
-    <Content Include="Assets\Itens\Item__33.png" />
-    <Content Include="Assets\Itens\Item__34.png" />
-    <Content Include="Assets\Itens\Item__35.png" />
-    <Content Include="Assets\Itens\Item__36.png" />
-    <Content Include="Assets\Itens\Item__37.png" />
-    <Content Include="Assets\Itens\Item__38.png" />
-    <Content Include="Assets\Itens\Item__39.png" />
-    <Content Include="Assets\Itens\Item__40.png" />
-    <Content Include="Assets\Itens\Item__41.png" />
-    <Content Include="Assets\Itens\Item__42.png" />
-    <Content Include="Assets\Itens\Item__43.png" />
-    <Content Include="Assets\Itens\Item__44.png" />
-    <Content Include="Assets\Itens\Item__45.png" />
-    <Content Include="Assets\Itens\Item__46.png" />
-    <Content Include="Assets\Itens\Item__47.png" />
-    <Content Include="Assets\Itens\Item__48.png" />
-    <Content Include="Assets\Itens\Item__49.png" />
-    <Content Include="Assets\Itens\Item__50.png" />
-    <Content Include="Assets\Itens\Item__51.png" />
-    <Content Include="Assets\Itens\Item__52.png" />
-    <Content Include="Assets\Itens\Item__53.png" />
-    <Content Include="Assets\Itens\Item__54.png" />
-    <Content Include="Assets\Itens\Item__55.png" />
-    <Content Include="Assets\Itens\Item__56.png" />
-    <Content Include="Assets\Itens\Item__57.png" />
-    <Content Include="Assets\Itens\Item__58.png" />
-    <Content Include="Assets\Itens\Item__59.png" />
-    <Content Include="Assets\Itens\Item__60.png" />
-    <Content Include="Assets\Itens\Item__61.png" />
-    <Content Include="Assets\Itens\Item__62.png" />
-    <Content Include="Assets\Itens\Item__63.png" />
-    <Content Include="Assets\Itens\Item__64.png" />
-    <Content Include="Assets\Itens\Item__65.png" />
-    <Content Include="Assets\Itens\Item__66.png" />
-    <Content Include="Assets\Mapa\Map002.png" />
-    <Content Include="Assets\Mapa\Map001.png" />
-    <Content Include="Assets\Mapa\Map004.png" />
-    <Content Include="Assets\Mapa\Map005.png" />
+    <Content Include="Assets\Map002.png" />
+    <Content Include="Assets\Map001.png" />
+    <Content Include="Assets\Map004.png" />
+    <Content Include="Assets\Map005.png" />
     <Content Include="Properties\Default.rd.xml" />
+    <Content Include="Assets\LockScreenLogo.scale-200.png" />
     <Content Include="Assets\SplashScreen.scale-200.png" />
     <Content Include="Assets\Square150x150Logo.scale-200.png" />
     <Content Include="Assets\Square44x44Logo.scale-200.png" />
@@ -281,24 +171,15 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="VisualGame\Menu\MenuClass.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="VisualGame\Menu\MenuHome.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Microsoft.NETCore.UniversalWindowsPlatform">
-      <Version>6.2.8</Version>
+      <Version>6.2.7</Version>
     </PackageReference>
   </ItemGroup>
   <ItemGroup>
-    <WCFMetadata Include="Connected Services\" />
+    <Folder Include="VisualGame\" />
   </ItemGroup>
-  <ItemGroup />
   <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '14.0' ">
     <VisualStudioVersion>14.0</VisualStudioVersion>
   </PropertyGroup>

@@ -15,7 +15,7 @@ using Windows.UI.Xaml.Data;
 using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
-using ChaosDivinity.VisualGame.Menu;
+
 
 namespace ChaosDivinity
 {
@@ -27,8 +27,7 @@ namespace ChaosDivinity
         double TelaX = 0;
 
         public MainPage()
-        {
-
+        {            
             this.InitializeComponent();
              TelaY = (double)Tela.GetValue(Canvas.TopProperty);
              TelaX = (double)Tela.GetValue(Canvas.LeftProperty);       
