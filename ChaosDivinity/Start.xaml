@@ -15,22 +15,22 @@
         <Canvas Name ="Tela" HorizontalAlignment="Left" Height="3240" VerticalAlignment="Top" Width="5760" PreviewKeyDown="EventFunc" PreviewKeyUp="EventFunc" Margin="0,0,0,0" Canvas.Top="12" Canvas.Left="-12" >
             <Image 
                     
-                    Source="Assets\Mapa\Map001.png"
+                    Source="Assets\Map001.png"
                     Width="2436"
                     Height="1621" Canvas.Top="18" Canvas.Left="6" />
             <Image 
                     
-                    Source="Assets\Mapa\Map002.png"
+                    Source="Assets\Map002.png"
                     Width="2436"
                     Height="1621" Canvas.Top="1628" Canvas.Left="8" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" />
             <Image 
                     
-                    Source="Assets\Mapa\Map005.png"
+                    Source="Assets\Map005.png"
                     Width="2436"
                     Height="1621" Canvas.Top="1626" Canvas.Left="2434" />
             <Image 
                     
-                    Source="Assets\Mapa\Map004.png"
+                    Source="Assets\Map004.png"
                     Width="2436"
                     Height="1621" Canvas.Left="2434" Canvas.Top="24" />
 
@@ -41,7 +41,7 @@
             <Image 
                     Source="Assets\giphy.gif"
                     Width="70"
-                    Height="70" Canvas.Left="0" />
+                    Height="70" Canvas.Left="0" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" />
         </Canvas>
 
     </Canvas>
