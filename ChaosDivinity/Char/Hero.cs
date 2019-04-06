@@ -2,6 +2,7 @@
 using ChaosDivinity.Item;
 using System;
 using System.Collections.Generic;
+using ChaosDivinity.Interface;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -14,48 +15,40 @@ namespace ChaosDivinity.Char
         protected int draquimas = 500;
         protected int xp_atual, xp_total;
         protected List<Skill> listOfSkills;
-        protected EquippedSlot[] armo;
-        protected string className;
+        protected EquippedSlot[] armo { get; set; }
+        
+        public BackPack BackPack { get ; }
+        public int Draquimas { get =>draquimas; set => draquimas = value ; }
+        public int Xp_atual { get ; set ; }
+        public int Xp_total { get; set; }
+        public List<Skill> ListofSkill { get ; }
 
+        public int Power { get ; set ; }
+        public int Agility { get ; set ; }
+        public int Sort { get ; set; }
+        public int Vitality { get ; set; }
+        public int Intelligence { get ; set ; }
+        public Classification.Perso ClassGroup { get; }
 
-        protected int power;
-        protected int agility;
-        protected int intelligence;
-        protected int sort;
-        protected int vitality;
-
-        public BackPack BackPack { get => mochila; }
-        public int Draquimas { get => draquimas; set => draquimas = value; }
-        public int Xp_atual { get => xp_atual; set => xp_atual = value; }
-        public int Xp_total { get => xp_total; set => xp_total = value; }
-        public List<Skill> ListofSkill { get => listOfSkills; }
-        public string ClassName { get => className; }
-
-
-        public int Power { get => power; set => power = value; }
-        public int Agility { get => agility; set => agility = value; }
-        public int Sort { get => sort; set => sort = value; }
-        public int Vitality { get => vitality; set => vitality = value; }
-        public int Intelligence { get => intelligence; set => intelligence = value; }
-
-        public Hero(string nomeChar, int hp_atual, int hp_total, int mp_atual, int mp_total, int lvl, int power, int agility, int sort, int intelligence, int vitality) : base(nomeChar, hp_atual, hp_total, mp_total, mp_atual, lvl)
+        public Hero(string nomeChar, int hp_atual, int hp_total, int mp_atual, int mp_total, int lvl, int power, int agility, int sort, int intelligence, int vitality, Classification.Perso classGroup) : base(nomeChar, hp_atual, hp_total, mp_total, mp_atual, lvl)
         {
-            this.power = power;
-            this.agility = agility;
-            this.sort = sort;
-            this.intelligence = intelligence;
-            this.vitality = vitality;
-            //this.mochila = new BackPack();
+            this.Power = power;
+            this.Agility = agility;
+            this.Sort = sort;
+            this.Intelligence = intelligence;
+            this.Vitality = vitality;
+            this.ClassGroup = classGroup;
+            
             Armo();
         }
 
         private void Armo()
         {
             this.armo = new EquippedSlot[4];
-            this.armo[0] = new EquippedSlot("Armadura", this);
-            this.armo[1] = new EquippedSlot("Acessorio", this);
-            this.armo[2] = new EquippedSlot("Acessorio", this);
-            this.armo[3] = new EquippedSlot("Equipamento", this);
+            this.armo[0] = new EquippedSlot(Classification.TypeOf.Armo, this);
+            this.armo[1] = new EquippedSlot(Classification.TypeOf.Acessorio, this);
+            this.armo[2] = new EquippedSlot(Classification.TypeOf.Acessorio, this);
+            this.armo[3] = new EquippedSlot(Classification.TypeOf.Acessorio, this);
         }
         //Verifica se o ganho de experiência fez o personagem passar de level
         public bool IsLvUP()
@@ -84,12 +77,13 @@ namespace ChaosDivinity.Char
             }
         }
 
-        public bool AddtemToEquip(ItemGame item)
+        public bool AddtemToEquip(Equipment item)
         {
 
             foreach (EquippedSlot x in armo)
             {
-                if (x.Type == item.Category && x.Equip == null)
+                if (x.Type == item.Category
+                    && x.Equip == null)
                 {
                     x.EquipItem(item);
                     return true;

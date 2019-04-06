@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using ChaosDivinity.Interface;
 
 namespace ChaosDivinity.Char
 {
@@ -7,14 +8,14 @@ namespace ChaosDivinity.Char
     {
 
 
-        public Rogue(string nomeChar, int hp_atual, int hp_total, int mp_atual, int mp_total, int lvl, int power, int agility, int sort, int intelligence, int vitality) : base(nomeChar, hp_atual, hp_total, mp_atual, mp_total, lvl, power, agility, sort, intelligence, vitality)
+        public Rogue(string nomeChar, int hp_atual, int hp_total, int mp_atual, int mp_total, int lvl, int power, int agility, int sort, int intelligence, int vitality, Classification.Perso classGroup) : base(nomeChar, hp_atual, hp_total, mp_atual, mp_total, lvl, power, agility, sort, intelligence, vitality, classGroup)
         {
             listOfSkills = new List<Skill>();
             listOfSkills.Add(new Skill("Sombras da Noite ", 5, 5, 1, 10, 0, 35, 0, 50));
             listOfSkills.Add(new Skill("Mordida Feroz ", 20, 25, 3, 5, 0, 0, 0, 100));
             listOfSkills.Add(new Skill("Apunhalar ", 30, 12, 7, 0, 0, 0, 0, 200));
             listOfSkills.Add(new Skill("Combo Triplo ", 35, 10, 10, 50, 0, 0, 0, 300));
-            this.className = "Rogue";
+            
         }
 
         public override void LvUp()

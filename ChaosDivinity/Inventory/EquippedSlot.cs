@@ -1,5 +1,6 @@
 ﻿using ChaosDivinity.Char;
 using ChaosDivinity.Item;
+using ChaosDivinity.Interface;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,29 +11,27 @@ namespace ChaosDivinity.Inventory
 {
     public class EquippedSlot
     {
-        private Equipment equipment;
-        private string equipmentType;
+
         private Hero hero;
+        public Equipment Equip { get; set; }
+        public Classification.TypeOf  Type{ get ; set; }
 
-        public Equipment Equip { get => equipment; }
-        public string Type { get => equipmentType; set => equipmentType = value; }
-
-        public EquippedSlot(string type, Hero hero)
+        public EquippedSlot(Classification.TypeOf type, Hero hero)
         {
-            this.equipmentType = type;
+            this.Type = type;
             this.hero = hero;
         }
 
         public bool EquipItem(ItemGame equip)
         {
-            if ((equip != null) && (equipment.Category == hero.ClassName) && (equipment.Level <= hero.Lvl) && (equipmentType == equip.Category))
+            if ((equip != null) && (Equip.Class == hero.ClassGroup) && (Equip.Level <= hero.Lvl) )
             {
-                if (equipment.Name == equip.Name) return true;
+                if (Equip.Name == equip.Name) return true;
                 else
                 {
                     hero.BackPack.RemoveItem(equip);
-                    hero.BackPack.AddItem(new InventorySlot(equipment));
-                    this.equipment = (Equipment)equip;
+                    hero.BackPack.AddItem(new InventorySlot(Equip));
+                    Equip = (Equipment)equip;
                     DistributeStatus();
 
                     return true;
@@ -43,11 +42,11 @@ namespace ChaosDivinity.Inventory
 
         public bool UnequipItem()
         {
-            if (equipment != null)
+            if (Equip != null)
             {
-                hero.BackPack.AddItem(new InventorySlot(equipment));
+                hero.BackPack.AddItem(new InventorySlot(Equip));
                 RemoveStatus();
-                equipment = null;
+                Equip = null;
                 return true;
             }
             else return true;
@@ -55,25 +54,25 @@ namespace ChaosDivinity.Inventory
 
         public void DistributeStatus()
         {
-            if (equipment != null)
+            if (Equip != null)
             {
-                hero.Agility += equipment.Agility;
-                hero.Intelligence += equipment.Intelligence;
-                hero.Power += equipment.Power;
-                hero.Vitality += equipment.Vitality;
-                hero.Sort += equipment.Sort;
+                hero.Agility += Equip.Agility;
+                hero.Intelligence += Equip.Intelligence;
+                hero.Power += Equip.Power;
+                hero.Vitality += Equip.Vitality;
+                hero.Sort += Equip.Sort;
             }
         }
 
         public void RemoveStatus()
         {
-            if (equipment != null)
+            if ( Equip!= null)
             {
-                hero.Agility -= equipment.Agility;
-                hero.Intelligence -= equipment.Intelligence;
-                hero.Power -= equipment.Power;
-                hero.Vitality -= equipment.Vitality;
-                hero.Sort -= equipment.Sort;
+                hero.Agility -= Equip.Agility;
+                hero.Intelligence -= Equip.Intelligence;
+                hero.Power -= Equip.Power;
+                hero.Vitality -= Equip.Vitality;
+                hero.Sort -= Equip.Sort;
             }
         }
 

@@ -15,8 +15,6 @@ using Windows.UI.Xaml.Data;
 using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
-using Windows.System.Threading;
-
 
 
 namespace ChaosDivinity
@@ -32,7 +30,7 @@ namespace ChaosDivinity
         {            
             this.InitializeComponent();
              TelaY = (double)Tela.GetValue(Canvas.TopProperty);
-             TelaX = (double)Tela.GetValue(Canvas.LeftProperty);
+             TelaX = (double)Tela.GetValue(Canvas.LeftProperty);       
 
         }
 
@@ -70,7 +68,8 @@ namespace ChaosDivinity
             }
         }
 
-       
+        
+        
     }
 
 }
