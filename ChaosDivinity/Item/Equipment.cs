@@ -9,8 +9,8 @@ namespace ChaosDivinity.Item
 {
     public class Equipment : ItemGame
     {
-        private int def;
-        private int dmg;
+        //private int def;
+        //private int dmg;
        
         public Classification.TypeOf Category { get; }
         public Classification.Perso Class { get; }
