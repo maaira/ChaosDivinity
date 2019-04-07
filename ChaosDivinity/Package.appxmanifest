@@ -8,7 +8,7 @@
 
   <Identity
     Name="5903bbf3-02e7-40b1-abd2-b137c01cc298"
-    Publisher="CN=monge"
+    Publisher="CN=maira"
     Version="1.0.0.0" />
 
   <mp:PhoneIdentity PhoneProductId="5903bbf3-02e7-40b1-abd2-b137c01cc298" PhonePublisherId="00000000-0000-0000-0000-000000000000"/>
