@@ -152,7 +152,7 @@
       <SubType>Designer</SubType>
     </AppxManifest>
     <None Include="Assets\Heroes\knight\Thumbs.db" />
-    <Content Include="Assets\hobbitonbrushhand.ttf" />
+    <Content Include="Assets\Text\hobbitonbrushhand.ttf" />
     <None Include="ChaosDivinity_TemporaryKey.pfx" />
   </ItemGroup>
   <ItemGroup>
