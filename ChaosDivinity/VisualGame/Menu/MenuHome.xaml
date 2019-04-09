@@ -20,6 +20,5 @@
             <Button Background="Transparent" BorderThickness="0" Click="Sair" x:Name="Exit" Content="Sair" Height="45" Width="183" FontSize="31" FontFamily="Algerian" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="25,0,27,5" Visibility="0"/>
         </Grid>
         <TextBlock Text="Chaos Divinity" FontSize="70" Canvas.Left="489" Canvas.Top="135" Height="107" Width="462"/>
-
     </Canvas>
 </Page>

@@ -28,7 +28,7 @@ namespace ChaosDivinity.VisualGame.Menu
     {
         public MenuClass()
         {
-
+            
             this.InitializeComponent();
         }
         private void IniciarGladiador(object sender, RoutedEventArgs e)
