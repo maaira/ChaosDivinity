@@ -12,7 +12,7 @@
 
     <Canvas Name ="Principle" HorizontalAlignment="Left" Height="1080" VerticalAlignment="Top" Width="1920">
 
-        <Canvas Name ="Tela" HorizontalAlignment="Left" Height="3240" VerticalAlignment="Top" Width="5760" PreviewKeyDown="EventFunc" PreviewKeyUp="EventFunc" Margin="0,0,0,0" Canvas.Top="12" Canvas.Left="-12" >
+        <Canvas Name ="Tela" HorizontalAlignment="Left" Height="3240" VerticalAlignment="Top" Width="5760" Margin="0,0,0,0" Canvas.Top="12" Canvas.Left="-12" >
             <Image 
                     
                     Source="Assets\Map001.png"
