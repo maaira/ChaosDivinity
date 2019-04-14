@@ -22,6 +22,7 @@ namespace ChaosDivinity
 
     public sealed partial class MainPage : Page
     {
+        internal static object instance;
         HeroMovement hero;
 
         public MainPage()

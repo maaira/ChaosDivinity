@@ -136,6 +136,7 @@
     <Compile Include="Item\Equipment.cs" />
     <Compile Include="Item\ItemGame.cs" />
     <Compile Include="Market\Market.cs" />
+    <Compile Include="NPC\NPC.cs" />
     <Compile Include="Start.xaml.cs">
       <DependentUpon>Start.xaml</DependentUpon>
     </Compile>
@@ -153,6 +154,8 @@
     <Content Include="Assets\Map001.png" />
     <Content Include="Assets\Map004.png" />
     <Content Include="Assets\Map005.png" />
+    <Content Include="Assets\NPC1.gif" />
+    <Content Include="Assets\NPC2.gif" />
     <Content Include="Properties\Default.rd.xml" />
     <Content Include="Assets\SplashScreen.scale-200.png" />
     <Content Include="Assets\Square150x150Logo.scale-200.png" />
