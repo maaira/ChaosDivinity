@@ -121,6 +121,7 @@
     </Compile>
     <Compile Include="Char\Character.cs" />
     <Compile Include="Char\Hero.cs" />
+    <Compile Include="Char\HeroMovement.cs" />
     <Compile Include="Char\Mage.cs" />
     <Compile Include="Char\Rogue.cs" />
     <Compile Include="Char\Skill.cs" />
@@ -135,6 +136,7 @@
     <Compile Include="Item\Equipment.cs" />
     <Compile Include="Item\ItemGame.cs" />
     <Compile Include="Market\Market.cs" />
+    <Compile Include="NPC\NPC.cs" />
     <Compile Include="Start.xaml.cs">
       <DependentUpon>Start.xaml</DependentUpon>
     </Compile>
@@ -147,14 +149,14 @@
     <None Include="ChaosDivinity_TemporaryKey.pfx" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Assets\975993.jpg" />
     <Content Include="Assets\giphy.gif" />
     <Content Include="Assets\Map002.png" />
     <Content Include="Assets\Map001.png" />
     <Content Include="Assets\Map004.png" />
     <Content Include="Assets\Map005.png" />
+    <Content Include="Assets\NPC1.gif" />
+    <Content Include="Assets\NPC2.gif" />
     <Content Include="Properties\Default.rd.xml" />
-    <Content Include="Assets\LockScreenLogo.scale-200.png" />
     <Content Include="Assets\SplashScreen.scale-200.png" />
     <Content Include="Assets\Square150x150Logo.scale-200.png" />
     <Content Include="Assets\Square44x44Logo.scale-200.png" />

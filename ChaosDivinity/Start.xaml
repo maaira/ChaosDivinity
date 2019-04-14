@@ -9,20 +9,20 @@
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}" Height="1080" Width="1920"
     Name ="Page"
     >
-
     <Canvas Name ="Principle" HorizontalAlignment="Left" Height="1080" VerticalAlignment="Top" Width="1920">
 
-        <Canvas Name ="Tela" HorizontalAlignment="Left" Height="3240" VerticalAlignment="Top" Width="5760" PreviewKeyDown="EventFunc" PreviewKeyUp="EventFunc" Margin="0,0,0,0" Canvas.Top="12" Canvas.Left="-12" >
+        <Canvas Name ="Tela" HorizontalAlignment="Left" Height="3240" VerticalAlignment="Top" Width="5760" Margin="0,0,0,0" Canvas.Top="-15" Canvas.Left="-6" >
             <Image 
                     
                     Source="Assets\Map001.png"
                     Width="2436"
                     Height="1621" Canvas.Top="18" Canvas.Left="6" />
+
             <Image 
                     
                     Source="Assets\Map002.png"
                     Width="2436"
-                    Height="1621" Canvas.Top="1628" Canvas.Left="8" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" />
+                    Height="1621" Canvas.Top="1628" Canvas.Left="8" HorizontalAlignment="Stretch" VerticalAlignment="Top" />
             <Image 
                     
                     Source="Assets\Map005.png"
@@ -34,8 +34,18 @@
                     Width="2436"
                     Height="1621" Canvas.Left="2434" Canvas.Top="24" />
 
-            <Button Content="Button" HorizontalAlignment="Left" Canvas.Left="3138" Canvas.Top="194" VerticalAlignment="Top"/>
+            <Image 
+                    Source="Assets\NPC1.gif"
+                    Width="140"
+                    Height="140" Canvas.Left="2440" Canvas.Top="76" HorizontalAlignment="Left" />
 
+            <Image 
+                    Source="Assets\NPC2.gif"
+                    Width="200"
+                    Height="200" Canvas.Left="3068" Canvas.Top="24" HorizontalAlignment="Left" />
+
+            <Button Content="Dino" HorizontalAlignment="Left" Canvas.Left="3138" Canvas.Top="194" VerticalAlignment="Top"/>
+            <Button Content="Diva" HorizontalAlignment="Left" Canvas.Left="2490" Canvas.Top="214" VerticalAlignment="Top"/>
         </Canvas>
         <Canvas Name ="Perso"  Height="70" Canvas.Left="840" Canvas.Top="528" Width="70" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
             <Image 
