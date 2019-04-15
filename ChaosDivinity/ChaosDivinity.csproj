@@ -152,6 +152,14 @@
       <SubType>Designer</SubType>
     </AppxManifest>
     <None Include="Assets\Heroes\knight\Thumbs.db" />
+    <Content Include="Assets\Menu\background\background2.png" />
+    <Content Include="Assets\Menu\background\background3.jpg" />
+    <Content Include="Assets\Menu\background\background4.png" />
+    <Content Include="Assets\Menu\background\background5.jpg" />
+    <Content Include="Assets\Menu\background\background6.jpg" />
+    <Content Include="Assets\Menu\titleclass.png" />
+    <Content Include="Assets\Sound\Fantascape.mp3" />
+    <Content Include="Assets\Sound\Our-Mountain_v003.mp3" />
     <Content Include="Assets\Text\hobbitonbrushhand.ttf" />
     <None Include="ChaosDivinity_TemporaryKey.pfx" />
   </ItemGroup>
@@ -190,10 +198,10 @@
     <Content Include="Assets\Heroes\rogue\RogueAtaque.gif" />
     <Content Include="Assets\Heroes\rogue\RogueParadaLeft.gif" />
     <Content Include="Assets\Heroes\rogue\RogueParadaRight.gif" />
-    <Content Include="Assets\Menu\background.gif" />
-    <Content Include="Assets\Menu\Background.png" />
-    <Content Include="Assets\Menu\background1.png" />
-    <Content Include="Assets\Menu\home.jpg" />
+    <Content Include="Assets\Menu\background\background.gif" />
+    <Content Include="Assets\Menu\background\Background.png" />
+    <Content Include="Assets\Menu\background\background1.png" />
+    <Content Include="Assets\Menu\background\home.jpg" />
     <Content Include="Assets\Itens\Item__00.png" />
     <Content Include="Assets\Itens\Item__01.png" />
     <Content Include="Assets\Itens\Item__02.png" />
@@ -265,6 +273,7 @@
     <Content Include="Assets\Mapa\Map001.png" />
     <Content Include="Assets\Mapa\Map004.png" />
     <Content Include="Assets\Mapa\Map005.png" />
+    <Content Include="Assets\Text\title2.png" />
     <Content Include="Properties\Default.rd.xml" />
     <Content Include="Assets\SplashScreen.scale-200.png" />
     <Content Include="Assets\Square150x150Logo.scale-200.png" />

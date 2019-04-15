@@ -6,6 +6,7 @@ using System.Runtime.InteropServices.WindowsRuntime;
 using Windows.ApplicationModel.Core;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
+using Windows.Media.Core;
 using Windows.UI.ViewManagement;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
@@ -22,6 +23,8 @@ namespace ChaosDivinity.VisualGame.Menu
    
     public sealed partial class MenuHome : Page
     {
+        
+
         public MenuHome ()
         {
             ApplicationView.PreferredLaunchWindowingMode = ApplicationViewWindowingMode.FullScreen;
@@ -32,8 +35,8 @@ namespace ChaosDivinity.VisualGame.Menu
         private void Sair(object sender, RoutedEventArgs e)
         {
 
-            //song.Source = MediaSource.CreateFromUri(new Uri(""));
-            // song.Play();
+            //song.Source = MediaSource.CreateFromUri(new Uri("ms-appx:///Assets/sound"));
+            //song.Play();
 
             CoreApplication.Exit();
         }
@@ -41,7 +44,7 @@ namespace ChaosDivinity.VisualGame.Menu
         private void Iniciar(object sender, RoutedEventArgs e)
         {
 
-            //song.Source = MediaSource.CreateFromUri(new Uri(""));
+            //song.Source = MediaSource.CreateFromUri(new Uri("ms-appx:///Assets/sound"));
             //song.Play();
 
             this.Frame.Navigate(typeof(MenuClass));

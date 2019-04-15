@@ -9,14 +9,14 @@
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
     <Canvas Name="tela" HorizontalAlignment="Center" VerticalAlignment="Center" Width="1500" Height="1000" >
-        <Image Name ="back" Source="ms-appx:///Assets/Menu/background.png" Width="1500" Height="1000" Stretch="UniformToFill"/>
+        <Image Name ="back" Source="ms-appx:///Assets/Menu/background/background6.jpg" Width="1500" Height="1000" Stretch="UniformToFill"/>
         <Grid Height="50" Canvas.Left="150" Canvas.Top="720" Width="235">
             <Image Height="50" Width="235" Source="ms-appx:///Assets/Button/Button.png"/>
-            <Button Background="Transparent" BorderThickness="0" x:Name="Warrior" Click="IniciarGladiador" Content="Warrior" Height="45" Width="183" FontSize="31" FontFamily="Algerian" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="25,0,27,5" Visibility="0"/>
+            <Button Background="Transparent" BorderThickness="0" x:Name="Warrior" Click="IniciarGladiador" Content="Warrior" Height="45" Width="183" FontSize="31" FontFamily="Algerian"  VerticalAlignment="Center" HorizontalAlignment="Center" Margin="25,0,27,5" Visibility="0"/>
         </Grid>
         <Grid Height="50" Canvas.Left="605" Canvas.Top="720" Width="235">
             <Image  Height="50" Width="235" Source="ms-appx:///Assets/Button/Button.png"/>
-            <Button Background="Transparent" BorderThickness="0" Click="IniciarMago" x:Name="Wizard" Content="Wizard" Height="45" Width="183" FontSize="31" FontFamily="Algerian" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="25,0,27,5" Visibility="0"/>
+            <Button Background="Transparent" BorderThickness="0"  Click="IniciarMago" x:Name="Wizard" Content="Wizard"  Height="45" Width="183" FontSize="31" FontFamily="Algerian" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="25,0,27,5" Visibility="0"/>
         </Grid>
         <Grid Height="50" Canvas.Left="1105" Canvas.Top="720" Width="235">
             <Image  Height="50" Width="235" Source="ms-appx:///Assets/Button/Button.png"/>
@@ -26,8 +26,7 @@
             <Image  Height="50" Width="235" Source="ms-appx:///Assets/Button/Button.png"/>
             <Button Background="Transparent" BorderThickness="0" Click="Retornar" x:Name="Voltar" Content="Voltar" Height="45" Width="183" FontSize="31" FontFamily="Algerian" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="25,0,27,5" Visibility="0"/>
         </Grid>
-
-        <TextBlock Text="Escolha sua Classe" FontSize="70" Canvas.Left="427" Canvas.Top="100" Height="107" Width="592"  />
+        <Image   Source="ms-appx:///Assets/Menu/titleclass.png" HorizontalAlignment="Stretch" Canvas.Left="267" Canvas.Top="189" VerticalAlignment="Stretch"/>
         <Image Height="351" Width="235" Source="ms-appx:///Assets/Heroes/knight/idleRight.gif" Canvas.Left="150" Canvas.Top="335"/>
         <Image Stretch="UniformToFill" Height="351" Width="235" Source="ms-appx:///Assets/Heroes/Mage/MagoParadoRight.gif" Canvas.Left="603" Canvas.Top="335"/>
         <Image Stretch="UniformToFill" Height="351" Width="235" Source="ms-appx:///Assets/Heroes/rogue/RogueParadaRight.gif" Canvas.Left="1105" Canvas.Top="335"/>

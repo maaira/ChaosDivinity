@@ -10,7 +10,8 @@
 
 
     <Canvas Name="Tela" HorizontalAlignment="Center" VerticalAlignment="Center" Width="1500" Height="1000">
-        <Image Name ="Background" Source="ms-appx:///Assets/Menu/home.jpg" Width="1500" Height="1000" Stretch="Uniform"/>
+        <Image Name ="Background" Source="ms-appx:///Assets/Menu/background/home.jpg" Width="1500" Height="1000" Stretch="Uniform"/>
+        <Image   Source="ms-appx:///Assets/Text/title2.png" HorizontalAlignment="Stretch" Canvas.Left="333" Canvas.Top="198" VerticalAlignment="Stretch"/>
         <Grid Height="50" Canvas.Left="605" Canvas.Top="650" Width="235">
             <Image Height="50" Width="235" Source="ms-appx:///Assets/Button/Button.png"/>
             <Button Background="Transparent" BorderThickness="0" x:Name="Start" Click="Iniciar" Content="Iniciar" Height="45" Width="183" FontSize="31" FontFamily="Algerian" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="25,0,27,5" Visibility="0"/>
@@ -19,6 +20,5 @@
             <Image  Height="50" Width="235" Source="ms-appx:///Assets/Button/Button.png"/>
             <Button Background="Transparent" BorderThickness="0" Click="Sair" x:Name="Exit" Content="Sair" Height="45" Width="183" FontSize="31" FontFamily="Algerian" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="25,0,27,5" Visibility="0"/>
         </Grid>
-        <TextBlock Text="Chaos Divinity" FontSize="72" Canvas.Left="489" Canvas.Top="135" Height="107" Width="462" FontFamily="Hobbiton Brushhand Hobbiton brush"/>
     </Canvas>
 </Page>
