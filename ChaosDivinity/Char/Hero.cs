@@ -1,6 +1,5 @@
 ﻿using ChaosDivinity.Inventory;
 using ChaosDivinity.Item;
-using System;
 using System.Collections.Generic;
 using ChaosDivinity.Interface;
 using System.Linq;
@@ -13,22 +12,34 @@ namespace ChaosDivinity.Char
     {
         protected BackPack mochila = new BackPack();
         protected int draquimas = 500;
-        protected int xp_atual, xp_total;
         protected List<Skill> listOfSkills;
-        protected EquippedSlot[] armo { get; set; }
-        
-        public BackPack BackPack { get ; }
-        public int Draquimas { get =>draquimas; set => draquimas = value ; }
-        public int Xp_atual { get ; set ; }
-        public int Xp_total { get; set; }
-        public List<Skill> ListofSkill { get ; }
+        protected EquippedSlot[] Armo { get; set; }
 
-        public int Power { get ; set ; }
-        public int Agility { get ; set ; }
-        public int Sort { get ; set; }
-        public int Vitality { get ; set; }
-        public int Intelligence { get ; set ; }
+        public BackPack BackPack { get; }
+        public int Draquimas { get => draquimas; set => draquimas = value; }
+        public float Xp_atual { get; set; }
+        public float Xp_total { get; set; }
+        public List<Skill> ListofSkill { get; }
+
+        public int Power { get; set; }
+        public int Agility { get; set; }
+        public int Sort { get; set; }
+        public int Vitality { get; set; }
+        public int Intelligence { get; set; }
         public Classification.Perso ClassGroup { get; }
+
+        public string MoveToRight { get; set; }
+        public string MoveToLeft { get; set; }
+        //protected string MoveUp { get; set; }
+        //protected string MoveDown { get; set; }
+        public string StopLeft { get; set; }
+        public string StopRight { get; set; }
+
+        public bool MovingToRight { get; set; }
+        public bool MovingToLeft { get; set; }
+        public bool MovingToUp { get; set; }
+        public bool MovingToDown { get; set; }
+        public bool IsMoving { get; set; }
 
         public Hero(string nomeChar, int hp_atual, int hp_total, int mp_atual, int mp_total, int lvl, int power, int agility, int sort, int intelligence, int vitality, Classification.Perso classGroup) : base(nomeChar, hp_atual, hp_total, mp_total, mp_atual, lvl)
         {
@@ -38,17 +49,18 @@ namespace ChaosDivinity.Char
             this.Intelligence = intelligence;
             this.Vitality = vitality;
             this.ClassGroup = classGroup;
-            
-            Armo();
+
+
+            ArmoInit();
         }
 
-        private void Armo()
+        private void ArmoInit()
         {
-            this.armo = new EquippedSlot[4];
-            this.armo[0] = new EquippedSlot(Classification.TypeOf.Armo, this);
-            this.armo[1] = new EquippedSlot(Classification.TypeOf.Acessorio, this);
-            this.armo[2] = new EquippedSlot(Classification.TypeOf.Acessorio, this);
-            this.armo[3] = new EquippedSlot(Classification.TypeOf.Acessorio, this);
+            this.Armo = new EquippedSlot[4];
+            this.Armo[0] = new EquippedSlot(Classification.TypeOf.Armo, this);
+            this.Armo[1] = new EquippedSlot(Classification.TypeOf.Acessorio, this);
+            this.Armo[2] = new EquippedSlot(Classification.TypeOf.Acessorio, this);
+            this.Armo[3] = new EquippedSlot(Classification.TypeOf.Acessorio, this);
         }
         //Verifica se o ganho de experiência fez o personagem passar de level
         public bool IsLvUP()
@@ -67,8 +79,8 @@ namespace ChaosDivinity.Char
         public virtual void LvUp()
         {
             Lvl++;
-            xp_atual = xp_atual - xp_total;
-            Xp_total *= 2;
+            Xp_atual = Xp_atual - Xp_total;
+            Xp_total *= (float)1.5;
             hp_atual = Hp_total;
             mp_atual = Mp_total;
             if (IsLvUP() == true)
@@ -80,7 +92,7 @@ namespace ChaosDivinity.Char
         public bool AddtemToEquip(Equipment item)
         {
 
-            foreach (EquippedSlot x in armo)
+            foreach (EquippedSlot x in Armo)
             {
                 if (x.Type == item.Category
                     && x.Equip == null)

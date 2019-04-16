@@ -4,7 +4,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
-    <ProjectGuid>{5C1939AC-1C60-424B-BC19-9DCFEA5E4E80}</ProjectGuid>
+    <ProjectGuid>{90E03317-3913-4CC2-9ED4-029FF182400B}</ProjectGuid>
     <OutputType>AppContainerExe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>ChaosDivinity</RootNamespace>
@@ -119,28 +119,35 @@
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Char\Character.cs" />
+    <Compile Include="Char\Char.cs" />
     <Compile Include="Char\Hero.cs" />
-    <Compile Include="Char\HeroMovement.cs" />
     <Compile Include="Char\Mage.cs" />
     <Compile Include="Char\Rogue.cs" />
     <Compile Include="Char\Skill.cs" />
-    <Compile Include="Char\Warior.cs" />
-    <Compile Include="Collision\Collision.cs" />
-    <Compile Include="Interface\Classification.cs" />
-    <Compile Include="Inventory\InventorySlot.cs" />
-    <Compile Include="Inventory\EquippedSlot.cs" />
+    <Compile Include="Char\Warrior.cs" />
+    <Compile Include="Enum\Classification.cs" />
+    <Compile Include="Inventory\EqquipedSlot.cs" />
     <Compile Include="Inventory\Inventory.cs" />
+    <Compile Include="Inventory\InventorySlot.cs" />
     <Compile Include="Item\Consumable.cs" />
     <Compile Include="Item\DBItem.cs" />
     <Compile Include="Item\Equipment.cs" />
-    <Compile Include="Item\ItemGame.cs" />
-    <Compile Include="Market\Market.cs" />
-    <Compile Include="NPC\NPC.cs" />
-    <Compile Include="Start.xaml.cs">
-      <DependentUpon>Start.xaml</DependentUpon>
+    <Compile Include="Item\Item.cs" />
+    <Compile Include="VisualGame\Maps\City.xaml.cs">
+      <DependentUpon>City.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Manager\MapManager.cs" />
+    <Compile Include="Market\Market.cs" />
+    <Compile Include="Physics\Collision.cs" />
+    <Compile Include="Physics\HeroMovement.cs" />
+    <Compile Include="Physics\Movement.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="VisualGame\Menu\MenuClass.xaml.cs">
+      <DependentUpon>MenuClass.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="VisualGame\Menu\MenuHome.xaml.cs">
+      <DependentUpon>MenuHome.xaml</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <AppxManifest Include="Package.appxmanifest">
@@ -149,14 +156,34 @@
     <None Include="ChaosDivinity_TemporaryKey.pfx" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Assets\giphy.gif" />
-    <Content Include="Assets\Map002.png" />
-    <Content Include="Assets\Map001.png" />
-    <Content Include="Assets\Map004.png" />
-    <Content Include="Assets\Map005.png" />
-    <Content Include="Assets\NPC1.gif" />
-    <Content Include="Assets\NPC2.gif" />
+    <Content Include="Assets\Button\Button.png" />
+    <Content Include="Assets\Mage\MageAttack.gif" />
+    <Content Include="Assets\Mage\MageAttackLeft.gif" />
+    <Content Include="Assets\Mage\MageDeath.gif" />
+    <Content Include="Assets\Mage\MageStop.gif" />
+    <Content Include="Assets\Mage\MageStopLeft.gif" />
+    <Content Include="Assets\Mage\MageStopRight.gif" />
+    <Content Include="Assets\Mage\MageWalkLeft.gif" />
+    <Content Include="Assets\Mage\MageWalkRight.gif" />
+    <Content Include="Assets\Maps\Map1\Map001.png" />
+    <Content Include="Assets\Maps\Map1\Map002.png" />
+    <Content Include="Assets\Maps\Map1\Map004.png" />
+    <Content Include="Assets\Maps\Map1\Map005.png" />
+    <Content Include="Assets\Menu\Background.png" />
+    <Content Include="Assets\Menu\home.jpg" />
+    <Content Include="Assets\Rogue\RogueAtaque.gif" />
+    <Content Include="Assets\Rogue\RogueStopLeft.gif" />
+    <Content Include="Assets\Rogue\RogueStopRight.gif" />
+    <Content Include="Assets\Rogue\RogueToLeft.gif" />
+    <Content Include="Assets\Rogue\RogueToRight.gif" />
+    <Content Include="Assets\Warrior\idleLeft.gif" />
+    <Content Include="Assets\Warrior\idleRight.gif" />
+    <Content Include="Assets\Warrior\walkLeft.gif" />
+    <Content Include="Assets\Warrior\walkRight.gif" />
+    <Content Include="Assets\Warrior\WarriorAtaque.gif" />
+    <Content Include="Assets\Warrior\WarriorMorre.gif" />
     <Content Include="Properties\Default.rd.xml" />
+    <Content Include="Assets\LockScreenLogo.scale-200.png" />
     <Content Include="Assets\SplashScreen.scale-200.png" />
     <Content Include="Assets\Square150x150Logo.scale-200.png" />
     <Content Include="Assets\Square44x44Logo.scale-200.png" />
@@ -169,19 +196,25 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Page Include="Start.xaml">
+    <Page Include="VisualGame\Maps\City.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
+    </Page>
+    <Page Include="VisualGame\Menu\MenuClass.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="VisualGame\Menu\MenuHome.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
     </Page>
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Microsoft.NETCore.UniversalWindowsPlatform">
-      <Version>6.2.7</Version>
+      <Version>6.2.8</Version>
     </PackageReference>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="VisualGame\" />
-  </ItemGroup>
+  <ItemGroup />
   <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '14.0' ">
     <VisualStudioVersion>14.0</VisualStudioVersion>
   </PropertyGroup>
