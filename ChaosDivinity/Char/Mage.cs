@@ -9,14 +9,13 @@ namespace ChaosDivinity.Char
     {
         //private new List<Skill> listOfSkills;
 
-        public Mage(string nomeChar, int hp_atual, int hp_total, int mp_atual, int mp_total, int lvl, int power, int agility, int sort, int intelligence, int vitality, Classification.Perso classGroup) : base(nomeChar, hp_atual, hp_total, mp_atual, mp_total, lvl, power, agility, sort, intelligence, vitality, classGroup )
+        public Mage(string nomeChar, int hp_atual, int hp_total, int mp_atual, int mp_total, int lvl, int power, int agility, int sort, int intelligence, int vitality, Classification.Perso classGroup) : base(nomeChar, hp_atual, hp_total, mp_atual, mp_total, lvl, power, agility, sort, intelligence, vitality, classGroup)
         {
-            listOfSkills = new List<Skill>();
-            listOfSkills.Add(new Skill("Lança Chamas", 10, 5, 0, 10, 0, 35, 0, 50));
-            listOfSkills.Add(new Skill("Nuvem Tóxica", 15, 25, 0, 5, 0, 0, 0, 100));
-            listOfSkills.Add(new Skill("Tsunami", 20, 12, 7, 0, 0, 0, 0, 200));
-            listOfSkills.Add(new Skill("Avalanche", 30, 10, 0, 50, 0, 0, 0, 300));
-            
+            this.MoveToLeft = "ms-appx:///Assets/Mage/MageWalkLeft.gif";
+            this.MoveToRight = "ms-appx:///Assets/Mage/MageWalkRight.gif";
+            this.StopLeft = "ms-appx:///Assets/Mage/MageStopLeft.gif";
+            this.StopRight = "ms-appx:///Assets/Mage/MageStopRight.gif";
+
         }
 
         public override void LvUp()

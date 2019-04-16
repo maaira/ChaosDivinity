@@ -1,0 +1,42 @@
+﻿<Page
+    x:Class="ChaosDivinity.VisualGame.Maps.City"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:ChaosDivinity"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}" Loading="Init">
+
+    <Canvas Name ="Principle" HorizontalAlignment="Left" Height="1080" VerticalAlignment="Top" Width="1920">
+
+        <Canvas Name ="Tela" HorizontalAlignment="Left" Height="3240" VerticalAlignment="Top" Width="4872" Canvas.Top="0" Canvas.Left="0" >
+            <Image                     
+                    Source="ms-appx:///Assets/Maps/Map1/Map001.png"
+                    Width="2436"
+                    Height="1621" Canvas.Top="0" Canvas.Left="0" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" />
+            <Image 
+                    
+                    Source="ms-appx:///Assets/Maps/Map1/Map002.png"
+                    Width="2436"
+                    Height="1621" Canvas.Top="1621" Canvas.Left="0" />
+            <Image 
+                    
+                    Source="ms-appx:///Assets/Maps/Map1/Map005.png"
+                    Width="2436"
+                    Height="1621" Canvas.Top="1621" Canvas.Left="2430" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" />
+            <Image 
+                    
+                    Source="ms-appx:///Assets/Maps/Map1/Map004.png"
+                    Width="2436"
+                    Height="1621" Canvas.Left="2430" Canvas.Top="0" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" />
+
+
+
+        </Canvas>
+        <Canvas Name ="Perso"  Height="70" Canvas.Left="960" Canvas.Top="540" Width="70" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" >
+
+        </Canvas>
+
+    </Canvas>
+</Page>

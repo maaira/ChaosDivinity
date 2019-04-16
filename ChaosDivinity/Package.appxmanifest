@@ -7,11 +7,11 @@
   IgnorableNamespaces="uap mp">
 
   <Identity
-    Name="5903bbf3-02e7-40b1-abd2-b137c01cc298"
+    Name="58bf9be8-08e8-4a1d-8a57-4ec217a14db4"
     Publisher="CN=maira"
     Version="1.0.0.0" />
 
-  <mp:PhoneIdentity PhoneProductId="5903bbf3-02e7-40b1-abd2-b137c01cc298" PhonePublisherId="00000000-0000-0000-0000-000000000000"/>
+  <mp:PhoneIdentity PhoneProductId="58bf9be8-08e8-4a1d-8a57-4ec217a14db4" PhonePublisherId="00000000-0000-0000-0000-000000000000"/>
 
   <Properties>
     <DisplayName>ChaosDivinity</DisplayName>
