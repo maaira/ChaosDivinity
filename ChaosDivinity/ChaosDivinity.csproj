@@ -137,6 +137,7 @@
     <Compile Include="Item\ItemGame.cs" />
     <Compile Include="Market\Market.cs" />
     <Compile Include="NPC\NPC.cs" />
+    <Compile Include="NPC\NPCFlyout.cs" />
     <Compile Include="Start.xaml.cs">
       <DependentUpon>Start.xaml</DependentUpon>
     </Compile>
