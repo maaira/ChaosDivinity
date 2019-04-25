@@ -1,0 +1,36 @@
+﻿<Page
+    x:Class="ChaosDivinity.VisualGame.Menu.MenuClass"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:ChaosDivinity.VisualGame.Menu"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+    <Canvas Name="tela" HorizontalAlignment="Center" VerticalAlignment="Center" Width="1500" Height="1000" >
+        <Image Name ="back" Source="ms-appx:///Assets/Menu/background.png" Width="1500" Height="1000" Stretch="UniformToFill"/>
+        <Grid Height="50" Canvas.Left="150" Canvas.Top="720" Width="235">
+            <Image Height="50" Width="235" Source="ms-appx:///Assets/Button/Button.png"/>
+            <Button Background="Transparent" BorderThickness="0" x:Name="Warrior" Click="InitWarrior" Content="Warrior" Height="45" Width="183" FontSize="31" FontFamily="Algerian" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="25,0,27,5" Visibility="0"/>
+        </Grid>
+        <Grid Height="50" Canvas.Left="605" Canvas.Top="720" Width="235">
+            <Image  Height="50" Width="235" Source="ms-appx:///Assets/Button/Button.png"/>
+            <Button Background="Transparent" BorderThickness="0" Click="InitMage" x:Name="Wizard" Content="Mage" Height="45" Width="183" FontSize="31" FontFamily="Algerian" VerticalAlignment="Bottom" HorizontalAlignment="Center" Visibility="0" Margin="0,0,0,5"/>
+        </Grid>
+        <Grid Height="50" Canvas.Left="1105" Canvas.Top="720" Width="235">
+            <Image  Height="50" Width="235" Source="ms-appx:///Assets/Button/Button.png"/>
+            <Button Background="Transparent" BorderThickness="0" Click="InitRogue" x:Name="Ladina" Content="Rogue" Height="45" Width="183" FontSize="31" FontFamily="Algerian" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="25,0,27,5" Visibility="0"/>
+        </Grid>
+        <Grid Height="50" Canvas.Left="65" Canvas.Top="830" Width="235">
+            <Image  Height="50" Width="235" Source="ms-appx:///Assets/Button/Button.png"/>
+            <Button Background="Transparent" BorderThickness="0" Click="GoBack" x:Name="go_back" Content="Back" Height="45" Width="183" FontSize="31" FontFamily="Algerian" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="25,0,27,5" Visibility="0"/>
+        </Grid>
+
+        <TextBlock Text="Escolha sua Classe" FontSize="70" Canvas.Left="427" Canvas.Top="100" Height="107" Width="592"  />
+        <Image Height="351" Width="235" Source="ms-appx:///Assets/Warrior/walkRight.gif" Canvas.Left="150" Canvas.Top="335"/>
+        <Image Stretch="UniformToFill" Height="351" Width="235" Source="ms-appx:///Assets/Mage/MageWalkRight.gif" Canvas.Left="603" Canvas.Top="335"/>
+        <Image Stretch="UniformToFill" Height="351" Width="235" Source="ms-appx:///Assets/Rogue/RogueToRight.gif" Canvas.Left="1105" Canvas.Top="335"/>
+
+    </Canvas>
+</Page>
