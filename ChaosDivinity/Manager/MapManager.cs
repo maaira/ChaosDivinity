@@ -1,12 +1,11 @@
 ﻿using ChaosDivinity.Char;
 using ChaosDivinity.Interface;
+using ChaosDivinity.Manager;
 using ChaosDivinity.Physics;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.Numerics;
 using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Media.Imaging;
 
@@ -15,42 +14,62 @@ namespace ChaosDivinity.Managers
 {
     class MapManager
     {
+        
+        private static List<PhysicObject> _worldObject = new List<PhysicObject>();
 
-        public static void InitPerso(Canvas Perso, Hero hero)
+        public List<PhysicObject> WorldObject { get => _worldObject; set => _worldObject = value; }
+
+        public static void Map(Hero hero, Canvas Tela, Canvas Perso, Canvas MOB)
         {
+            InitiMob(MOB);
+            InitPerso(hero, Tela, Perso);
+        }
+
+        public static void InitPerso( Hero hero, Canvas Tela, Canvas Perso)
+        {
+            
+            PersoManager.AddPersoToMap(hero, Perso, _worldObject);
+            _worldObject.Add(hero);
+            InitHeroMove(Tela, hero);
+            
+        }
+
+        public static void InitiMob(Canvas MOB)
+        {
+
+            NPC p = new NPC("Tururu", 10,10,10,10,10);
+            p.Container = new Canvas();
             Image img = new Image();
             BitmapImage bitmapImage = new BitmapImage();
             img.Width = bitmapImage.DecodePixelWidth = 70;
-            if (hero == null)
-            {
-                Debug.WriteLine("Turury");
-                bitmapImage.UriSource = new Uri(hero.StopLeft);
-            }
-            else if (hero.ClassGroup == Classification.Perso.Rogue)
-            {
-                Debug.WriteLine("Turury");
-                bitmapImage.UriSource = new Uri(hero.StopLeft);
-            }
-            else if (hero.ClassGroup == Classification.Perso.Warrior)
-            {
-                Debug.WriteLine("Turury");
-                bitmapImage.UriSource = new Uri(hero.StopLeft);
-            }
-            else if (hero.ClassGroup == Classification.Perso.Mage)
-            {
-                Debug.WriteLine("Turury");
-                bitmapImage.UriSource = new Uri(hero.StopLeft);
-            }
 
+            try
+            {
 
+               bitmapImage.UriSource = new Uri("ms-appx:///Assets/Mage/MageStopLeft.gif");
+
+            }
+            catch (UriFormatException e)
+            {
+
+                Debug.WriteLine(e.Source);
+                Debug.WriteLine(e.Message);
+
+            }
             img.Source = bitmapImage;
-            Perso.Children.Add(img);
-
+            p.Container.Children.Add(img);
+            MOB.Children.Add(p.Container);
+            if(p!=null)_worldObject.Add(p);
+            
         }
 
-        public static void InitMapMove(Canvas Perso, Canvas Tela, HeroMovement hero, Hero h)
+        public static void InitHeroMove( Canvas Background, Hero h)
         {
-            hero = new HeroMovement(Perso, Tela, h);
+            h.StartMovingProcess = new HeroMovement( h.Container, h);
+            h.StartCollisionManager = new CollisionTrigger( _worldObject, h);
+            
         }
+
+        
     }
 }

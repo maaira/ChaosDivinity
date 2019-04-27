@@ -2,9 +2,6 @@
 using ChaosDivinity.Item;
 using System.Collections.Generic;
 using ChaosDivinity.Interface;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace ChaosDivinity.Char
 {
@@ -35,11 +32,7 @@ namespace ChaosDivinity.Char
         public string StopLeft { get; set; }
         public string StopRight { get; set; }
 
-        public bool MovingToRight { get; set; }
-        public bool MovingToLeft { get; set; }
-        public bool MovingToUp { get; set; }
-        public bool MovingToDown { get; set; }
-        public bool IsMoving { get; set; }
+        
 
         public Hero(string nomeChar, int hp_atual, int hp_total, int mp_atual, int mp_total, int lvl, int power, int agility, int sort, int intelligence, int vitality, Classification.Perso classGroup) : base(nomeChar, hp_atual, hp_total, mp_total, mp_atual, lvl)
         {
@@ -49,8 +42,7 @@ namespace ChaosDivinity.Char
             this.Intelligence = intelligence;
             this.Vitality = vitality;
             this.ClassGroup = classGroup;
-
-
+            
             ArmoInit();
         }
 

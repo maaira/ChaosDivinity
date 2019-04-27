@@ -1,25 +1,15 @@
-﻿using ChaosDivinity.Inventory;
-using ChaosDivinity.Item;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Windows.UI.Xaml.Controls;
+﻿using ChaosDivinity.Physics;
 
 namespace ChaosDivinity.Char
 {
-    public abstract class Character
+    public abstract class Character : PhysicObject
     {
         protected string nameChar;
         protected int hp_atual, hp_total;
         protected int mp_atual, mp_total;
         protected int dmg;
         protected int lvl;
-
-        //protected string nameClass;  
-
-
+                
         public string Nome { get => nameChar; set => nameChar = value; }
         public int Hp_atual { get => hp_atual; set => hp_atual = value; }
         public int Hp_total { get => hp_total; set => hp_total = value; }
@@ -27,10 +17,8 @@ namespace ChaosDivinity.Char
         public int Mp_total { get => mp_total; set => mp_total = value; }
         public int Damage { get => dmg; set => dmg = value; }
         public int Lvl { get => lvl; set => lvl = value; }
-
-
-
-        public Character(string nomeChar, int hp_atual, int hp_total, int mp_atual, int mp_total, int lvl)
+                
+        public Character(string nomeChar, int hp_atual, int hp_total, int mp_atual, int mp_total, int lvl) : base()
         {
             this.nameChar = nomeChar;
             this.hp_atual = hp_atual;
@@ -38,8 +26,12 @@ namespace ChaosDivinity.Char
             this.mp_atual = mp_atual;
             this.mp_total = mp_total;
             this.lvl = lvl;
+
         }
 
+        public void Action(){
+            
+        }
 
 
 
