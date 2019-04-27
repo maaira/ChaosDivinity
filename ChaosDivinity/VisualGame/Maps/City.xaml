@@ -10,7 +10,9 @@
 
     <Canvas Name ="Principle" HorizontalAlignment="Left" Height="1080" VerticalAlignment="Top" Width="1920">
 
-        <Canvas Name ="Tela" HorizontalAlignment="Left" Height="3240" VerticalAlignment="Top" Width="4872" Canvas.Top="0" Canvas.Left="0" >
+        <Canvas Name ="Background" HorizontalAlignment="Left" Height="3240" VerticalAlignment="Top" Width="4872" Canvas.Top="0" Canvas.Left="0" >
+
+
             <Image                     
                     Source="ms-appx:///Assets/Maps/Map1/Map001.png"
                     Width="2436"
@@ -31,12 +33,10 @@
                     Width="2436"
                     Height="1621" Canvas.Left="2430" Canvas.Top="0" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" />
 
-
-
-        </Canvas>
-        <Canvas Name ="Perso"  Height="70" Canvas.Left="960" Canvas.Top="540" Width="70" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" >
-
         </Canvas>
 
+        <Canvas Name ="Perso" HorizontalAlignment="Stretch" Height="100" Canvas.Left="960" Canvas.Top="540" VerticalAlignment="Stretch" Width="100"/>
+        <Canvas Name ="MOB" Height="100" Canvas.Left="1060" Canvas.Top="640" Width="100"/>
     </Canvas>
+
 </Page>

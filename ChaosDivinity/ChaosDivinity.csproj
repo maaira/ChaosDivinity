@@ -29,6 +29,7 @@
     <UseVSHostingProcess>false</UseVSHostingProcess>
     <ErrorReport>prompt</ErrorReport>
     <Prefer32Bit>true</Prefer32Bit>
+    <LangVersion>7.3</LangVersion>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
     <OutputPath>bin\x86\Release\</OutputPath>
@@ -41,6 +42,7 @@
     <ErrorReport>prompt</ErrorReport>
     <Prefer32Bit>true</Prefer32Bit>
     <UseDotNetNativeToolchain>true</UseDotNetNativeToolchain>
+    <LangVersion>7.3</LangVersion>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|ARM'">
     <DebugSymbols>true</DebugSymbols>
@@ -121,6 +123,7 @@
     </Compile>
     <Compile Include="Char\Char.cs" />
     <Compile Include="Char\Hero.cs" />
+    <Compile Include="Char\Interactives\NPC.cs" />
     <Compile Include="Char\Mage.cs" />
     <Compile Include="Char\Rogue.cs" />
     <Compile Include="Char\Skill.cs" />
@@ -133,6 +136,12 @@
     <Compile Include="Item\DBItem.cs" />
     <Compile Include="Item\Equipment.cs" />
     <Compile Include="Item\Item.cs" />
+    <Compile Include="Manager\PersoManager.cs" />
+    <Compile Include="Physics\CollisionTrigger.cs" />
+    <Compile Include="Physics\HeroActiove.cs" />
+    <Compile Include="Physics\ObjectInteraction.cs" />
+    <Compile Include="Physics\ObjectMoment.cs" />
+    <Compile Include="Physics\PhysicObject.cs" />
     <Compile Include="VisualGame\Maps\City.xaml.cs">
       <DependentUpon>City.xaml</DependentUpon>
     </Compile>
@@ -214,7 +223,9 @@
       <Version>6.2.8</Version>
     </PackageReference>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="MapsObjects\" />
+  </ItemGroup>
   <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '14.0' ">
     <VisualStudioVersion>14.0</VisualStudioVersion>
   </PropertyGroup>

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ChaosDivinity.Physics;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -7,7 +8,7 @@ using System.Windows;
 
 namespace ChaosDivinity.Item
 {
-    public class ItemGame
+    public class ItemGame : PhysicObject
     {
         /*  ---------- Objetos para instaciar ----------- */
         public string Name { get; set; }
