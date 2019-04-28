@@ -27,7 +27,6 @@ namespace ChaosDivinity.Physics
             {
                 await Windows.ApplicationModel.Core.CoreApplication.MainView.CoreWindow.Dispatcher.RunAsync(CoreDispatcherPriority.High, () =>
                 {
-
                     UpdateColisions();
                     
                 });

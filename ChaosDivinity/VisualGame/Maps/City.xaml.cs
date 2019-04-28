@@ -37,8 +37,7 @@ namespace ChaosDivinity.VisualGame.Maps
         private void Init(Windows.UI.Xaml.FrameworkElement sender, object args)
         {
             MapManager.Map(hero, Background, Perso, MOB);
-            
-            
+                        
         }
     }
 }
