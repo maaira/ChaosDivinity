@@ -8,5 +8,6 @@ namespace ChaosDivinity.MapObjects
 {
     class Chest
     {
+        //Item t;
     }
 }
