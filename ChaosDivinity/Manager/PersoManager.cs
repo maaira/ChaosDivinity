@@ -23,7 +23,7 @@ namespace ChaosDivinity.Manager
             {
                 try
                 {
-
+                    
                     bitmapImage.UriSource = new Uri(hero.StopLeft);
 
                 }
@@ -40,7 +40,8 @@ namespace ChaosDivinity.Manager
             img.Source = bitmapImage;
             hero.Container = Perso;
             Perso.Children.Add(img);
-            if(hero!=null)p.Add(hero);
+            hero.SetPosition();
+            if (hero!=null)p.Add(hero);
             
             
         }
