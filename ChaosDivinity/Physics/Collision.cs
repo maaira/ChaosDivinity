@@ -1,24 +1,17 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Windows.UI.Xaml.Controls;
+﻿using System.Collections.Generic;
 using System.Numerics;
 using ChaosDivinity.Physics;
 using System.Diagnostics;
+using System;
 
 namespace ChaosDivinity.PhysicCollision
 {
     public class Collision
     {
-        protected int length = 0;
-        protected double unsafeX = 0;
-        protected double unsafeY = 0;
-        protected double radius1, radius2;
-        protected Vector3 center_point2, center_point1;
+        protected double tam_x, tam_y;
+        protected double percent = 0.85;
         protected Vector2 dist_vector;
-        protected double radius, dist;
+        protected double dist, radius;
         protected List<PhysicObject> array;
         protected PhysicObject p;
 
@@ -26,122 +19,107 @@ namespace ChaosDivinity.PhysicCollision
         {
             this.array = array;
             this.p = p;
-            length = array.Count;
         }
 
         public void UpdateColisions()
         {
             
-            if (length <= 1) return;
+            if (array.Count <= 1) return;
 
-            if (p == null && p.Container== null) return;
-            //Debug.WriteLine("uhuu");
-
-            double canvas_left = (double)p.Container.GetValue(Canvas.LeftProperty);
-            double canvas_top  = (double)p.Container.GetValue(Canvas.TopProperty);
-            double canvas_righ = (double)p.Container.GetValue(Canvas.LeftProperty) + p.Container.Width;
-            double canvas_down = (double)p.Container.GetValue(Canvas.TopProperty) + p.Container.Height;
-            center_point1 = p.Container.CenterPoint;
-
-            if (canvas_down == 0 && canvas_left == 0 && canvas_righ == 0 && canvas_top == 0 && center_point1 == null) return;
-            //Debug.WriteLine("1");
-            radius1 = (canvas_left + canvas_righ + canvas_top + canvas_down) / 4;
-
+            if (p == null && p.Container== null) return;            
+                                    
             foreach(PhysicObject obj in array )
             {
-                
-                
-                //Debug.WriteLine("6");
+
                 if (obj == null && obj.Container == null ) return;
-                //Debug.WriteLine("5");
+                if (p == obj) return;
 
-                dist_vector.X = (float)(p.Container.Width / 2 + obj.Container.Width / 2);
-                dist_vector.Y = (float)(p.Container.Height / 2 + obj.Container.Height / 2); 
+                dist_vector.Y = (float)Math.Abs(p.Posi.Y - obj.Posi.Y);
+                dist_vector.X = (float)Math.Abs(p.Posi.X - obj.Posi.X);
 
-                double canvas_left2 = (double)obj.Container.GetValue(Canvas.LeftProperty);
-                double canvas_top2  = (double)obj.Container.GetValue(Canvas.TopProperty);  
-                double canvas_righ2 = (double)obj.Container.GetValue(Canvas.LeftProperty) + p.Container.Width;
-                double canvas_down2 = (double)obj.Container.GetValue(Canvas.TopProperty) + p.Container.Height;
-                center_point2 = obj.Container.CenterPoint;
+                double right = (obj.Posi.X - obj.Container.Width/2) - ( p.Posi.X + p.Container.Width/2 );
+                double left  = (p.Posi.X   - p.Container.Width/2  ) - (obj.Posi.X + p.Container.Width/2);
+                double bot   = (obj.Posi.Y - obj.Container.Height/2) - (p.Posi.Y + p.Container.Height/2);
+                double top   = (obj.Posi.Y - obj.Container.Height / 2) - (p.Posi.Y + p.Container.Height / 2);
 
-                if (canvas_down2 == 0 && canvas_left2 == 0 && canvas_righ2 == 0 && canvas_top2 == 0 && center_point2 == null) return;
-                //Debug.WriteLine("2");
+                tam_y = (p.Container.Height / 2 + obj.Container.Height / 2);
+                tam_x = (p.Container.Width / 2 + obj.Container.Width / 2);
 
-                radius2 = (canvas_down2 + canvas_left2 + canvas_righ2 + canvas_top2) / 4;
-                unsafeX = (center_point2.X + center_point1.X) / 2;
-                unsafeY = (center_point2.Y + center_point1.Y) / 2;
-                radius = Math.Abs(Math.Pow(center_point1.X - center_point2.X, 2) + Math.Pow(center_point2.Y - center_point2.Y, 2));
-
-                double right = (center_point2.X - p.Container.Width / 2)  - (center_point1.X + p.Container.Width / 2);
-                double left  = (center_point1.X - p.Container.Width / 2)  - (center_point2.X + p.Container.Width / 2);
-                double bot   = (center_point1.Y - p.Container.Height / 2) - (center_point2.Y - obj.Container.Height / 2);
-                double top   = (center_point2.Y - obj.Container.Height / 2) - (center_point1.Y - p.Container.Height / 2);
-
-                unsafeX = (p.Container.Height / 2 + obj.Container.Height / 2);
-                unsafeY = (p.Container.Width / 2 + obj.Container.Width / 2);
-
-                //Debug.WriteLine("Radius = " + radius);
-                //Debug.WriteLine("Distancia = " + dist);
+                radius = Math.Abs(Math.Pow((p.Posi.X - obj.Posi.X),2) + Math.Pow((p.Posi.Y - obj.Posi.Y), 2));
                 
-                if (radius <= radius1 + radius2)
-
+                if ( radius <= 180 && obj.IsInteractive)
                 {
-                    //Debug.WriteLine("Interacrion");
-                    if (p.MinimumObjectInteractive == null && obj.IsInteractive == true)
+                    if(p.MinimumObjectInteractive== null)
                     {
                         p.MinimumObjectInteractive = obj;
+                        p.MinimumObjectInteractiveDist = radius;
                     }
-                    else if (p.MinimumObjectInteractiveDist < dist && obj.IsInteractive == true)
+                    else if(p.MinimumObjectInteractiveDist > radius)
                     {
                         p.MinimumObjectInteractive = obj;
-                        p.MinimumObjectInteractiveDist = dist;
+                        p.MinimumObjectInteractiveDist = radius;
                     }
                 }
 
-                if (center_point1.X < center_point2.X)
+                if (p.Posi.X <= obj.Posi.X)
                 {
-                    if (right < 0 && dist_vector.X <= unsafeY * 0.93f)
-                        {
+                    
+                    if (right < 0 && dist_vector.X <= tam_x * percent)
+                    {
+                        //Debug.WriteLine("DIR");
                         p.InMoment.Right = false;
-                        p.OnColide = obj;                   
+                        p.OnColide = obj;
+                        
                         continue;
                     }
                     else p.InMoment.Right = true;
+
+                }
+                else p.InMoment.Right = true;
+                if (p.Posi.X >= obj.Posi.X)
+                {
+                    
+                    if ( right< 0 && dist_vector.Y <= tam_x * percent)
+                    {
+                        //Debug.WriteLine("ESQ");
+                        p.InMoment.Left = false; 
+                        p.OnColide = obj;
                         
-                }
-                if (center_point1.X > center_point2.X)
+                        continue;
+                        
+                    }else p.InMoment.Left = true;
+
+                }else p.InMoment.Left = true;
+
+                if (p.Posi.X >= obj.Posi.X)
                 {
-                    if ( right< 0 && dist_vector.Y <= unsafeY * 0.93f)
+                    
+                    if (top < 0 && dist_vector.Y <= tam_y * percent)
                     {
-                         p.InMoment.Left = false; 
-                         p.OnColide = obj;
-                         continue;   
-                    }
-                    else p.InMoment.Left = true;
-                }
-                if (center_point1.Y > center_point2.Y)
+                        //Debug.WriteLine("C");
+                        p.InMoment.Up = false;
+                        p.OnColide = obj;
+                        
+                        continue;
+
+                    }else p.InMoment.Up = true;
+
+                }else p.InMoment.Up = true;
+
+                if (p.Posi.X <= obj.Posi.X)
                 {
-                    if (top < 0 && dist_vector.Y <= unsafeY * 0.93f)
+                    //Debug.WriteLine("tururu4");
+                    if (bot < 0 && dist_vector.Y <= tam_y * percent)
                     {
-                            p.InMoment.Up = false;
-                            p.OnColide = obj;
-                            continue;
-                    }
-                    else p.InMoment.Up = true;
-                }
-                if (center_point1.Y < center_point2.Y)
-                {
-                    if (bot < 0 && dist_vector.Y <= unsafeY * 0.9f)
-                    {
+                        //Debug.WriteLine("B");
                         p.InMoment.Down = false;
                         p.OnColide = obj;
-
+                        
                         continue;
-                    }
-                    else p.InMoment.Down = true;
 
-                }                   
+                    }else p.InMoment.Down = true;
                 
+                }else p.InMoment.Down = true;
             }
         }
     }
