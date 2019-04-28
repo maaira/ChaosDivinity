@@ -142,7 +142,6 @@
     <Compile Include="Physics\ObjectInteraction.cs" />
     <Compile Include="Physics\ObjectMoment.cs" />
     <Compile Include="Physics\PhysicObject.cs" />
-    <Compile Include="Physics\Position.cs" />
     <Compile Include="VisualGame\Maps\City.xaml.cs">
       <DependentUpon>City.xaml</DependentUpon>
     </Compile>

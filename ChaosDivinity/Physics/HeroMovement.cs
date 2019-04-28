@@ -17,7 +17,6 @@ namespace ChaosDivinity.Physics
     {
         protected Canvas Perso;
         protected Hero Hero;
-        protected double delta_move = 0.0915;
         protected dynamic Move_Object;
         protected Thread UpdateMovement;
         BitmapImage bitmapImage = new BitmapImage();
@@ -60,6 +59,7 @@ namespace ChaosDivinity.Physics
             }
             if (e.VirtualKey == Windows.System.VirtualKey.S && Hero.InMoment.Down == true)
             {
+
                 Hero.IsMoving = true;
                 down = true;
             }
@@ -74,7 +74,7 @@ namespace ChaosDivinity.Physics
                 ImageSetWhileMove(Hero.StopLeft);
                 Hero.IsMoving = false;
                 left = false;
-                
+
             }
             if (e.VirtualKey == Windows.System.VirtualKey.D)
             {
@@ -110,27 +110,27 @@ namespace ChaosDivinity.Physics
                 {
                     if (left)
                     {
-                        TelaX -= delta_move;
+                        TelaX += 0.015;
                         Move_Object.SetValue(Canvas.LeftProperty, TelaX);
-                        Hero.SetPosition();
+
                     }
                     if (right)
                     {
-                        TelaX += delta_move;
+                        TelaX -= 0.015;
                         Move_Object.SetValue(Canvas.LeftProperty, TelaX);
-                        Hero.SetPosition();
+
                     }
                     if (up)
                     {
-                        TelaY -= delta_move;
+                        TelaY += 0.015;
                         Move_Object.SetValue(Canvas.TopProperty, TelaY);
-                        Hero.SetPosition();
+                        
                     }
                     if (down)
                     {
-                        TelaY += delta_move;
+                        TelaY -= 0.015;
                         Move_Object.SetValue(Canvas.TopProperty, TelaY);
-                        Hero.SetPosition();
+                       
                     }
                 });
 

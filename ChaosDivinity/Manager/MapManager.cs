@@ -21,24 +21,24 @@ namespace ChaosDivinity.Managers
 
         public static void Map(Hero hero, Canvas Tela, Canvas Perso, Canvas MOB)
         {
-            
             InitiMob(MOB);
             InitPerso(hero, Tela, Perso);
         }
 
         public static void InitPerso( Hero hero, Canvas Tela, Canvas Perso)
         {
-
+            
             PersoManager.AddPersoToMap(hero, Perso, _worldObject);
+            _worldObject.Add(hero);
             InitHeroMove(Tela, hero);
-                        
+            
         }
 
         public static void InitiMob(Canvas MOB)
         {
 
             NPC p = new NPC("Tururu", 10,10,10,10,10);
-            p.Container = MOB;
+            p.Container = new Canvas();
             Image img = new Image();
             BitmapImage bitmapImage = new BitmapImage();
             img.Width = bitmapImage.DecodePixelWidth = 70;
@@ -58,10 +58,8 @@ namespace ChaosDivinity.Managers
             }
             img.Source = bitmapImage;
             p.Container.Children.Add(img);
-            p.SetPosition();
-            Debug.WriteLine(p.Posi.X);
-            Debug.WriteLine(p.Posi.Y);
-            if (p!=null)_worldObject.Add(p);
+            MOB.Children.Add(p.Container);
+            if(p!=null)_worldObject.Add(p);
             
         }
 

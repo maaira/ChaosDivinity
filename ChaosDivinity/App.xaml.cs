@@ -5,7 +5,6 @@ using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Navigation;
 using ChaosDivinity.VisualGame.Menu;
-using System.Diagnostics;
 
 namespace ChaosDivinity
 {
@@ -58,16 +57,7 @@ namespace ChaosDivinity
                     // When the navigation stack isn't restored navigate to the first page,
                     // configuring the new page by passing required information as a navigation
                     // parameter
-                    try
-                    {
-                        rootFrame.Navigate(typeof(MenuHome), e.Arguments);
-                    }
-                    catch(AggregateException ex)
-                    {
-                        Debug.WriteLine(ex.Source);
-                        Debug.WriteLine(ex.Message);
-                    }
-                    
+                    rootFrame.Navigate(typeof(MenuHome), e.Arguments);
                 }
                 // Ensure the current window is active
                 Window.Current.Activate();
