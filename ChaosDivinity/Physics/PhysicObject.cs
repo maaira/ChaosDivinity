@@ -13,11 +13,9 @@ namespace ChaosDivinity.Physics
 
     public abstract class PhysicObject
     {        
-        public Canvas Container { get; set; }
-        
+        public Canvas Container { get; set; }        
         public ObjectMoment InMoment { get; set; }
         public bool IsMoving { get; set; }
-
         public bool Interaction { get; set; }        
         public PhysicObject MinimumObjectInteractive { get; set; }
         public PhysicObject OnColide { get; set; }
@@ -27,8 +25,7 @@ namespace ChaosDivinity.Physics
         public Movement StartMovingProcess;
 
         public CollisionTrigger StartCollisionManager;
-        public Position Posi { get; }
-        
+        public Position Posi { get; }        
         public PhysicObject()
         {
 
