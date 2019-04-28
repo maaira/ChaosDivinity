@@ -39,7 +39,7 @@ namespace ChaosDivinity.PhysicCollision
 
                 double right = (obj.Posi.X - obj.Container.Width/2) - ( p.Posi.X + p.Container.Width/2 );
                 double left  = (p.Posi.X   - p.Container.Width/2  ) - (obj.Posi.X + p.Container.Width/2);
-                double bot   = (obj.Posi.Y - obj.Container.Height/2) - (p.Posi.Y + p.Container.Height/2);
+                double bot   = (p.Posi.Y - p.Container.Height/2) - (obj.Posi.Y + obj.Container.Height/2);
                 double top   = (obj.Posi.Y - obj.Container.Height / 2) - (p.Posi.Y + p.Container.Height / 2);
 
                 tam_y = (p.Container.Height / 2 + obj.Container.Height / 2);
@@ -47,7 +47,7 @@ namespace ChaosDivinity.PhysicCollision
 
                 radius = Math.Abs(Math.Pow((p.Posi.X - obj.Posi.X),2) + Math.Pow((p.Posi.Y - obj.Posi.Y), 2));
                 
-                if ( radius <= 180 && obj.IsInteractive)
+                if ( radius <= 90 && obj.IsInteractive)
                 {
                     if(p.MinimumObjectInteractive== null)
                     {
@@ -71,11 +71,10 @@ namespace ChaosDivinity.PhysicCollision
                         p.OnColide = obj;
                         
                         continue;
-                    }
-                    else p.InMoment.Right = true;
+                    }else p.InMoment.Right = true;
 
-                }
-                else p.InMoment.Right = true;
+                }else p.InMoment.Right = true;
+
                 if (p.Posi.X >= obj.Posi.X)
                 {
                     
