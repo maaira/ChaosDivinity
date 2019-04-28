@@ -8,12 +8,12 @@ namespace ChaosDivinity.PhysicCollision
 {
     public class Collision
     {
-        protected double tam_x, tam_y;
-        protected double percent = 0.85;
-        protected Vector2 dist_vector;
-        protected double dist, radius;
-        protected List<PhysicObject> array;
-        protected PhysicObject p;
+        private double tam_x, tam_y;
+        private double percent = 0.85;
+        private Vector2 dist_vector;
+        private double radius;
+        private List<PhysicObject> array;
+        private PhysicObject p;
 
         public Collision(List<PhysicObject> array, PhysicObject p)
         {

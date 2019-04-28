@@ -7,14 +7,15 @@ using Windows.UI.Core;
 
 namespace ChaosDivinity.Physics
 {
-    public class CollisionTrigger : Collision
+    public class CollisionTrigger 
     {
+        private Collision collider;
         private Thread UpdateCollision;
         private PhysicObject obj;
 
-        public CollisionTrigger(List<PhysicObject> array, PhysicObject po) : base(array, po)
+        public CollisionTrigger(List<PhysicObject> array, PhysicObject po) 
         {
-            
+            this.collider = new Collision(array, po);
             this.obj = po;
             UpdateCollision = new Thread(CollisionRegister);
             UpdateCollision.Start();
@@ -27,7 +28,7 @@ namespace ChaosDivinity.Physics
             {
                 await Windows.ApplicationModel.Core.CoreApplication.MainView.CoreWindow.Dispatcher.RunAsync(CoreDispatcherPriority.High, () =>
                 {
-                    UpdateColisions();
+                    collider.UpdateColisions();
                     
                 });
                 
