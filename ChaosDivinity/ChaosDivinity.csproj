@@ -123,7 +123,6 @@
     </Compile>
     <Compile Include="Char\Char.cs" />
     <Compile Include="Char\Hero\Hero.cs" />
-    <Compile Include="Char\Interactives\NPC.cs" />
     <Compile Include="Char\Hero\Mage.cs" />
     <Compile Include="Char\Hero\Rogue.cs" />
     <Compile Include="Char\Skill.cs" />
@@ -151,7 +150,6 @@
       <DependentUpon>City.xaml</DependentUpon>
     </Compile>
     <Compile Include="Manager\MapManager.cs" />
-    <Compile Include="Market\Market.cs" />
     <Compile Include="Physics\Collision\Collision.cs" />
     <Compile Include="Physics\Move\HeroMovement.cs" />
     <Compile Include="Physics\Move\Movement.cs" />
@@ -239,7 +237,9 @@
       <Version>6.2.8</Version>
     </PackageReference>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="Char\Interactives\" />
+  </ItemGroup>
   <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '14.0' ">
     <VisualStudioVersion>14.0</VisualStudioVersion>
   </PropertyGroup>

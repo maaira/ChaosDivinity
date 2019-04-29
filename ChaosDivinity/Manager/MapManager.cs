@@ -1,6 +1,7 @@
 ﻿using ChaosDivinity.Char;
 using ChaosDivinity.Interface;
 using ChaosDivinity.Manager;
+using ChaosDivinity.NPCNamespace;
 using ChaosDivinity.Physics;
 using System;
 using System.Collections.Generic;
@@ -14,30 +15,30 @@ namespace ChaosDivinity.Managers
 {
     class MapManager
     {
-        
+
         private static List<PhysicObject> _worldObject = new List<PhysicObject>();
 
         public List<PhysicObject> WorldObject { get => _worldObject; set => _worldObject = value; }
 
         public static void Map(Hero hero, Canvas Tela, Canvas Perso, Canvas MOB)
         {
-            
+
             InitiMob(MOB);
             InitPerso(hero, Tela, Perso);
         }
 
-        public static void InitPerso( Hero hero, Canvas Tela, Canvas Perso)
+        public static void InitPerso(Hero hero, Canvas Tela, Canvas Perso)
         {
 
             PersoManager.AddPersoToMap(hero, Perso, _worldObject);
             InitHeroMove(Tela, hero);
-                        
+
         }
 
         public static void InitiMob(Canvas MOB)
         {
 
-            NPC p = new NPC("Tururu", 10,10,10,10,10);
+            NPC p = new NPC(10, "Teste",TypeNPC.NPCTrade) ;
             p.Container = MOB;
             Image img = new Image();
             BitmapImage bitmapImage = new BitmapImage();
@@ -46,7 +47,7 @@ namespace ChaosDivinity.Managers
             try
             {
 
-               bitmapImage.UriSource = new Uri("ms-appx:///Assets/Mage/MageStopLeft.gif");
+                bitmapImage.UriSource = new Uri("ms-appx:///Assets/Mage/MageStopLeft.gif");
 
             }
             catch (UriFormatException e)
@@ -61,17 +62,17 @@ namespace ChaosDivinity.Managers
             p.SetPosition();
             Debug.WriteLine(p.Posi.X);
             Debug.WriteLine(p.Posi.Y);
-            if (p!=null)_worldObject.Add(p);
-            
+            if (p != null) _worldObject.Add(p);
+
         }
 
-        public static void InitHeroMove( Canvas Background, Hero h)
+        public static void InitHeroMove(Canvas Background, Hero h)
         {
-            h.StartMovingProcess = new HeroMovement( h.Container, h);
-            h.StartCollisionManager = new CollisionTrigger( _worldObject, h);
-            
+            h.StartMovingProcess = new HeroMovement(h.Container, h);
+            h.StartCollisionManager = new CollisionTrigger(_worldObject, h);
+
         }
 
-        
+
     }
 }

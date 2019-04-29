@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 
-namespace ChaosDivinity.NPC
+namespace ChaosDivinity.NPCNamespace
 {
     class NPCFlyout
     {

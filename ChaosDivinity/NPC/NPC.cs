@@ -1,15 +1,16 @@
-﻿using System;
+﻿using ChaosDivinity.Physics;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ChaosDivinity.NPC
+namespace ChaosDivinity.NPCNamespace
 {
 
     public enum TypeNPC { NPCTrade, NPCTalk };
 
-    class NPC:IActions
+    class NPC : PhysicObject, IActions
     {
         public string Name { get; set; }
         public uint IDNpc { get; set; }

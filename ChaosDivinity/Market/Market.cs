@@ -11,12 +11,6 @@ namespace ChaosDivinity.Market
 {
     public class MarketClass
     {
-
-        //public Inventory TradingItems = new Inventory();
-        //public Inventory BuyingItems = new Inventory();
-        private InventorySlot slotTrade;
-        public const int MaxItensTrading = 10;
-
         public static bool SellItem(ItemGame item, Hero hero)
         {
             if (item != null && hero != null)
