@@ -34,7 +34,5 @@ namespace ChaosDivinity.Item
             return ListOfItem;
         }
 
-
-
     }
 }

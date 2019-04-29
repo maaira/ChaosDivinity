@@ -2,7 +2,9 @@
 using ChaosDivinity.Managers;
 using ChaosDivinity.Physics;
 using System.Diagnostics;
+using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
+using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Navigation;
 
 // The Blank Page item template is documented at https://go.microsoft.com/fwlink/?LinkId=402352&clcid=0x409
@@ -20,6 +22,7 @@ namespace ChaosDivinity.VisualGame.Maps
         public City()
         {
             this.InitializeComponent();
+            this.AddEventToShop();
         }
 
         protected override void OnNavigatedTo(NavigationEventArgs e)
@@ -42,5 +45,21 @@ namespace ChaosDivinity.VisualGame.Maps
 
             MapManager.InitMapMove(Perso, Tela, movement, hero);
         }
+
+        private void AddEventToShop()
+        {
+            foreach (UIElement element in ShopGrid.Children)
+            {
+                if(element is Image)
+                {
+                    element.PointerPressed += SlotShop;
+                }
+            }
+        }
+
+        private void SlotShop(object sender, PointerRoutedEventArgs e)
+        {
+            Debug.WriteLine("Imagem clicada : " + ((Image)sender).Name);
+        } 
     }
 }

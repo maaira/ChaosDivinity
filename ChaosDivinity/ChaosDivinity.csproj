@@ -159,6 +159,15 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Assets\Button\Button.png" />
+    <Content Include="Assets\ItensShop\Apple.png" />
+    <Content Include="Assets\ItensShop\Arco.png" />
+    <Content Include="Assets\ItensShop\Cajado_Demetriz.png" />
+    <Content Include="Assets\ItensShop\Espada_De_Pandora.png" />
+    <Content Include="Assets\ItensShop\Oraculo.png" />
+    <Content Include="Assets\ItensShop\Pocao_Azul.png" />
+    <Content Include="Assets\ItensShop\Raio.png" />
+    <Content Include="Assets\ItensShop\Sombra_Noites.png" />
+    <Content Include="Assets\ItensShop\TWW_Red_Potion_Artwork.png" />
     <Content Include="Assets\Mage\MageAttack.gif" />
     <Content Include="Assets\Mage\MageAttackLeft.gif" />
     <Content Include="Assets\Mage\MageDeath.gif" />
@@ -173,6 +182,8 @@
     <Content Include="Assets\Maps\Map1\Map005.png" />
     <Content Include="Assets\Menu\Background.png" />
     <Content Include="Assets\Menu\home.jpg" />
+    <Content Include="Assets\NPC\Dino.gif" />
+    <Content Include="Assets\NPC\Poring.gif" />
     <Content Include="Assets\Rogue\RogueAtaque.gif" />
     <Content Include="Assets\Rogue\RogueStopLeft.gif" />
     <Content Include="Assets\Rogue\RogueStopRight.gif" />
