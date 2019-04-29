@@ -10,7 +10,9 @@
 
     <Canvas Name ="Principle" HorizontalAlignment="Left" Height="1080" VerticalAlignment="Top" Width="1920">
 
-        <Canvas Name ="Tela" HorizontalAlignment="Left" Height="3240" VerticalAlignment="Top" Width="4872" Canvas.Top="0" Canvas.Left="0" >
+        <Canvas Name ="Background" HorizontalAlignment="Left" Height="3240" VerticalAlignment="Top" Width="4872" Canvas.Top="0" Canvas.Left="0" >
+
+
             <Image                     
                     Source="ms-appx:///Assets/Maps/Map1/Map001.png"
                     Width="2436"
@@ -31,32 +33,11 @@
                     Width="2436"
                     Height="1621" Canvas.Left="2430" Canvas.Top="0" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" />
 
-            <Image 
-                    Name="Dino"
-                    Source="ms-appx:///Assets/NPC/Dino.gif"
-                    Width="234"
-                    Height="178" Canvas.Left="3216" Canvas.Top="132"/>
-
-            <Button Name="DinoButton" Content="Dino" HorizontalAlignment="Center" Height="30" Canvas.Left="3302" Margin="0,0,0,0" Canvas.Top="292" VerticalAlignment="Top" Width="60"/>
-            <Grid Name="ShopGrid" HorizontalAlignment="Stretch" Height="300" Canvas.Left="1090" Canvas.Top="300" VerticalAlignment="Stretch" Width="300">
-                
-                <Image Name="RedPotion" Stretch="Fill" Source="ms-appx:///Assets/ItensShop/TWW_Red_Potion_Artwork.png" HorizontalAlignment="Left" Height="100" VerticalAlignment="Top" Width="100"/>
-                <Image Name="BluePotion" Stretch="Fill" Source="ms-appx:///Assets/ItensShop/Pocao_Azul.png"  HorizontalAlignment="Left" Height="100" VerticalAlignment="Top" Width="100" Margin="200,200,0,0"/>
-                <Image Name="Apple" Stretch="Fill" Source="ms-appx:///Assets/ItensShop/Apple.png"  HorizontalAlignment="Center" Height="100" VerticalAlignment="Top" Width="100" Margin="0,200,0,0"/>
-                <Image Name="Espada_Pandora" Stretch="Fill" Source="ms-appx:///Assets/ItensShop/Espada_De_Pandora.png"  HorizontalAlignment="Left" Height="100" VerticalAlignment="Top" Width="100" Margin="-5,200,0,0"/>
-                <Image Name="Cajado_Demetriz" Stretch="Fill" Source="ms-appx:///Assets/ItensShop/Cajado_Demetriz.png"  HorizontalAlignment="Left" Height="100" VerticalAlignment="Center" Width="100" Margin="200,0,0,0"/>
-                <Image Name="Oraculo" Stretch="Fill" Source="ms-appx:///Assets/ItensShop/Oraculo.png"  HorizontalAlignment="Center" Height="100" VerticalAlignment="Center" Width="100" Margin="0,0,0,0"/>
-                <Image Name="Arco" Stretch="Fill" Source="ms-appx:///Assets/ItensShop/Arco.png"  HorizontalAlignment="Left" Height="100" VerticalAlignment="Center" Width="100" Margin="-5,0,0,0"/>
-                <Image Name="Sombras_das_Noites" Stretch="Fill" Source="ms-appx:///Assets/ItensShop/Sombra_Noites.png"  HorizontalAlignment="Left" Height="100" VerticalAlignment="Top" Width="100" Margin="200,0,0,0"/>
-                <Image Name="Raio" Stretch="Fill" Source="ms-appx:///Assets/ItensShop/Raio.png"  HorizontalAlignment="Center" Height="100" VerticalAlignment="Top" Width="100" Margin="0,0,0,0"/>
-
-            </Grid>
-
-
         </Canvas>
-        <Canvas Name ="Perso"  Height="70" Canvas.Left="960" Canvas.Top="540" Width="70" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" >
 
-        </Canvas>
+        <Canvas Name ="Perso" Height="100" Canvas.Left="860" Canvas.Top="620" Width="100"/>
+        <Canvas Name ="MOB" Height="100" Canvas.Left="1065" Canvas.Top="620" Width="100"/>
 
     </Canvas>
+
 </Page>
