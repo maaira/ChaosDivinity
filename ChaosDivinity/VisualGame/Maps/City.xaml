@@ -35,8 +35,10 @@
 
         </Canvas>
 
-        <Canvas Name ="Perso" Height="100" Canvas.Left="860" Canvas.Top="620" Width="100"/>
-        <Canvas Name ="MOB" Height="100" Canvas.Left="1065" Canvas.Top="620" Width="100"/>
+        <Canvas Name ="Perso" Height="100" Canvas.Left="530" Canvas.Top="440" Width="100"/>
+        <Canvas Name ="MOB" Height="100" Canvas.Left="530" Canvas.Top="390" Width="100"/>
+        <Canvas Name ="MOB2" Height="100" Canvas.Left="1160" Canvas.Top="645" Width="100"/>
+        <Canvas Name ="MOB3" Height="100" Canvas.Left="1290" Canvas.Top="390" Width="100"/>
 
     </Canvas>
 

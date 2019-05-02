@@ -39,6 +39,7 @@ namespace ChaosDivinity.Manager
             
             img.Source = bitmapImage;
             hero.Container = Perso;
+            hero.SetRadius();
             Perso.Children.Add(img);
             hero.SetPosition();
             if (hero!=null)p.Add(hero);

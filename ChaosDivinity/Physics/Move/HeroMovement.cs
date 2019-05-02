@@ -17,23 +17,22 @@ namespace ChaosDivinity.Physics
     {
         protected Canvas Perso;
         protected Hero Hero;
-        protected double delta_move = 0.0915;
+        protected double delta_move = 9.915;
         protected dynamic Move_Object;
-        protected Thread UpdateMovement;
         BitmapImage bitmapImage = new BitmapImage();
-        
+        Thread Update;
         public HeroMovement(Canvas Tela,Hero hero)
         {
 
             this.Hero = hero;
             this.Perso = hero.Container;
             this.Move_Object = Tela;
-            TelaX = (double)this.Move_Object.GetValue(Canvas.LeftProperty);
-            TelaY = (double)this.Move_Object.GetValue(Canvas.TopProperty);
+            TelaX = (double)this.Hero.Posi.X;
+            TelaY = (double)this.Hero.Posi.Y;
             Window.Current.CoreWindow.KeyDown += EventFunc;
             Window.Current.CoreWindow.KeyUp += EventFuncOff;
-            UpdateMovement = new Thread(UpdateMovementeFunc);
-            UpdateMovement.Start();
+            Update = new Thread(UpdateMovementeFunc);
+            Update.Start();
 
         }
 
@@ -41,24 +40,24 @@ namespace ChaosDivinity.Physics
         public void EventFunc(CoreWindow sender, KeyEventArgs e)
         {
 
-            if (e.VirtualKey == Windows.System.VirtualKey.A && Hero.InMoment.Left == true)
+            if (e.VirtualKey == Windows.System.VirtualKey.A && Hero.InMoment.Left )
             {
                 Hero.IsMoving = true;
                 left = true;
 
             }
-            if (e.VirtualKey == Windows.System.VirtualKey.D && Hero.InMoment.Right == true)
+            if (e.VirtualKey == Windows.System.VirtualKey.D && Hero.InMoment.Right )
             {
                 Hero.IsMoving = true;
                 right = true;
 
             }
-            if (e.VirtualKey == Windows.System.VirtualKey.W && Hero.InMoment.Up == true)
+            if (e.VirtualKey == Windows.System.VirtualKey.W && Hero.InMoment.Up )
             {
                 Hero.IsMoving = true;
                 up = true;
             }
-            if (e.VirtualKey == Windows.System.VirtualKey.S && Hero.InMoment.Down == true)
+            if (e.VirtualKey == Windows.System.VirtualKey.S && Hero.InMoment.Down )
             {
                 Hero.IsMoving = true;
                 down = true;
@@ -108,34 +107,39 @@ namespace ChaosDivinity.Physics
             {
                 await Windows.ApplicationModel.Core.CoreApplication.MainView.CoreWindow.Dispatcher.RunAsync(CoreDispatcherPriority.High, () =>
                 {
-                    if (left)
-                    {
-                        TelaX -= delta_move;
-                        Move_Object.SetValue(Canvas.LeftProperty, TelaX);
-                        Hero.SetPosition();
-                    }
-                    if (right)
-                    {
-                        TelaX += delta_move;
-                        Move_Object.SetValue(Canvas.LeftProperty, TelaX);
-                        Hero.SetPosition();
-                    }
-                    if (up)
-                    {
-                        TelaY -= delta_move;
-                        Move_Object.SetValue(Canvas.TopProperty, TelaY);
-                        Hero.SetPosition();
-                    }
-                    if (down)
-                    {
-                        TelaY += delta_move;
-                        Move_Object.SetValue(Canvas.TopProperty, TelaY);
-                        Hero.SetPosition();
-                    }
+                    UpdateMove();
                 });
 
             }
 
+        }
+
+        public override void UpdateMove()
+        {
+            if (left)
+            {
+                TelaX -= delta_move;
+                Move_Object.SetValue(Canvas.LeftProperty, TelaX);
+                Hero.SetPosition();
+            }
+            if (right)
+            {
+                TelaX += delta_move;
+                Move_Object.SetValue(Canvas.LeftProperty, TelaX);
+                Hero.SetPosition();
+            }
+            if (up)
+            {
+                TelaY -= delta_move;
+                Move_Object.SetValue(Canvas.TopProperty, TelaY);
+                Hero.SetPosition();
+            }
+            if (down)
+            {
+                TelaY += delta_move;
+                Move_Object.SetValue(Canvas.TopProperty, TelaY);
+                Hero.SetPosition();
+            }
         }
 
         private void ImageSetWhileMove(string path)

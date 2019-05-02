@@ -128,6 +128,7 @@
     <Compile Include="Char\Hero\Rogue.cs" />
     <Compile Include="Char\Skill.cs" />
     <Compile Include="Char\Hero\Warrior.cs" />
+    <Compile Include="Delegate\Delegate.cs" />
     <Compile Include="Enum\Classification.cs" />
     <Compile Include="Inventory\EqquipedSlot.cs" />
     <Compile Include="Inventory\Inventory.cs" />
