@@ -57,6 +57,8 @@ namespace ChaosDivinity.VisualGame.Maps
         private void ClickVerificationNPC()
         {
 
+            
+
         }
 
         private void SlotShop(object sender, PointerRoutedEventArgs e)
