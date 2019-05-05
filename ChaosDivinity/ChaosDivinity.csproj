@@ -142,6 +142,7 @@
     <Compile Include="Manager\PersoManager.cs" />
     <Compile Include="MapObjects\Chest.cs" />
     <Compile Include="MapObjects\Gateway.cs" />
+    <Compile Include="NPC\Quest.cs" />
     <Compile Include="Physics\Collision\CollisionTrigger.cs" />
     <Compile Include="Physics\PhysicOnject\ObjectInteraction.cs" />
     <Compile Include="Physics\PhysicOnject\ObjectMoment.cs" />
