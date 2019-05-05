@@ -9,9 +9,8 @@ namespace ChaosDivinity.PhysicCollision
     public class Collision
     {
         private double tam_x, tam_y;
-        private double percent = 0.85;
         private Vector2 dist_vector;
-        private double radius;
+        private double radius, radius_collider;
         private List<PhysicObject> array;
         private PhysicObject p;
 
@@ -23,102 +22,112 @@ namespace ChaosDivinity.PhysicCollision
 
         public void UpdateColisions()
         {
-            
+            int cont = 0;
+
             if (array.Count <= 1) return;
 
             if (p == null && p.Container== null) return;            
                                     
             foreach(PhysicObject obj in array )
             {
-
-                if (obj == null && obj.Container == null ) return;
-                if (p == obj) return;
+                cont++;
+                if (obj == null && obj.Container == null ) continue;
+                if (p == obj) continue;
 
                 dist_vector.Y = (float)Math.Abs(p.Posi.Y - obj.Posi.Y);
                 dist_vector.X = (float)Math.Abs(p.Posi.X - obj.Posi.X);
 
-                double right = (obj.Posi.X - obj.Container.Width/2) - ( p.Posi.X + p.Container.Width/2 );
-                double left  = (p.Posi.X   - p.Container.Width/2  ) - (obj.Posi.X + p.Container.Width/2);
-                double bot   = (p.Posi.Y - p.Container.Height/2) - (obj.Posi.Y + obj.Container.Height/2);
-                double top   = (obj.Posi.Y - obj.Container.Height / 2) - (p.Posi.Y + p.Container.Height / 2);
+                tam_x = Math.Abs(p.Container.Width/2 + obj.Container.Width/2);
+                tam_y = Math.Abs(p.Container.Height / 2 + obj.Container.Height / 2);
 
-                tam_y = (p.Container.Height / 2 + obj.Container.Height / 2);
-                tam_x = (p.Container.Width / 2 + obj.Container.Width / 2);
+                radius = Math.Sqrt(Math.Pow((p.Posi.X - obj.Posi.X),2) + Math.Pow((p.Posi.Y - obj.Posi.Y), 2));
+                radius_collider = p.Radius + obj.Radius;
 
-                radius = Math.Abs(Math.Pow((p.Posi.X - obj.Posi.X),2) + Math.Pow((p.Posi.Y - obj.Posi.Y), 2));
-                
-                if ( radius <= 90 && obj.IsInteractive)
+                if ( radius <= radius_collider && obj.IsInteractive)
                 {
-                    if(p.MinimumObjectInteractive== null)
+                    if(p.MinimumObjectInteractive== null && radius <= radius_collider)
                     {
                         p.MinimumObjectInteractive = obj;
                         p.MinimumObjectInteractiveDist = radius;
                     }
-                    else if(p.MinimumObjectInteractiveDist > radius)
+
+                    else if(p.MinimumObjectInteractiveDist > radius && radius <= radius_collider)
                     {
                         p.MinimumObjectInteractive = obj;
                         p.MinimumObjectInteractiveDist = radius;
                     }
                 }
 
-                if (p.Posi.X <= obj.Posi.X)
+                Debug.WriteLine(cont);
+                Debug.WriteLine("");
+                Debug.WriteLine("Vector Y: " + dist_vector.Y);
+                Debug.WriteLine("Vector X: " + dist_vector.X);
+                Debug.WriteLine("Raio: " + radius);
+                Debug.WriteLine("Raio Collider" + radius_collider);
+                Debug.WriteLine("");
+
+                if (p.Posi.X < obj.Posi.X)
                 {
-                    
-                    if (right < 0 && dist_vector.X <= tam_x * percent)
+                    Debug.WriteLine("DIR");
+                    if (radius <= radius_collider && dist_vector.Y < tam_y / 2) 
                     {
-                        //Debug.WriteLine("DIR");
-                        p.InMoment.Right = false;
+                        Debug.WriteLine("Collider");
+                        if (p.InMoment.Right == false) { }
+                        else p.InMoment.Right = false;
+                        //p.InMoment.Right = false;
                         p.OnColide = obj;
-                        
-                        continue;
-                    }else p.InMoment.Right = true;
+                    }
+                    else p.InMoment.Right = true;
 
-                }else p.InMoment.Right = true;
-
-                if (p.Posi.X >= obj.Posi.X)
-                {
-                    
-                    if ( right< 0 && dist_vector.Y <= tam_x * percent)
-                    {
-                        //Debug.WriteLine("ESQ");
-                        p.InMoment.Left = false; 
-                        p.OnColide = obj;
-                        
-                        continue;
-                        
-                    }else p.InMoment.Left = true;
-
-                }else p.InMoment.Left = true;
-
-                if (p.Posi.X >= obj.Posi.X)
-                {
-                    
-                    if (top < 0 && dist_vector.Y <= tam_y * percent)
-                    {
-                        //Debug.WriteLine("C");
-                        p.InMoment.Up = false;
-                        p.OnColide = obj;
-                        
-                        continue;
-
-                    }else p.InMoment.Up = true;
-
-                }else p.InMoment.Up = true;
-
-                if (p.Posi.X <= obj.Posi.X)
-                {
-                    //Debug.WriteLine("tururu4");
-                    if (bot < 0 && dist_vector.Y <= tam_y * percent)
-                    {
-                        //Debug.WriteLine("B");
-                        p.InMoment.Down = false;
-                        p.OnColide = obj;
-                        
-                        continue;
-
-                    }else p.InMoment.Down = true;
+                }
                 
-                }else p.InMoment.Down = true;
+                else if (p.Posi.X > obj.Posi.X)
+                {
+                    Debug.WriteLine("ESQ");
+                    if (radius < radius_collider && dist_vector.Y <= tam_y/2)
+                    {
+                        Debug.WriteLine("Collider");
+                        if (p.InMoment.Left == false) { }
+                        else p.InMoment.Left = false;
+                        //p.InMoment.Left = false;
+                        p.OnColide = obj;
+                    }
+                    else p.InMoment.Left = true;
+                }
+                
+                if (p.Posi.Y > obj.Posi.Y)
+                {
+                    Debug.WriteLine("Up");
+                    if (radius < radius_collider && dist_vector.X < tam_x / 2)
+                    {
+                        Debug.WriteLine("Collider");
+                        if (p.InMoment.Up == false) { }
+                        else p.InMoment.Up = false;
+                        //p.InMoment.Up = false;
+                        p.OnColide = obj;
+                    }
+                    else p.InMoment.Up = true;
+
+                }
+                
+                else if (p.Posi.Y < obj.Posi.Y)
+                {
+                    Debug.WriteLine("Down"); 
+
+                    if (radius < radius_collider && dist_vector.X < tam_x / 2)
+                    {
+                        Debug.WriteLine("Collider");
+                        if (p.InMoment.Down == false) { }
+                        else p.InMoment.Down = false;
+                        //p.InMoment.Down = false;
+                        p.OnColide = obj;
+                    }
+                    else p.InMoment.Down = true;
+
+                }
+                
+
+
             }
         }
     }

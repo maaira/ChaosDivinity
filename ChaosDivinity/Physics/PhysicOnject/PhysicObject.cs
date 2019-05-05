@@ -4,13 +4,7 @@ using Windows.UI.Xaml.Controls;
 
 namespace ChaosDivinity.Physics
 {
-    public delegate void ActionInCollision();
-    public delegate void ActionInIntertion();
-    public delegate void IsCollision();
-    public delegate void IsInteration();
-    public delegate void UpdateCollision(PhysicObject[] array, PhysicObject p);
-    public delegate void Move();
-
+    
     public abstract class PhysicObject
     {        
         public Canvas Container { get; set; }        
@@ -25,7 +19,9 @@ namespace ChaosDivinity.Physics
         public Movement StartMovingProcess;
 
         public CollisionTrigger StartCollisionManager;
-        public Position Posi { get; }        
+        public Position Posi { get; }
+        
+        public double Radius { get; set; }
         public PhysicObject()
         {
 
@@ -43,6 +39,11 @@ namespace ChaosDivinity.Physics
             if (Container == null) return;
             this.Posi.X = (double)Container.GetValue(Canvas.LeftProperty) + Container.Width / 2;
             this.Posi.Y = (double)Container.GetValue(Canvas.TopProperty) + Container.Height / 2;
+        }
+        public void SetRadius()
+        {
+            if (Container == null) return;
+            this.Radius = (Container.Width + Container.Height) / 4;
         }
     }
 }

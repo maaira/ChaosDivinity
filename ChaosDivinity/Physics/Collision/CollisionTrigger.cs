@@ -11,12 +11,10 @@ namespace ChaosDivinity.Physics
     {
         private Collision collider;
         private Thread UpdateCollision;
-        private PhysicObject obj;
-
+        
         public CollisionTrigger(List<PhysicObject> array, PhysicObject po) 
         {
             this.collider = new Collision(array, po);
-            this.obj = po;
             UpdateCollision = new Thread(CollisionRegister);
             UpdateCollision.Start();
             
@@ -35,9 +33,6 @@ namespace ChaosDivinity.Physics
             }
         }
 
-        private void CollisionSets()
-        {
-
-        }
+        
     }
 }

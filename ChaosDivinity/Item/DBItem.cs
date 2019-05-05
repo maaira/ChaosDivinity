@@ -12,11 +12,7 @@ namespace ChaosDivinity.Item
     public class DBItem
     {
         static private Dictionary<string, InventorySlot> ListOfItem;
-        static private string[] person = { "Guerreiro", "Ladino", "Mago", "All" };
-        private static string[] type = { "Arma", "Acessorio", "Coleção", "Armadura" };
-        private static string[] categoryType = { "", "Espada", "Adaga", "Cajado", "Acessorio", "Escudo" };
-
-
+        
         public static Dictionary<string, InventorySlot> DBItens()
         {
             ListOfItem = new Dictionary<string, InventorySlot>();
