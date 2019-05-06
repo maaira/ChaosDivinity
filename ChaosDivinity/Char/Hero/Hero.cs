@@ -54,6 +54,7 @@ namespace ChaosDivinity.Char
             this.Armo[2] = new EquippedSlot(Classification.TypeOf.Acessorio, this);
             this.Armo[3] = new EquippedSlot(Classification.TypeOf.Acessorio, this);
         }
+
         //Verifica se o ganho de experiência fez o personagem passar de level
         public bool IsLvUP()
         {
@@ -80,6 +81,8 @@ namespace ChaosDivinity.Char
                 LvUp(); //Função recursiva para caso ganhe experiência suficiente para passar mais de uma vez de level
             }
         }
+
+
 
         public bool AddtemToEquip(Equipment item)
         {
