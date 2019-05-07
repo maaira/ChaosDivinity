@@ -1,5 +1,6 @@
 ﻿using ChaosDivinity.Char;
 using ChaosDivinity.Managers;
+using ChaosDivinity.NPCNamespace;
 using ChaosDivinity.Physics;
 using System.Diagnostics;
 using Windows.UI.Xaml;
@@ -21,6 +22,7 @@ namespace ChaosDivinity.VisualGame.Maps
         {
             this.InitializeComponent();
             this.AddEventToShop();
+            QuestList.LoadQuestList();
         }
 
         protected override void OnNavigatedTo(NavigationEventArgs e)

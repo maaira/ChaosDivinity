@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using ChaosDivinity.Char;
 
-namespace ChaosDivinity.NPC
+namespace ChaosDivinity.NPCNamespace
 {
     public abstract class Quest
     {
@@ -135,3 +135,19 @@ namespace ChaosDivinity.NPC
     }
 
 }
+
+/*
+ * 
+ * //Realiza a procura da quest no dicionario a partir do ID
+        public static Quest SearchQuest(uint QuestIDRequested)
+        {
+            if (allQuests.ContainsKey(QuestIDRequested) == true)
+            {
+                return allQuests[QuestIDRequested];
+            }
+            else
+            {
+                throw new ArgumentOutOfRangeException();
+            }
+        }
+ * /
