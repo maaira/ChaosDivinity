@@ -44,8 +44,21 @@
                     Width="200"
                     Height="200" Canvas.Left="3068" Canvas.Top="24" HorizontalAlignment="Left" />
 
-            <Button Content="Dino" HorizontalAlignment="Left" Canvas.Left="3138" Canvas.Top="194" VerticalAlignment="Top"/>
-            <Button Content="Diva" HorizontalAlignment="Left" Canvas.Left="2490" Canvas.Top="214" VerticalAlignment="Top"/>
+            <Button Content="Dino" HorizontalAlignment="Left" Canvas.Left="3138" Canvas.Top="194" VerticalAlignment="Top">
+                <Button.Flyout>
+                    <Flyout x:Name = "Dinoo">
+                        <TextBlock Text="I`m Dino, what are you want?" FontSize="20" HorizontalAlignment="Center"/>
+                    </Flyout> 
+                </Button.Flyout>
+            </Button>
+
+            <Button Content="Diva" HorizontalAlignment="Left" Canvas.Left="2490" Canvas.Top="214" VerticalAlignment="Top">
+                <Button.Flyout>
+                    <Flyout x:Name = "Diva">
+                        <TextBlock Text="I`m Diva, i'm here to serve you!" FontSize="20" HorizontalAlignment="Center"/>
+                    </Flyout>
+                </Button.Flyout>
+            </Button>
         </Canvas>
         <Canvas Name ="Perso"  Height="70" Canvas.Left="840" Canvas.Top="528" Width="70" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
             <Image 
