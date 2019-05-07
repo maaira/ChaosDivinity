@@ -39,7 +39,8 @@ namespace ChaosDivinity.Managers
 
             PersoManager.AddPersoToMap(hero, Perso, _worldObject);
             InitHeroMove(Tela, hero);
-
+            hero.SetPhysics(_worldObject);
+                        
         }
 
         public static void InitiMob(Canvas MOB)
@@ -76,8 +77,7 @@ namespace ChaosDivinity.Managers
         public static void InitHeroMove(Canvas Background, Hero h)
         {    
             h.StartMovingProcess = new HeroMovement( h.Container, h);
-            h.StartCollisionManager = new CollisionTrigger( _worldObject, h);
-                                    
+                                               
         }
     }
 }

@@ -17,7 +17,7 @@ namespace ChaosDivinity.Physics
     {
         protected Canvas Perso;
         protected Hero Hero;
-        protected double delta_move = 9.915;
+        protected double delta_move = 0.015;
         protected dynamic Move_Object;
         BitmapImage bitmapImage = new BitmapImage();
         Thread Update;
@@ -40,27 +40,30 @@ namespace ChaosDivinity.Physics
         public void EventFunc(CoreWindow sender, KeyEventArgs e)
         {
 
-            if (e.VirtualKey == Windows.System.VirtualKey.A && Hero.InMoment.Left )
+            if (e.VirtualKey == Windows.System.VirtualKey.A )
             {
                 Hero.IsMoving = true;
                 left = true;
+                Hero.OnCollision();
 
             }
-            if (e.VirtualKey == Windows.System.VirtualKey.D && Hero.InMoment.Right )
+            if (e.VirtualKey == Windows.System.VirtualKey.D )
             {
                 Hero.IsMoving = true;
                 right = true;
-
+                Hero.OnCollision();
             }
-            if (e.VirtualKey == Windows.System.VirtualKey.W && Hero.InMoment.Up )
+            if (e.VirtualKey == Windows.System.VirtualKey.W  )
             {
                 Hero.IsMoving = true;
                 up = true;
+                Hero.OnCollision();
             }
-            if (e.VirtualKey == Windows.System.VirtualKey.S && Hero.InMoment.Down )
+            if (e.VirtualKey == Windows.System.VirtualKey.S )
             {
                 Hero.IsMoving = true;
                 down = true;
+                Hero.OnCollision();
             }
 
         }
@@ -116,25 +119,25 @@ namespace ChaosDivinity.Physics
 
         public override void UpdateMove()
         {
-            if (left)
+            if (left && Hero.InMoment.Left)
             {
                 TelaX -= delta_move;
                 Move_Object.SetValue(Canvas.LeftProperty, TelaX);
                 Hero.SetPosition();
             }
-            if (right)
+            if (right && Hero.InMoment.Right)
             {
                 TelaX += delta_move;
                 Move_Object.SetValue(Canvas.LeftProperty, TelaX);
                 Hero.SetPosition();
             }
-            if (up)
+            if (up &&  Hero.InMoment.Up)
             {
                 TelaY -= delta_move;
                 Move_Object.SetValue(Canvas.TopProperty, TelaY);
                 Hero.SetPosition();
             }
-            if (down)
+            if (down && Hero.InMoment.Down)
             {
                 TelaY += delta_move;
                 Move_Object.SetValue(Canvas.TopProperty, TelaY);

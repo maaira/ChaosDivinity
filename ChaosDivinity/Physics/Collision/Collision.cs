@@ -40,6 +40,7 @@ namespace ChaosDivinity.PhysicCollision
                 tam_x = Math.Abs(p.Container.Width/2 + obj.Container.Width/2);
                 tam_y = Math.Abs(p.Container.Height / 2 + obj.Container.Height / 2);
 
+
                 radius = Math.Sqrt(Math.Pow((p.Posi.X - obj.Posi.X),2) + Math.Pow((p.Posi.Y - obj.Posi.Y), 2));
                 radius_collider = p.Radius + obj.Radius;
 
@@ -58,69 +59,76 @@ namespace ChaosDivinity.PhysicCollision
                     }
                 }
 
-                Debug.WriteLine(cont);
+                /*Debug.WriteLine(cont);
                 Debug.WriteLine("");
                 Debug.WriteLine("Vector Y: " + dist_vector.Y);
                 Debug.WriteLine("Vector X: " + dist_vector.X);
                 Debug.WriteLine("Raio: " + radius);
                 Debug.WriteLine("Raio Collider" + radius_collider);
-                Debug.WriteLine("");
+                Debug.WriteLine("");*/
 
                 if (p.Posi.X < obj.Posi.X)
                 {
-                    Debug.WriteLine("DIR");
+                    /*Debug.WriteLine("DIR");
+
+                    Debug.WriteLine(cont);
+                    Debug.WriteLine("");
+                    Debug.WriteLine("Vector Y: " + dist_vector.Y);
+                    Debug.WriteLine("Vector X: " + dist_vector.X);
+                    Debug.WriteLine("Raio: " + radius);
+                    Debug.WriteLine("Raio Collider" + radius_collider);
+                    Debug.WriteLine("");*/
                     if (radius <= radius_collider && dist_vector.Y < tam_y / 2) 
                     {
-                        Debug.WriteLine("Collider");
-                        if (p.InMoment.Right == false) { }
-                        else p.InMoment.Right = false;
-                        //p.InMoment.Right = false;
-                        p.OnColide = obj;
+                        //Debug.WriteLine("Collider");
+                        p.InMoment.Right = false;
+                        break;
                     }
                     else p.InMoment.Right = true;
 
                 }
                 
-                else if (p.Posi.X > obj.Posi.X)
+                if (p.Posi.X > obj.Posi.X)
                 {
-                    Debug.WriteLine("ESQ");
-                    if (radius < radius_collider && dist_vector.Y <= tam_y/2)
+                    /*Debug.WriteLine("ESQ");
+                    Debug.WriteLine(cont);
+                    Debug.WriteLine("");
+                    Debug.WriteLine("Vector Y: " + dist_vector.Y);
+                    Debug.WriteLine("Vector X: " + dist_vector.X);
+                    Debug.WriteLine("Raio: " + radius);
+                    Debug.WriteLine("Raio Collider" + radius_collider);
+                    Debug.WriteLine("");*/
+                    if (radius <= radius_collider && dist_vector.Y <= tam_y/2)
                     {
-                        Debug.WriteLine("Collider");
-                        if (p.InMoment.Left == false) { }
-                        else p.InMoment.Left = false;
-                        //p.InMoment.Left = false;
-                        p.OnColide = obj;
+                        //Debug.WriteLine("Collider");
+                        p.InMoment.Left = false;
+                        break;
                     }
                     else p.InMoment.Left = true;
                 }
                 
                 if (p.Posi.Y > obj.Posi.Y)
                 {
-                    Debug.WriteLine("Up");
-                    if (radius < radius_collider && dist_vector.X < tam_x / 2)
+                    //Debug.WriteLine("Up");
+                    if (radius <= radius_collider && dist_vector.X < tam_x / 2)
                     {
-                        Debug.WriteLine("Collider");
-                        if (p.InMoment.Up == false) { }
-                        else p.InMoment.Up = false;
-                        //p.InMoment.Up = false;
-                        p.OnColide = obj;
+                        //Debug.WriteLine("Collider");
+                        p.InMoment.Up = false;
+                        break;
                     }
                     else p.InMoment.Up = true;
 
                 }
                 
-                else if (p.Posi.Y < obj.Posi.Y)
+                if (p.Posi.Y < obj.Posi.Y)
                 {
-                    Debug.WriteLine("Down"); 
+                    //Debug.WriteLine("Down"); 
 
-                    if (radius < radius_collider && dist_vector.X < tam_x / 2)
+                    if (radius <= radius_collider && dist_vector.X < tam_x / 2)
                     {
-                        Debug.WriteLine("Collider");
-                        if (p.InMoment.Down == false) { }
-                        else p.InMoment.Down = false;
-                        //p.InMoment.Down = false;
-                        p.OnColide = obj;
+                        //Debug.WriteLine("Collider");
+                        p.InMoment.Down = false;
+                        break;
                     }
                     else p.InMoment.Down = true;
 
