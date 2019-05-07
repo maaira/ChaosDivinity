@@ -135,19 +135,3 @@ namespace ChaosDivinity.NPCNamespace
     }
 
 }
-
-/*
- * 
- * //Realiza a procura da quest no dicionario a partir do ID
-        public static Quest SearchQuest(uint QuestIDRequested)
-        {
-            if (allQuests.ContainsKey(QuestIDRequested) == true)
-            {
-                return allQuests[QuestIDRequested];
-            }
-            else
-            {
-                throw new ArgumentOutOfRangeException();
-            }
-        }
- * /
