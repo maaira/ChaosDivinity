@@ -15,6 +15,7 @@ namespace ChaosDivinity.NPCNamespace
         {
             allQuests = new Dictionary<uint, Quest>();
             Quest sla = new ConversationQuest("Sajhsajsja",0);
+            //oi
             allQuests.Add(1, sla);
         }
 
