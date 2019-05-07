@@ -123,7 +123,6 @@
     </Compile>
     <Compile Include="Char\Char.cs" />
     <Compile Include="Char\Hero\Hero.cs" />
-    <Compile Include="Char\Interactives\NPC.cs" />
     <Compile Include="Char\Hero\Mage.cs" />
     <Compile Include="Char\Hero\Rogue.cs" />
     <Compile Include="Char\Skill.cs" />
@@ -136,10 +135,16 @@
     <Compile Include="Item\Consumable.cs" />
     <Compile Include="Item\DBItem.cs" />
     <Compile Include="Item\Equipment.cs" />
+    <Compile Include="Market\Market.cs" />
+    <Compile Include="NPC\ManagementQuest.cs" />
+    <Compile Include="NPC\NPC.cs" />
+    <Compile Include="NPC\NPCFlyout.cs" />
     <Compile Include="Item\Item.cs" />
     <Compile Include="Manager\PersoManager.cs" />
     <Compile Include="MapObjects\Chest.cs" />
     <Compile Include="MapObjects\Gateway.cs" />
+    <Compile Include="NPC\Quest.cs" />
+    <Compile Include="NPC\QuestList.cs" />
     <Compile Include="Physics\Collision\CollisionTrigger.cs" />
     <Compile Include="Physics\PhysicOnject\ObjectInteraction.cs" />
     <Compile Include="Physics\PhysicOnject\ObjectMoment.cs" />
@@ -149,7 +154,6 @@
       <DependentUpon>City.xaml</DependentUpon>
     </Compile>
     <Compile Include="Manager\MapManager.cs" />
-    <Compile Include="Market\Market.cs" />
     <Compile Include="Physics\Collision\Collision.cs" />
     <Compile Include="Physics\Move\HeroMovement.cs" />
     <Compile Include="Physics\Move\Movement.cs" />
@@ -169,6 +173,15 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Assets\Button\Button.png" />
+    <Content Include="Assets\ItensShop\Apple.png" />
+    <Content Include="Assets\ItensShop\Arco.png" />
+    <Content Include="Assets\ItensShop\Cajado_Demetriz.png" />
+    <Content Include="Assets\ItensShop\Espada_De_Pandora.png" />
+    <Content Include="Assets\ItensShop\Oraculo.png" />
+    <Content Include="Assets\ItensShop\Pocao_Azul.png" />
+    <Content Include="Assets\ItensShop\Raio.png" />
+    <Content Include="Assets\ItensShop\Sombra_Noites.png" />
+    <Content Include="Assets\ItensShop\TWW_Red_Potion_Artwork.png" />
     <Content Include="Assets\Mage\MageAttack.gif" />
     <Content Include="Assets\Mage\MageAttackLeft.gif" />
     <Content Include="Assets\Mage\MageDeath.gif" />
@@ -183,6 +196,8 @@
     <Content Include="Assets\Maps\Map1\Map005.png" />
     <Content Include="Assets\Menu\Background.png" />
     <Content Include="Assets\Menu\home.jpg" />
+    <Content Include="Assets\NPC\Dino.gif" />
+    <Content Include="Assets\NPC\Poring.gif" />
     <Content Include="Assets\Rogue\RogueAtaque.gif" />
     <Content Include="Assets\Rogue\RogueStopLeft.gif" />
     <Content Include="Assets\Rogue\RogueStopRight.gif" />
@@ -226,7 +241,9 @@
       <Version>6.2.8</Version>
     </PackageReference>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="Char\Interactives\" />
+  </ItemGroup>
   <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '14.0' ">
     <VisualStudioVersion>14.0</VisualStudioVersion>
   </PropertyGroup>
