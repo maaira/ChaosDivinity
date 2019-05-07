@@ -15,8 +15,8 @@ namespace ChaosDivinity.Physics
         public CollisionTrigger(List<PhysicObject> array, PhysicObject po) 
         {
             this.collider = new Collision(array, po);
-            UpdateCollision = new Thread(CollisionRegister);
-            UpdateCollision.Start();
+            //UpdateCollision = new Thread(CollisionRegister);
+            //UpdateCollision.Start();
             
         }
                 
