@@ -37,9 +37,10 @@ namespace ChaosDivinity.VisualGame.Maps
 
         protected override void OnNavigatedTo(NavigationEventArgs e)
         {
-
+            //Traz o heroi selecionado
             if (e.Parameter is Hero)
             {
+
                 hero = (Hero)e.Parameter;
                 Debug.WriteLine(hero.Nome);
             }
