@@ -146,10 +146,7 @@ namespace ChaosDivinity.NPCNamespace
       }
      */
 
+    }
+
 }
-
-
-
-
-
 
