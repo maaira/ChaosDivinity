@@ -16,7 +16,7 @@ namespace ChaosDivinity.NPCNamespace
             
             allQuests = new Dictionary<uint, Quest>();
 
-            Quest First_Quest = new ConversationQuest("First Quest", 1)
+            Quest First_Quest = new ConversationQuest("First Quest", 1 )
             {
                 ID = 1,
                 Description = "Pirmeiro Missão do Chaos Divinity",
@@ -25,7 +25,7 @@ namespace ChaosDivinity.NPCNamespace
                 Verification = false
             };
 
-            Quest Second_Quest = new ConversationQuest("Second Quest", 1)
+            Quest Second_Quest = new ConversationQuest("Second Quest", 2)
             {
                 ID = 2,
                 Description = "Segunda Missão, compre um equip",

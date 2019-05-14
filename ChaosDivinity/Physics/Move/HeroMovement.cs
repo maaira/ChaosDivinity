@@ -140,16 +140,16 @@ namespace ChaosDivinity.Physics
             {
                 TelaY -= delta_move;
                 m_tela_y += delta_move_;
-                Move_Object.SetValue(Canvas.TopProperty, m_tela_x);
-                Hero.Container.SetValue(Canvas.TopProperty, TelaX);
+                Move_Object.SetValue(Canvas.TopProperty, m_tela_y);
+                Hero.Container.SetValue(Canvas.TopProperty, TelaY);
                 Hero.SetPosition();
             }
             if (down && Hero.InMoment.Down)
             {
                 TelaY += delta_move;
                 m_tela_y -= delta_move_;
-                Move_Object.SetValue(Canvas.TopProperty, m_tela_x);
-                Hero.Container.SetValue(Canvas.TopProperty, TelaX);
+                Move_Object.SetValue(Canvas.TopProperty, m_tela_y);
+                Hero.Container.SetValue(Canvas.TopProperty, TelaY);
                 Hero.SetPosition();
             }
         }

@@ -1,4 +1,5 @@
 ﻿
+
 namespace ChaosDivinity.NPCNamespace
 {
     public abstract class Quest
@@ -12,13 +13,9 @@ namespace ChaosDivinity.NPCNamespace
         public bool Verification { get; set; }//está completa sim ou não
 
         //construtor
-        public Quest(string name, uint id, string description,  int xp, int money)
+        public Quest(string name)
         {
             this.name = name;
-            this.ID = id;
-            this.Description = description;
-            this.XPQuest = xp;
-            this.MoneyQuest = money;
         }
 
         //Informa se a quest foi completada retornando um true
@@ -38,7 +35,7 @@ namespace ChaosDivinity.NPCNamespace
         public int QuantityRequestedEntity { get; set; } //quantos foram solicitados
 
         //Construtor
-        public TypeCountQuest(string name, int entityCount, int entityRequest, uint id, string description, int xp, int money) : base(name,  id, description, xp, money)
+        public TypeCountQuest(string name, int entityCount, int entityRequest) : base(name)
         {
             this.CountForEntity = entityCount;
             this.QuantityRequestedEntity = entityRequest;
@@ -53,9 +50,9 @@ namespace ChaosDivinity.NPCNamespace
         //Realiza as contagem e completa a quest
         public void CounterActionCompleteQuest(int entityUniversalID)
         {
-            if(entityUniversalID == IDEntity)
+            if (entityUniversalID == IDEntity)
             {
-                if(CountForEntity == QuantityRequestedEntity)
+                if (CountForEntity == QuantityRequestedEntity)
                 {
                     CompleteVerificarionQuest();
                 }
@@ -74,14 +71,14 @@ namespace ChaosDivinity.NPCNamespace
     {
         public int NpcQuestID { get; set; }
 
-        public ConversationQuest(string name, int NpcRequestID, uint id, string description, int xp, int money) : base(name, id, description, xp, money)
+        public ConversationQuest(string name, int NpcRequestID) : base(name)
         {
             this.NpcQuestID = NpcRequestID;
         }
 
         public void TalkNpcComplet(int NpcGenericId)
         {
-            if(NpcGenericId == NpcQuestID)
+            if (NpcGenericId == NpcQuestID)
             {
                 CompleteVerificarionQuest();
             }
@@ -98,7 +95,7 @@ namespace ChaosDivinity.NPCNamespace
         public int ItemQuestId { get; set; }
         public int QuantityRequestedItem { get; set; }
 
-        public ConversationDelivery(string name, int NpcIdRequested, int itemRequested, int itemQuantityRequested, uint id, string description, int xp, int money) : base(name, id, description, xp, money)
+        public ConversationDelivery(string name, int NpcIdRequested, int itemRequested, int itemQuantityRequested) : base(name)
         {
             this.NpcQuestID = NpcIdRequested;
             this.ItemQuestId = itemRequested;
@@ -122,31 +119,14 @@ namespace ChaosDivinity.NPCNamespace
         {
             if (VerificationTalkNpc(NpcGenericId))
             {
-                if(ItemGenericId == ItemQuestId && QuantityItemGeneric == QuantityRequestedItem)
+                if (ItemGenericId == ItemQuestId && QuantityItemGeneric == QuantityRequestedItem)
                 {
                     CompleteVerificarionQuest();
                 }
             }
-            
+
         }
 
     }
 
-    /*
-      public static Quest SearchQuest(uint QuestIDRequested)
-      {
-          if (allQuests.ContainsKey(QuestIDRequested) == true)
-          {
-              return allQuests[QuestIDRequested];
-          }
-          else
-          {
-              throw new ArgumentOutOfRangeException();
-          }
-      }
-     */
-
-    }
-
 }
-
