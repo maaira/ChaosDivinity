@@ -13,6 +13,8 @@
         <Canvas Name ="Background" HorizontalAlignment="Left" Height="3240" VerticalAlignment="Top" Width="4872" Canvas.Top="0" Canvas.Left="0" >
 
 
+           
+            
             <Image                     
                     Source="ms-appx:///Assets/Maps/Map1/Map001.png"
                     Width="2436"
@@ -32,7 +34,7 @@
                     Source="ms-appx:///Assets/Maps/Map1/Map004.png"
                     Width="2436"
                     Height="1621" Canvas.Left="2430" Canvas.Top="0" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" />
-
+            
             <Image 
                     Name="Dino"
                     Source="ms-appx:///Assets/NPC/Dino.gif"
@@ -60,7 +62,22 @@
         <Canvas Name ="MOB" Height="100" Canvas.Left="530" Canvas.Top="390" Width="100"/>
         <Canvas Name ="MOB2" Height="100" Canvas.Left="1160" Canvas.Top="645" Width="100"/>
         <Canvas Name ="MOB3" Height="100" Canvas.Left="1290" Canvas.Top="390" Width="100"/>
+        <Image  
+                    Name="quick_menu"
+                    Source="ms-appx:///Assets/Menu/equip_menu.png"
+                    Width="1500"
+                    Height="80" Canvas.Top="660" HorizontalAlignment="Stretch" Canvas.Left="0" VerticalAlignment="Stretch"/>
+        
+        <Canvas Opacity="1" Name="Inventory" Height="497" Canvas.Left="545" Canvas.Top="150" Width="320" HorizontalAlignment="Left" VerticalAlignment="Top">
+            <Image Source="ms-appx:///Assets/Menu/inventory.png" Margin="0,0,-305,0" Width="305" HorizontalAlignment="Left"/>
+            <Image Source="ms-appx:///Assets/Menu/equip2.png" Margin="-285,48,0,48" Width="249" HorizontalAlignment="Left"/>
 
+            <ProgressBar Name="Hp_equip" Height="14" Canvas.Left="10" Canvas.Top="70" Foreground="Red" Margin="-215,324,76,-318" />
+            <ProgressBar Name="Mp_equip" Height="14" Canvas.Left="10" Canvas.Top="70" Foreground="Blue" Margin="-215,371,76,-365" />
+
+            <Button Height="20" Width="25" Click="ExitInventory" HorizontalAlignment="Left" Canvas.Top="5" Canvas.Left="270"/>
+
+        </Canvas>
     </Canvas>
 
 </Page>
