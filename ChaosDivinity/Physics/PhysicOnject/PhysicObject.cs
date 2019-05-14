@@ -1,22 +1,24 @@
 ﻿using ChaosDivinity.PhysicCollision;
 using System;
 using System.Collections.Generic;
-using System.Diagnostics;
-using System.Numerics;
 using Windows.UI.Xaml.Controls;
 
 namespace ChaosDivinity.Physics
 {
     public delegate void CollisionHandleEvent(PhysicObject sender, EventArgs p);
+    public delegate void InInterationHandleEvent(PhysicObject sender, EventArgs p);
+    public delegate void IsDisturbed(PhysicObject p);
     public abstract class PhysicObject
-    {        
-        public Canvas Container { get; set; }        
+    {
+        public Canvas Container { get; set; }
         public ObjectMoment InMoment { get; set; }
         public bool IsMoving { get; set; }
-        public bool Interaction { get; set; }        
+        public bool Interaction { get; set; }
         public PhysicObject MinimumObjectInteractive { get; set; }
         public double MinimumObjectInteractiveDist { get; set; }
         public bool IsInteractive { get; set; }
+
+        public IsDisturbed InterationEvent;
 
         public Movement StartMovingProcess;
 
@@ -47,21 +49,33 @@ namespace ChaosDivinity.Physics
             if (Container == null) return;
             this.Radius = (Container.Width + Container.Height) / 4;
         }
-        public virtual void OnCollision()
+        public void OnCollision()
         {
             StartCollisionManager?.Invoke(this, EventArgs.Empty);
         }
-        public void CollisionEvent(PhysicObject sender, EventArgs p)
+        public virtual void CollisionEvent(PhysicObject sender, EventArgs p)
         {
             PhysicObject obj= (PhysicObject)sender;
-            //Debug.WriteLine("Here");
             obj.CollisionUp.UpdateColisions();
         }
 
-        public void SetPhysics(List<PhysicObject> _worldlist)
+        public virtual void SetPhysics(List<PhysicObject> _worldlist)
         {
-            CollisionUp = new Collision(_worldlist, this);
-            StartCollisionManager += new CollisionHandleEvent(CollisionEvent);
+            
         }
+        public virtual void OnInteraction()
+        {
+            InterationEvent?.DynamicInvoke(this, EventArgs.Empty);
+        }
+
+        public void EndExistence()
+        {
+            if (Container == null) return;
+            Canvas p = (Canvas)Container.Parent;
+            p.Children.Remove(Container);            
+        }
+
+        
+        
     }
 }

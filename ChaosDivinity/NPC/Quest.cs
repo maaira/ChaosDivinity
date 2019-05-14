@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using ChaosDivinity.Char;
-
+﻿
 namespace ChaosDivinity.NPCNamespace
 {
     public abstract class Quest
@@ -18,9 +12,13 @@ namespace ChaosDivinity.NPCNamespace
         public bool Verification { get; set; }//está completa sim ou não
 
         //construtor
-        public Quest(string name)
+        public Quest(string name, uint id, string description,  int xp, int money)
         {
             this.name = name;
+            this.ID = id;
+            this.Description = description;
+            this.XPQuest = xp;
+            this.MoneyQuest = money;
         }
 
         //Informa se a quest foi completada retornando um true
@@ -40,7 +38,7 @@ namespace ChaosDivinity.NPCNamespace
         public int QuantityRequestedEntity { get; set; } //quantos foram solicitados
 
         //Construtor
-        public TypeCountQuest(string name, int entityCount, int entityRequest) : base(name)
+        public TypeCountQuest(string name, int entityCount, int entityRequest, uint id, string description, int xp, int money) : base(name,  id, description, xp, money)
         {
             this.CountForEntity = entityCount;
             this.QuantityRequestedEntity = entityRequest;
@@ -76,7 +74,7 @@ namespace ChaosDivinity.NPCNamespace
     {
         public int NpcQuestID { get; set; }
 
-        public ConversationQuest(string name, int NpcRequestID) : base(name)
+        public ConversationQuest(string name, int NpcRequestID, uint id, string description, int xp, int money) : base(name, id, description, xp, money)
         {
             this.NpcQuestID = NpcRequestID;
         }
@@ -100,7 +98,7 @@ namespace ChaosDivinity.NPCNamespace
         public int ItemQuestId { get; set; }
         public int QuantityRequestedItem { get; set; }
 
-        public ConversationDelivery(string name, int NpcIdRequested, int itemRequested, int itemQuantityRequested) : base(name)
+        public ConversationDelivery(string name, int NpcIdRequested, int itemRequested, int itemQuantityRequested, uint id, string description, int xp, int money) : base(name, id, description, xp, money)
         {
             this.NpcQuestID = NpcIdRequested;
             this.ItemQuestId = itemRequested;
@@ -134,20 +132,24 @@ namespace ChaosDivinity.NPCNamespace
 
     }
 
+    /*
+      public static Quest SearchQuest(uint QuestIDRequested)
+      {
+          if (allQuests.ContainsKey(QuestIDRequested) == true)
+          {
+              return allQuests[QuestIDRequested];
+          }
+          else
+          {
+              throw new ArgumentOutOfRangeException();
+          }
+      }
+     */
+
 }
 
-/*
- * 
- * //Realiza a procura da quest no dicionario a partir do ID
-        public static Quest SearchQuest(uint QuestIDRequested)
-        {
-            if (allQuests.ContainsKey(QuestIDRequested) == true)
-            {
-                return allQuests[QuestIDRequested];
-            }
-            else
-            {
-                throw new ArgumentOutOfRangeException();
-            }
-        }
- * /
+
+
+
+
+
