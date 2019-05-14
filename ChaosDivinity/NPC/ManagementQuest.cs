@@ -19,6 +19,7 @@ namespace ChaosDivinity.NPCNamespace
 
         public ManagementQuest(Hero hr)
         {
+            this.hero = hr;
             numQuestCaught = 0; //Çomeçamos com 0 Quest Pegas
             numQuestDelivered = 0; //Çomeçamos com 0 Quest Entregues
             numQuestActive = 0;//Começamos com 0 missões
