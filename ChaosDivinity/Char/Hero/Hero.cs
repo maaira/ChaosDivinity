@@ -2,6 +2,9 @@
 using ChaosDivinity.Item;
 using System.Collections.Generic;
 using ChaosDivinity.Interface;
+using ChaosDivinity.Physics;
+using System;
+using ChaosDivinity.PhysicCollision;
 
 namespace ChaosDivinity.Char
 {
@@ -82,7 +85,23 @@ namespace ChaosDivinity.Char
             }
         }
 
+        public void InteractionEvent(PhysicObject sender, EventArgs p)
+        {
 
+        }
+
+        public override void CollisionEvent(PhysicObject sender, EventArgs p)
+        {
+            PhysicObject obj = (PhysicObject)sender;
+            //Debug.WriteLine("Here");
+            obj.CollisionUp.UpdateColisions();
+        }
+
+        public override void SetPhysics(List<PhysicObject> _worldlist)
+        {
+            CollisionUp = new Collision(_worldlist, this);
+            StartCollisionManager += new CollisionHandleEvent(CollisionEvent);
+        }
 
         public bool AddtemToEquip(Equipment item)
         {
@@ -138,38 +157,7 @@ namespace ChaosDivinity.Char
                 return false; // Morreu
             }
         }
-        /*
-        //Calcula o dano com base nos items equipados
-        public int Atk_base()
-        {
-            int damage_add = 0;
-            foreach ( i in mochila.InventoryOfBackPack)
-            {
-                if (i != null)
-                {
-                    if (i == true)
-                    {
-                        damage_add += i.Dmg;
-                    }
-                }
-            }
-            return Base_dmg + damage_add;
-        }
-
-        //Verifica se o golpe passa da defesa e modifica o HP
-        public bool Take_dmg(int dmg)
-        {
-            if (dmg > Base_def)
-            {
-                Hp_atual -= dmg;
-                return true;
-            }
-            else
-            {
-                return false;
-            }
-        }
-        */
+        
 
         public bool Equip()
         {

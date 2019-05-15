@@ -135,6 +135,7 @@
     <Compile Include="Item\Consumable.cs" />
     <Compile Include="Item\DBItem.cs" />
     <Compile Include="Item\Equipment.cs" />
+    <Compile Include="Manager\ChestManager.cs" />
     <Compile Include="Market\Market.cs" />
     <Compile Include="NPC\ManagementQuest.cs" />
     <Compile Include="NPC\NPC.cs" />
@@ -145,7 +146,6 @@
     <Compile Include="MapObjects\Gateway.cs" />
     <Compile Include="NPC\Quest.cs" />
     <Compile Include="NPC\QuestList.cs" />
-    <Compile Include="Physics\Collision\CollisionTrigger.cs" />
     <Compile Include="Physics\PhysicOnject\ObjectInteraction.cs" />
     <Compile Include="Physics\PhysicOnject\ObjectMoment.cs" />
     <Compile Include="Physics\PhysicOnject\PhysicObject.cs" />
@@ -246,6 +246,8 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Char\Interactives\" />
+    <Folder Include="VisualGame\VisualInventory\" />
+    <Folder Include="VisualGame\VisualMarket\" />
   </ItemGroup>
   <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '14.0' ">
     <VisualStudioVersion>14.0</VisualStudioVersion>

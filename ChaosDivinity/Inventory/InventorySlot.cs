@@ -1,43 +1,36 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using ChaosDivinity.Item;
+﻿using ChaosDivinity.Item;
+using ChaosDivinity.Physics;
 
 namespace ChaosDivinity.Inventory
 {
-    public class InventorySlot
+    public class InventorySlot : PhysicObject
     {
-        private ItemGame item;
-        private int tam;
-        private string slotid; // variavel que cotrola o tipo de item do slot
-        private string type;
-        public ItemGame Slot { get => item; }
-        public string ID { get => slotid; }
-        public string Type { get => type; }
-        public int Tam { get => tam; set => tam = value; }
+       
+        public ItemGame Slot { get; set; }
+        public string ID { get; set; }
+        public string Type { get; set; }
+        public int Tam { get; set; }
 
         public InventorySlot(ItemGame t)
         {
-            this.tam = 0;
-            this.type = "";
-            this.slotid = "";
-            this.item = t;
+            this.Tam = 0;
+            this.Type = "";
+            this.ID = "";
+            this.Slot= t;
         }
 
         public bool AddItemToSlot(ItemGame it)
         {
-            if (tam == 0)
+            if (Tam == 0)
             {
-                tam++;
-                this.item = it;
+                Tam++;
+                this.Slot = it;
 
                 return true;
             }
-            if (tam != 0 && item != null && item.Name == it.Name)
+            if (Tam != 0 && Slot != null && Slot.Name == it.Name)
             {
-                tam++;
+                Tam++;
                 return true;
             }
             return false;
@@ -47,13 +40,13 @@ namespace ChaosDivinity.Inventory
         {
             if (item != null)
             {
-                tam--;
+                Tam--;
             }
-            else if (tam == 0) return false;
-            else if (item != null && tam == 1)
+            else if (Tam == 0) return false;
+            else if (item != null && Tam == 1)
             {
                 item = null;
-                tam -= 1;
+                Tam -= 1;
             }
 
 

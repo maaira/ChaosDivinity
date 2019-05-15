@@ -19,10 +19,10 @@ namespace ChaosDivinity.NPCNamespace
 
         public ManagementQuest(Hero hr)
         {
+            this.hero = hr;
             numQuestCaught = 0; //Çomeçamos com 0 Quest Pegas
             numQuestDelivered = 0; //Çomeçamos com 0 Quest Entregues
             numQuestActive = 0;//Começamos com 0 missões
-            this.hero = hr;
         }
 
         //Adicionar uma quest ao personagem
@@ -34,7 +34,6 @@ namespace ChaosDivinity.NPCNamespace
         }
 
         //APENAS verificar se a quest foi completa
-
         public bool VerificationQuestComplete(Quest q)
         {
             if (q.Verification)
