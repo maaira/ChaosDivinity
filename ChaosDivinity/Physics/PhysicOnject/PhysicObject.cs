@@ -23,8 +23,8 @@ namespace ChaosDivinity.Physics
         public Movement StartMovingProcess;
 
         public Collision CollisionUp;
-
         public CollisionHandleEvent StartCollisionManager;
+
         public Position Posi { get; }
         public double Radius { get; set; }
         public PhysicObject()

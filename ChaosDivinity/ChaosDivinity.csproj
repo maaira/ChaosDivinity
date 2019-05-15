@@ -199,6 +199,8 @@
     <Content Include="Assets\Menu\equip_menu.png" />
     <Content Include="Assets\Menu\home.jpg" />
     <Content Include="Assets\Menu\inventory.png" />
+    <Content Include="Assets\Musicas\City.mp3" />
+    <Content Include="Assets\Musicas\ClickSound.mp3" />
     <Content Include="Assets\NPC\Dino.gif" />
     <Content Include="Assets\NPC\Poring.gif" />
     <Content Include="Assets\Rogue\RogueAtaque.gif" />
