@@ -6,8 +6,7 @@ using System.Collections.Generic;
 namespace ChaosDivinity.MapObjects
 {
     public class Chest : PhysicObject
-    {
-        
+    {        
         public static InventorySlot RandomPremium(Dictionary<int, InventorySlot> p)
         { 
             int max = 10, mim = 1;
