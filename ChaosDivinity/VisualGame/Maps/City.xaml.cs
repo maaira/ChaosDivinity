@@ -3,6 +3,8 @@ using ChaosDivinity.Managers;
 using ChaosDivinity.NPCNamespace;
 using ChaosDivinity.Physics;
 using System.Diagnostics;
+using Windows.Media.Core;
+using Windows.Media.Playback;
 using Windows.UI.Core;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
@@ -16,7 +18,7 @@ namespace ChaosDivinity.VisualGame.Maps
     {
         private Hero hero;
         private bool isInventoryOpen;
-
+        private MediaPlayer song = new MediaPlayer();
 
 
         public City()
@@ -26,8 +28,8 @@ namespace ChaosDivinity.VisualGame.Maps
             QuestList.LoadQuestList();
             SetAllMenusReady();
             Window.Current.CoreWindow.KeyDown += KeySentinel;
-
-
+            song.Source = MediaSource.CreateFromUri(new System.Uri("ms-appx:///Assets/Musicas/City.mp3"));
+            song.Play();
 
 
         }
@@ -99,7 +101,7 @@ namespace ChaosDivinity.VisualGame.Maps
             switch (e.VirtualKey)
             {
                 case Windows.System.VirtualKey.I:
-
+                  
 
                     if (isInventoryOpen) Principle.Children.Remove(Inventory);
                     else Principle.Children.Add(Inventory);

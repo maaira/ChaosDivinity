@@ -1,4 +1,9 @@
-﻿
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using ChaosDivinity.Char;
 
 namespace ChaosDivinity.NPCNamespace
 {
@@ -50,9 +55,9 @@ namespace ChaosDivinity.NPCNamespace
         //Realiza as contagem e completa a quest
         public void CounterActionCompleteQuest(int entityUniversalID)
         {
-            if (entityUniversalID == IDEntity)
+            if(entityUniversalID == IDEntity)
             {
-                if (CountForEntity == QuantityRequestedEntity)
+                if(CountForEntity == QuantityRequestedEntity)
                 {
                     CompleteVerificarionQuest();
                 }
@@ -78,7 +83,7 @@ namespace ChaosDivinity.NPCNamespace
 
         public void TalkNpcComplet(int NpcGenericId)
         {
-            if (NpcGenericId == NpcQuestID)
+            if(NpcGenericId == NpcQuestID)
             {
                 CompleteVerificarionQuest();
             }
@@ -119,14 +124,30 @@ namespace ChaosDivinity.NPCNamespace
         {
             if (VerificationTalkNpc(NpcGenericId))
             {
-                if (ItemGenericId == ItemQuestId && QuantityItemGeneric == QuantityRequestedItem)
+                if(ItemGenericId == ItemQuestId && QuantityItemGeneric == QuantityRequestedItem)
                 {
                     CompleteVerificarionQuest();
                 }
             }
-
+            
         }
 
     }
 
 }
+
+/*
+ * 
+ * //Realiza a procura da quest no dicionario a partir do ID
+        public static Quest SearchQuest(uint QuestIDRequested)
+        {
+            if (allQuests.ContainsKey(QuestIDRequested) == true)
+            {
+                return allQuests[QuestIDRequested];
+            }
+            else
+            {
+                throw new ArgumentOutOfRangeException();
+            }
+        }
+ */

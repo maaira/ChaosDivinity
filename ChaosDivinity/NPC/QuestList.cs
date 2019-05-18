@@ -71,7 +71,7 @@ namespace ChaosDivinity.NPCNamespace
             }; 
 
             allQuests.Add(1, First_Quest);
-            allQuests.Add(2, First_Quest);
+            allQuests.Add(2, Second_Quest);
             allQuests.Add(3, First_Quest);
             allQuests.Add(4, First_Quest);
             allQuests.Add(5, First_Quest);
