@@ -47,7 +47,7 @@ namespace ChaosDivinity.Physics
         public void SetRadius()
         {
             if (Container == null) return;
-            this.Radius = (Container.Width + Container.Height) / 4;
+            this.Radius = (Container.Width/2 + Container.Height/2) / 2;
         }
         public void OnCollision()
         {

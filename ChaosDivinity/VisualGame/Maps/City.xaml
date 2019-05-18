@@ -11,9 +11,7 @@
     <Canvas Name ="Principle" HorizontalAlignment="Left" Height="1080" VerticalAlignment="Top" Width="1920">
 
         <Canvas Name ="Background" HorizontalAlignment="Left" Height="3240" VerticalAlignment="Top" Width="4872" Canvas.Top="0" Canvas.Left="0" >
-
-
-           
+                    
             
             <Image                     
                     Source="ms-appx:///Assets/Maps/Map1/Map001.png"
@@ -34,6 +32,10 @@
                     Source="ms-appx:///Assets/Maps/Map1/Map004.png"
                     Width="2436"
                     Height="1621" Canvas.Left="2430" Canvas.Top="0" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" />
+            <Canvas Name ="Perso" Height="100" Canvas.Left="530" Canvas.Top="440" Width="100"/>
+            <Canvas Name ="MOB" Height="100" Canvas.Left="530" Canvas.Top="390" Width="100"/>
+            <Canvas Name ="MOB2" Height="100" Canvas.Left="1160" Canvas.Top="645" Width="100"/>
+            <Canvas Name ="MOB3" Height="100" Canvas.Left="1290" Canvas.Top="390" Width="100"/>
             
             <Image 
                     Name="Dino"
@@ -58,10 +60,7 @@
 
         </Canvas>
 
-        <Canvas Name ="Perso" Height="100" Canvas.Left="530" Canvas.Top="440" Width="100"/>
-        <Canvas Name ="MOB" Height="100" Canvas.Left="530" Canvas.Top="390" Width="100"/>
-        <Canvas Name ="MOB2" Height="100" Canvas.Left="1160" Canvas.Top="645" Width="100"/>
-        <Canvas Name ="MOB3" Height="100" Canvas.Left="1290" Canvas.Top="390" Width="100"/>
+        
         <Image  
                     Name="quick_menu"
                     Source="ms-appx:///Assets/Menu/equip_menu.png"

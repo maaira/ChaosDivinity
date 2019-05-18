@@ -42,7 +42,7 @@ namespace ChaosDivinity.PhysicCollision
 
 
                 radius = Math.Sqrt(Math.Pow((p.Posi.X - obj.Posi.X),2) + Math.Pow((p.Posi.Y - obj.Posi.Y), 2));
-                radius_collider = p.Radius + obj.Radius;
+                radius_collider = p.Radius/2 + obj.Radius/2;
 
                 if ( radius <= radius_collider && obj.IsInteractive)
                 {
