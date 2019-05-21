@@ -11,6 +11,7 @@ namespace ChaosDivinity.Physics
     public abstract class PhysicObject
     {
         public Canvas Container { get; set; }
+        public string Path { get; set; }
         public ObjectMoment InMoment { get; set; }
         public bool IsMoving { get; set; }
         public bool Interaction { get; set; }

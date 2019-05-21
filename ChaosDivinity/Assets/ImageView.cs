@@ -1,11 +1,12 @@
 ﻿using System;
 using System.Diagnostics;
+using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Media.Imaging;
 
 namespace ChaosDivinity.Assets
 {
-    public class ImageView
+    class ImageView
     {
         public static Image ImageSet(string path)
         {
@@ -20,7 +21,7 @@ namespace ChaosDivinity.Assets
 
             }
             catch (UriFormatException e)
-            { 
+            {
 
                 Debug.WriteLine(e.Source);
                 Debug.WriteLine(e.Message);
@@ -28,6 +29,11 @@ namespace ChaosDivinity.Assets
             }
             img.Source = bitmapImage;
             return img;
+        }
+
+        internal static FrameworkElement ImageSet(object path)
+        {
+            throw new NotImplementedException();
         }
     }
 }

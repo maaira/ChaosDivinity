@@ -3,13 +3,14 @@ using ChaosDivinity.Physics;
 
 namespace ChaosDivinity.Inventory
 {
-    public class InventorySlot : PhysicObject
+    public class InventorySlot 
     {
-       
         public ItemGame Slot { get; set; }
         public string ID { get; set; }
         public string Type { get; set; }
         public int Tam { get; set; }
+        public object Item { get; internal set; }
+        public string Path { get; set; }
 
         public InventorySlot(ItemGame t)
         {
