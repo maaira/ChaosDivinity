@@ -1,20 +1,17 @@
 ﻿using ChaosDivinity.Char;
-using ChaosDivinity.Interface;
 using ChaosDivinity.Manager;
 using ChaosDivinity.NPCNamespace;
 using ChaosDivinity.Physics;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
-using System.Numerics;
-using System.Threading;
-using Windows.UI.Core;
 using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Media.Imaging;
 
 
 namespace ChaosDivinity.Managers
 {
+    
     class MapManager
     {
         private static List<PhysicObject> _worldObject = new List<PhysicObject>();
@@ -76,7 +73,7 @@ namespace ChaosDivinity.Managers
 
         public static void InitHeroMove(Canvas Background, Hero h)
         {    
-            h.StartMovingProcess = new HeroMovement( h.Container, h);
+            h.StartMovingProcess = new HeroMovement( Background, h);
                                                
         }
     }
