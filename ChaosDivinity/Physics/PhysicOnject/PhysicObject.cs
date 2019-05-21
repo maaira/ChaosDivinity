@@ -44,11 +44,12 @@ namespace ChaosDivinity.Physics
             if (Container == null) return;
             this.Posi.X = (double)Container.GetValue(Canvas.LeftProperty) + Container.Width / 2;
             this.Posi.Y = (double)Container.GetValue(Canvas.TopProperty) + Container.Height / 2;
+            Container.SetValue(Canvas.ZIndexProperty, Container.GetValue(Canvas.TopProperty));
         }
         public void SetRadius()
         {
             if (Container == null) return;
-            this.Radius = (Container.Width/2 + Container.Height/2) / 2;
+            this.Radius = (Container.Width/2 + Container.Height/2) / 8;
         }
         public void OnCollision()
         {

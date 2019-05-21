@@ -45,26 +45,24 @@ namespace ChaosDivinity.Physics
             {
                 Hero.IsMoving = true;
                 left = true;
-                //Hero.OnCollision();
-
+                
             }
             if (e.VirtualKey == Windows.System.VirtualKey.D )
             {
                 Hero.IsMoving = true;
                 right = true;
-                //Hero.OnCollision();
+                
             }
             if (e.VirtualKey == Windows.System.VirtualKey.W  )
             {
                 Hero.IsMoving = true;
                 up = true;
-                //Hero.OnCollision();
+               
             }
             if (e.VirtualKey == Windows.System.VirtualKey.S )
             {
                 Hero.IsMoving = true;
                 down = true;
-                //Hero.OnCollision();
             }
 
         }
@@ -144,6 +142,7 @@ namespace ChaosDivinity.Physics
                 m_tela_y += delta_move_;
                 Move_Object.SetValue(Canvas.TopProperty, m_tela_y);
                 Hero.Container.SetValue(Canvas.TopProperty, TelaY);
+                Hero.Container.SetValue(Canvas.ZIndexProperty, Hero.Container.Margin.Top);
                 Hero.SetPosition();
                 Hero.OnCollision();
             }
@@ -153,6 +152,7 @@ namespace ChaosDivinity.Physics
                 m_tela_y -= delta_move_;
                 Move_Object.SetValue(Canvas.TopProperty, m_tela_y);
                 Hero.Container.SetValue(Canvas.TopProperty, TelaY);
+                Hero.Container.SetValue(Canvas.ZIndexProperty, Hero.Container.Margin.Top);
                 Hero.SetPosition();
                 Hero.OnCollision();
             }

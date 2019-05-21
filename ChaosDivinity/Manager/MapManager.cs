@@ -49,8 +49,6 @@ namespace ChaosDivinity.Managers
             p.SetRadius();            
             p.Container.Children.Add(ImageView.ImageSet("ms-appx:///Assets/Mage/MageStopLeft.gif"));
             p.SetPosition();
-            Debug.WriteLine(p.Posi.X);
-            Debug.WriteLine(p.Posi.Y);
             if (p != null) _worldObject.Add(p);
 
         }
