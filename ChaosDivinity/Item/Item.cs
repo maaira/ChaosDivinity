@@ -8,7 +8,7 @@ using System.Windows;
 
 namespace ChaosDivinity.Item
 {
-    public class ItemGame : PhysicObject
+    public class ItemGame : PhysicObject 
     {
         /*  ---------- Objetos para instaciar ----------- */
         public string Name { get; set; }
@@ -18,15 +18,18 @@ namespace ChaosDivinity.Item
         public int Level { get; set; }
         //public Image Sprite { get => sprite; set => sprite = value; }
         public string ID { get; }
+        public string Path { get; set; }
 
         public ItemGame(string name, string description, int draqui, int sell, int lvl, string id)
         {
+
             this.Name = name;
             this.Description = description;
             this.SellValue = sell;
             this.MarketValue = draqui;
             this.ID = id;
             this.Level = lvl;
+
         }
 
 

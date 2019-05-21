@@ -1,12 +1,16 @@
-﻿using System;
+﻿using ChaosDivinity.Physics;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ChaosDivinity.NPC
+namespace ChaosDivinity.NPCNamespace
 {
-    class NPC:IActions
+
+    public enum TypeNPC { NPCTrade, NPCTalk };
+
+    class NPC : PhysicObject, IActions
     {
         public string Name { get; set; }
         public uint IDNpc { get; set; }
@@ -24,8 +28,8 @@ namespace ChaosDivinity.NPC
         {
             switch (this.TPN)
             {
-                case TypeNPC.NPCShop:
-                    //
+                case TypeNPC.NPCTrade:
+                    
                     break;
 
                 case TypeNPC.NPCTalk:
@@ -34,7 +38,7 @@ namespace ChaosDivinity.NPC
             }
         }
 
-        public void Shop(TypeNPC TP)
+        public void Trade(TypeNPC TP)
         {
           //
         }
@@ -45,8 +49,6 @@ namespace ChaosDivinity.NPC
         }
     }
 
-    public enum TypeNPC{ NPCShop, NPCTalk };
-
     class Function //dar as funções ao NPCs
     {
 
@@ -54,7 +56,7 @@ namespace ChaosDivinity.NPC
 
     public interface IActions //ações que os NPCs vão fazer
     {
-        void Shop(TypeNPC TP);
+        void Trade(TypeNPC TP);
         void Conversation(TypeNPC TP);
     }
 
