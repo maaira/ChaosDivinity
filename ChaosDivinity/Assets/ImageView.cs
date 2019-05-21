@@ -20,7 +20,8 @@ namespace ChaosDivinity.Assets
 
             }
             catch (UriFormatException e)
-            {
+            { 
+
                 Debug.WriteLine(e.Source);
                 Debug.WriteLine(e.Message);
 
