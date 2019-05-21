@@ -24,12 +24,12 @@ namespace ChaosDivinity.NPCNamespace
             this.TPN = Type;
         }
 
-        public void NPCAction()
+        public void NPCAction() 
         {
             switch (this.TPN)
             {
                 case TypeNPC.NPCTrade:
-                    
+                    //
                     break;
 
                 case TypeNPC.NPCTalk:
@@ -40,7 +40,7 @@ namespace ChaosDivinity.NPCNamespace
 
         public void Trade(TypeNPC TP)
         {
-          //
+            //
         }
 
         public void Conversation(TypeNPC TP)
