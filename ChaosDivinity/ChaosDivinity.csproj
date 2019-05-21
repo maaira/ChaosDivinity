@@ -121,6 +121,7 @@
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Assets\ImageView.cs" />
     <Compile Include="Char\Char.cs" />
     <Compile Include="Char\Hero\Hero.cs" />
     <Compile Include="Char\Hero\Mage.cs" />
@@ -136,6 +137,7 @@
     <Compile Include="Item\DBItem.cs" />
     <Compile Include="Item\Equipment.cs" />
     <Compile Include="Manager\ChestManager.cs" />
+    <Compile Include="MapObjects\FlyoutManager.cs" />
     <Compile Include="Market\Market.cs" />
     <Compile Include="NPC\ManagementQuest.cs" />
     <Compile Include="NPC\NPC.cs" />
@@ -208,20 +210,7 @@
     <Content Include="Assets\Rogue\RogueStopRight.gif" />
     <Content Include="Assets\Rogue\RogueToLeft.gif" />
     <Content Include="Assets\Rogue\RogueToRight.gif" />
-    <Content Include="Assets\Warrior\idleLeft.gif" />
-    <Content Include="Assets\Warrior\idleRight.gif" />
-    <Content Include="Assets\Warrior\walkLeft.gif" />
-    <Content Include="Assets\Warrior\walkRight.gif" />
-    <Content Include="Assets\Warrior\WarriorAtaque.gif" />
-    <Content Include="Assets\Warrior\WarriorMorre.gif" />
     <Content Include="Properties\Default.rd.xml" />
-    <Content Include="Assets\LockScreenLogo.scale-200.png" />
-    <Content Include="Assets\SplashScreen.scale-200.png" />
-    <Content Include="Assets\Square150x150Logo.scale-200.png" />
-    <Content Include="Assets\Square44x44Logo.scale-200.png" />
-    <Content Include="Assets\Square44x44Logo.targetsize-24_altform-unplated.png" />
-    <Content Include="Assets\StoreLogo.png" />
-    <Content Include="Assets\Wide310x150Logo.scale-200.png" />
   </ItemGroup>
   <ItemGroup>
     <ApplicationDefinition Include="App.xaml">
