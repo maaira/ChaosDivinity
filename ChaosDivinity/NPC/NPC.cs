@@ -49,7 +49,7 @@ namespace ChaosDivinity.NPCNamespace
         }
     }
 
-    class Function //dar as funções ao NPCs
+    class MyFunction //dar as funções ao NPCs
     {
 
     }
