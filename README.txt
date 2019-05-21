@@ -1,3 +1,6 @@
-- Criar interação entre as classes
-- Completar a classe do personagem
-- Qualquer coisa é só falar
+- NPC's 
+- Chest
+- Craft
+- Battle
+- Quest
+- Data Base
