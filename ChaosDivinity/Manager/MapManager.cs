@@ -1,4 +1,5 @@
-﻿using ChaosDivinity.Char;
+﻿using ChaosDivinity.Assets;
+using ChaosDivinity.Char;
 using ChaosDivinity.Manager;
 using ChaosDivinity.NPCNamespace;
 using ChaosDivinity.Physics;
@@ -45,25 +46,8 @@ namespace ChaosDivinity.Managers
 
             NPC p = new NPC(10, "Teste",TypeNPC.NPCTrade) ;
             p.Container = MOB;
-            p.SetRadius();
-            Image img = new Image();
-            BitmapImage bitmapImage = new BitmapImage();
-            img.Width = bitmapImage.DecodePixelWidth = 70;
-
-            try
-            {
-
-                bitmapImage.UriSource = new Uri("ms-appx:///Assets/Mage/MageStopLeft.gif");
-
-            }
-            catch (UriFormatException e)
-            {
-                Debug.WriteLine(e.Source);
-                Debug.WriteLine(e.Message);
-
-            }
-            img.Source = bitmapImage;
-            p.Container.Children.Add(img);
+            p.SetRadius();            
+            p.Container.Children.Add(ImageView.ImageSet("ms-appx:///Assets/Mage/MageStopLeft.gif"));
             p.SetPosition();
             Debug.WriteLine(p.Posi.X);
             Debug.WriteLine(p.Posi.Y);
