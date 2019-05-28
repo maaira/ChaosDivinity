@@ -3,4 +3,5 @@
 - Craft ???
 - Battle (Maira)
 - Quest (Caique)
+- Inventory/Market(Front)(Caique)
 - Data Base (Sledz)
