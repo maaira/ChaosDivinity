@@ -1,6 +1,6 @@
-- NPC's 
-- Chest
-- Craft
-- Battle
-- Quest
-- Data Base
+- NPC's (Caique)
+- Chest (Maira)
+- Craft ???
+- Battle (Maira)
+- Quest (Caique)
+- Data Base (Sledz)
