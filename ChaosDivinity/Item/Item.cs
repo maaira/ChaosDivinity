@@ -10,30 +10,14 @@ namespace ChaosDivinity.Item
 {
     public class ItemGame : PhysicObject 
     {
-        /*  ---------- Objetos para instaciar ----------- */
+        /*  ---------- Objetos para instanciar ----------- */
         public string Name { get; set; }
-        public string Description { get; }
-        public int MarketValue { get; }
-        public int SellValue { get; }
+        public string Description { get; set; }
+        public int MarketValue { get; set; }
+        public int SellValue { get; set; }
         public int Level { get; set; }
-        //public Image Sprite { get => sprite; set => sprite = value; }
-        public string ID { get; }
+        //public string ID { get; set; }
         public string Path { get; set; }
-
-        public ItemGame(string name, string description, int draqui, int sell, int lvl, string id)
-        {
-
-            this.Name = name;
-            this.Description = description;
-            this.SellValue = sell;
-            this.MarketValue = draqui;
-            this.ID = id;
-            this.Level = lvl;
-
-        }
-
-
-
 
     }
 }

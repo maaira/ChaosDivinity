@@ -5,6 +5,8 @@ using System.Text;
 using System.Threading.Tasks;
 using ChaosDivinity.Char;
 
+//CRÉDITOS DA EQUIPE NOEL <3
+
 namespace ChaosDivinity.NPCNamespace
 {
     public abstract class Quest
