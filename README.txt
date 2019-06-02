@@ -1,3 +1,7 @@
-- Criar interação entre as classes
-- Completar a classe do personagem
-- Qualquer coisa é só falar
+- NPC's (Caique)
+- Chest (Maira)
+- Craft ???
+- Battle (Maira)
+- Quest (Caique)
+- Inventory/Market(Front)(Caique)
+- Data Base (Sledz)

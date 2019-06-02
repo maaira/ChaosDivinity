@@ -45,26 +45,24 @@ namespace ChaosDivinity.Physics
             {
                 Hero.IsMoving = true;
                 left = true;
-                //Hero.OnCollision();
-
+                
             }
             if (e.VirtualKey == Windows.System.VirtualKey.D )
             {
                 Hero.IsMoving = true;
                 right = true;
-                //Hero.OnCollision();
+                
             }
             if (e.VirtualKey == Windows.System.VirtualKey.W  )
             {
                 Hero.IsMoving = true;
                 up = true;
-                //Hero.OnCollision();
+               
             }
             if (e.VirtualKey == Windows.System.VirtualKey.S )
             {
                 Hero.IsMoving = true;
                 down = true;
-                //Hero.OnCollision();
             }
 
         }
