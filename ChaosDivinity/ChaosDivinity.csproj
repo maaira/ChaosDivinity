@@ -138,6 +138,7 @@
     <Compile Include="Manager\ChestManager.cs" />
     <Compile Include="Market\ListItemShop.cs" />
     <Compile Include="Market\Market.cs" />
+    <Compile Include="NPC\ListItemShop.cs" />
     <Compile Include="NPC\ManagementQuest.cs" />
     <Compile Include="NPC\NPC.cs" />
     <Compile Include="NPC\NPCFlyout.cs" />
@@ -204,6 +205,12 @@
     <Content Include="Assets\Musicas\ClickSound.mp3" />
     <Content Include="Assets\NPC\Dino.gif" />
     <Content Include="Assets\NPC\Poring.gif" />
+    <Content Include="Assets\Pots\bluePotGiant.png" />
+    <Content Include="Assets\Pots\bluePotMedium.png" />
+    <Content Include="Assets\Pots\bluePotSmall.png" />
+    <Content Include="Assets\Pots\redPotGiant.png" />
+    <Content Include="Assets\Pots\redPotMedium.png" />
+    <Content Include="Assets\Pots\redPotSmall.png" />
     <Content Include="Assets\Rogue\RogueAtaque.gif" />
     <Content Include="Assets\Rogue\RogueStopLeft.gif" />
     <Content Include="Assets\Rogue\RogueStopRight.gif" />
