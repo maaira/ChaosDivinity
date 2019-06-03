@@ -22,6 +22,7 @@ namespace ChaosDivinity.Item
 
             Consumable cn1 = new Consumable()
             {
+                ID = "1",
                 Name = "Pequena Poção Vermelha",
                 Description = "Poção que recupera um pouco sua vida",
                 MarketValue = 6,
@@ -33,6 +34,7 @@ namespace ChaosDivinity.Item
 
             Consumable cn2 = new Consumable()
             {
+                ID = "2",
                 Name = "Média Poção Vermelha",
                 Description = "Poção de cura boazinha",
                 MarketValue = 14,
@@ -44,6 +46,7 @@ namespace ChaosDivinity.Item
 
             Consumable cn3 = new Consumable()
             {
+                ID = "3",
                 Name = "Grande Poção Vermelha",
                 Description = "Poção Blindona",
                 MarketValue = 20,
@@ -55,6 +58,7 @@ namespace ChaosDivinity.Item
 
             Consumable cn4 = new Consumable()
             {
+                ID = "4",
                 Name = "Pequena Poção Azul",
                 Description = "Poção que recupera um pouco sua mana",
                 MarketValue = 6,
@@ -66,6 +70,7 @@ namespace ChaosDivinity.Item
 
             Consumable cn5 = new Consumable()
             {
+                ID = "5",
                 Name = "Média Poção Azul",
                 Description = "Poção de cura boazinha",
                 MarketValue = 20,
@@ -77,6 +82,7 @@ namespace ChaosDivinity.Item
 
             Consumable cn6 = new Consumable()
             {
+                ID = "6",
                 Name = "Grande Poção Azul",
                 Description = "Poção Blindona",
                 MarketValue = 20,
@@ -91,6 +97,7 @@ namespace ChaosDivinity.Item
 
             Equipment eq1 = new Equipment()
             {
+                ID = "7",
                 Name = "Espada de Cobre",
                 Description = "Fraquinhaaa..coitadaaa. Q1",
                 Power = 2,
@@ -109,6 +116,7 @@ namespace ChaosDivinity.Item
 
             Equipment eq2 = new Equipment()
             {
+                ID = "8",
                 Name = "Espada de Bronze",
                 Description = "Já aguenta cortar papel. Q2",
                 Power = 6,
@@ -127,6 +135,7 @@ namespace ChaosDivinity.Item
 
             Equipment eq3 = new Equipment()
             {
+                ID = "9",
                 Name = "Espada de Ferro",
                 Description = "Dá para o gasto. Q3",
                 Power = 10,
@@ -145,6 +154,7 @@ namespace ChaosDivinity.Item
 
             Equipment eq4 = new Equipment()
             {
+                ID = "10",
                 Name = "Espada de Electrum",
                 Description = "Também nunca vi esse material, mas eh tinindo! Q4",
                 Power = 14,
@@ -163,6 +173,7 @@ namespace ChaosDivinity.Item
 
             Equipment eq5 = new Equipment()
             {
+                ID = "11",
                 Name = "Espada de Aço",
                 Description = "Ado ado ado, quem segura espada de aço eh macho. Q5",
                 Power = 20,
@@ -181,6 +192,7 @@ namespace ChaosDivinity.Item
 
             Equipment eq6 = new Equipment()
             {
+                ID = "12",
                 Name = "Espada de Titanium",
                 Description = "Esse eh barril DROBADO! Q6",
                 Power = 30,
@@ -199,6 +211,7 @@ namespace ChaosDivinity.Item
 
             Equipment eq7 = new Equipment()
             {
+                ID = "13",
                 Name = "Espada de Adamantium",
                 Description = "Java >> All. Q7",
                 Power = 38,
@@ -217,6 +230,7 @@ namespace ChaosDivinity.Item
 
             Equipment eq8 = new Equipment()
             {
+                ID = "14",
                 Name = "Espada dE hihiirokane",
                 Description = "Nego...se o mob resistir a essa, nada mais te derruba. Q8",
                 Power = 50,
@@ -236,6 +250,7 @@ namespace ChaosDivinity.Item
 
             Equipment eq9 = new Equipment()
             {
+                ID = "15",
                 Name = "Adaga de Cobre",
                 Description = "Fraquinhaaa..coitadaaa. Q1",
                 Power = 1,
@@ -253,6 +268,7 @@ namespace ChaosDivinity.Item
 
             Equipment eq10 = new Equipment()
             {
+                ID = "16",
                 Name = "Adaga de Bronze",
                 Description = "Corta até vento, reeee. Q2",
                 Power = 3,
@@ -270,6 +286,7 @@ namespace ChaosDivinity.Item
 
             Equipment eq11 = new Equipment()
             {
+                ID = "17",
                 Name = "Adaga de Ferro",
                 Description = "Dá para bincar, Q3",
                 Power = 8,
@@ -287,6 +304,7 @@ namespace ChaosDivinity.Item
 
             Equipment eq12 = new Equipment()
             {
+                ID = "18",
                 Name = "Adaga de Prata",
                 Description = "Ofuscanteee. Q4",
                 Power = 10,
@@ -304,6 +322,7 @@ namespace ChaosDivinity.Item
 
             Equipment eq13 = new Equipment()
             {
+                ID = "19",
                 Name = "Adaga de Aço",
                 Description = "Corta até intimidade. Q5",
                 Power = 16,
@@ -321,6 +340,7 @@ namespace ChaosDivinity.Item
 
             Equipment eq14 = new Equipment()
             {
+                ID = "20",
                 Name = "Adaga de Platinum",
                 Description = "Na verdade só tem um Relampago. Q6",
                 Power = 22,
@@ -338,6 +358,7 @@ namespace ChaosDivinity.Item
 
             Equipment eq15 = new Equipment()
             {
+                ID = "21",
                 Name = "Adaga de Titanium",
                 Description = "OLHA A FAAACAAAA. Q7",
                 Power = 30,
@@ -355,6 +376,7 @@ namespace ChaosDivinity.Item
 
             Equipment eq16 = new Equipment()
             {
+                ID = "22",
                 Name = "Adaga de Orichalcum",
                 Description = "Corte rápido, Tramontina. Q8",
                 Power = 30,
@@ -374,6 +396,7 @@ namespace ChaosDivinity.Item
 
             Equipment eq17 = new Equipment()
             {
+                ID = "23",
                 Name = "Cajado de Madeira",
                 Description = "Tá mais para um palito de dente. Q1",
                 Power = 1,
@@ -391,6 +414,7 @@ namespace ChaosDivinity.Item
 
             Equipment eq18 = new Equipment()
             {
+                ID = "24",
                 Name = "Cajado de Pérola",
                 Description = "Dá para o gasto. Q2",
                 Power = 1,
@@ -408,6 +432,7 @@ namespace ChaosDivinity.Item
 
             Equipment eq19 = new Equipment()
             {
+                ID = "25",
                 Name = "Cajado de Jade",
                 Description = "Cajado que mais parece varinha que solta purpurina. Q3",
                 Power = 1,
@@ -425,6 +450,7 @@ namespace ChaosDivinity.Item
 
             Equipment eq20 = new Equipment()
             {
+                ID = "26",
                 Name = "Cajado de Esmeralda",
                 Description = "Cajado forjado pelos elfos. Q4",
                 Power = 1,
@@ -442,6 +468,7 @@ namespace ChaosDivinity.Item
 
             Equipment eq21 = new Equipment()
             {
+                ID = "27",
                 Name = "Cajado de Rubi",
                 Description = "Agora a coisa tá ficando loucaa!! Q5",
                 Power = 5,
@@ -459,6 +486,7 @@ namespace ChaosDivinity.Item
 
             Equipment eq22 = new Equipment()
             {
+                ID = "28",
                 Name = "Cajado de Safira",
                 Description = "Na verdade só tem um Relampago",
                 Power = 8,
@@ -476,6 +504,7 @@ namespace ChaosDivinity.Item
 
             Equipment eq23 = new Equipment()
             {
+                ID = "29",
                 Name = "Cajado da Onyx",
                 Description = "Na verdade só tem um Relampago",
                 Power = 10,
@@ -493,6 +522,7 @@ namespace ChaosDivinity.Item
 
             Equipment eq24 = new Equipment()
             {
+                ID = "30",
                 Name = "Cajado de Diamente",
                 Description = "Na verdade só tem um Relampago",
                 Power = 20,
@@ -512,6 +542,7 @@ namespace ChaosDivinity.Item
 
             Equipment eq25 = new Equipment()
             {
+                ID = "31",
                 Name = "Armadura de Ferro",
                 Description = "Armadura dos calouros. Q1",
                 Power = 10,
@@ -529,6 +560,7 @@ namespace ChaosDivinity.Item
 
             Equipment eq26 = new Equipment()
             {
+                ID = "32",
                 Name = "Armadura de Aço",
                 Description = "A coisa começou a ficar séria hahaha. Q2",
                 Power = 25,
@@ -546,6 +578,7 @@ namespace ChaosDivinity.Item
 
             Equipment eq27 = new Equipment()
             {
+                ID = "33",
                 Name = "Armadura de Titanium",
                 Description = "Q3",
                 Power = 40,
@@ -563,6 +596,7 @@ namespace ChaosDivinity.Item
 
             Equipment eq28 = new Equipment()
             {
+                ID = "34",
                 Name = "Armadura de Adamantium",
                 Description = "Q4",
                 Power = 60,
@@ -582,6 +616,7 @@ namespace ChaosDivinity.Item
 
             Equipment eq29 = new Equipment()
             {
+                ID = "35",
                 Name = "Anel Necronomicom",
                 Description = "Rouba vida no próximo ataque. Q1",
                 Power = 1,
@@ -599,6 +634,7 @@ namespace ChaosDivinity.Item
 
             Equipment eq30 = new Equipment()
             {
+                ID = "36",
                 Name = "Anel Magna Scriptura",
                 Description = "Causa dano ao inimigo e cura. Q2",
                 Power = 60,
@@ -616,6 +652,7 @@ namespace ChaosDivinity.Item
 
             Equipment eq31 = new Equipment()
             {
+                ID = "37",
                 Name = "Anel do Dragão",
                 Description = "Adquiri rajada de fogo. Q3",
                 Power = 60,
@@ -633,6 +670,7 @@ namespace ChaosDivinity.Item
 
             Equipment eq32 = new Equipment()
             {
+                ID = "38",
                 Name = "Anel Coroa do Rei da Tempestade",
                 Description = "Adquiri rajada de raio. Q4",
                 Power = 60,
@@ -650,6 +688,7 @@ namespace ChaosDivinity.Item
 
             Equipment eq33 = new Equipment()
             {
+                ID = "39",
                 Name = "Anel Santo Graal",
                 Description = "Curaa! Q5",
                 Power = 60,
@@ -667,6 +706,7 @@ namespace ChaosDivinity.Item
 
             Equipment eq34 = new Equipment()
             {
+                ID = "40",
                 Name = "Anel Véu da Noite",
                 Description = "Ignora próximo dano recebido. Q6",
                 Power = 60,
@@ -684,6 +724,7 @@ namespace ChaosDivinity.Item
 
             Equipment eq35 = new Equipment()
             {
+                ID = "41",
                 Name = "Anel Coração da Dama Congelada",
                 Description = "Adquiri escudo de gelo e solta debuff em quem bater. Q7",
                 Power = 60,
@@ -701,6 +742,7 @@ namespace ChaosDivinity.Item
 
             Equipment eq36 = new Equipment()
             {
+                ID = "42",
                 Name = "Amuleto da Estrela Caída",
                 Description = "Meteoro com chance de crítico",
                 Power = 60,
