@@ -24,7 +24,6 @@ namespace ChaosDivinity.Char
             Xp_total *= 2;
             Hp_total += 0;
             Mp_total += 0;
-            dmg += 0;
             Hp_atual = Hp_total;
             Mp_atual = Mp_total;
             if (IsLvUP() == true)

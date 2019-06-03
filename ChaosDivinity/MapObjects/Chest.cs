@@ -1,4 +1,5 @@
-﻿using ChaosDivinity.Char;
+﻿using ChaosDivinity.Assets;
+using ChaosDivinity.Char;
 using ChaosDivinity.Inventory;
 using ChaosDivinity.Physics;
 using System;
@@ -15,7 +16,7 @@ namespace ChaosDivinity.MapObjects
 
         public Chest()
         {
-
+            Fl = new Flyout();
         }
         public InventorySlot RandomPremium(Dictionary<int, InventorySlot> p)
         { 
@@ -25,28 +26,23 @@ namespace ChaosDivinity.MapObjects
             if ( p[id_random] == null) return p[1];
             else return p[id_random];
         }
-
-        public void ShowFlyout()
-        {
-            
-
-        }
-
-        public void HideFlyout()
+               
+        public override void DisturbedEvent(PhysicObject sender, PhysicObject p)
         {
 
-        }
-        public override void CollisionEvent(PhysicObject sender, EventArgs p)
-        {
-            if(sender is Hero)
+            StackPanel s = new StackPanel();
+            s.Children.Add(ImageView.ImageSet(Item.Path));
+            TextBlock t = new TextBlock()
             {
+                Text = "Click E to add to you inventory",
+            };
+            s.Children.Add(t);
+            Fl.Content = s;
+            FlyoutBase.SetAttachedFlyout(p.Container, Fl);
+            FlyoutBase.ShowAttachedFlyout(p.Container);
+           
 
-                ShowFlyout();
-            }
-            if (sender == null)
-            {
-
-            }
         }
+
     }
- }
+}

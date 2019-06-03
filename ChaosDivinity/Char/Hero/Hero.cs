@@ -20,7 +20,7 @@ namespace ChaosDivinity.Char
         public float Xp_atual { get; set; }
         public float Xp_total { get; set; }
         public List<Skill> ListofSkill { get; }
-
+        
         public int Power { get; set; }
         public int Agility { get; set; }
         public int Sort { get; set; }
@@ -52,7 +52,7 @@ namespace ChaosDivinity.Char
         private void ArmoInit()
         {
             this.Armo = new EquippedSlot[4];
-            this.Armo[0] = new EquippedSlot(Classification.TypeOf.Armo, this);
+            this.Armo[0] = new EquippedSlot(Classification.TypeOf.Armor, this);
             this.Armo[1] = new EquippedSlot(Classification.TypeOf.Acessorio, this);
             this.Armo[2] = new EquippedSlot(Classification.TypeOf.Acessorio, this);
             this.Armo[3] = new EquippedSlot(Classification.TypeOf.Acessorio, this);
@@ -77,8 +77,8 @@ namespace ChaosDivinity.Char
             Lvl++;
             Xp_atual = Xp_atual - Xp_total;
             Xp_total *= (float)1.5;
-            hp_atual = Hp_total;
-            mp_atual = Mp_total;
+            Hp_atual = Hp_total;
+            Mp_atual = Mp_total;
             if (IsLvUP() == true)
             {
                 LvUp(); //Função recursiva para caso ganhe experiência suficiente para passar mais de uma vez de level

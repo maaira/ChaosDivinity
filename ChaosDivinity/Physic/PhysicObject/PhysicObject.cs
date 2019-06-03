@@ -7,7 +7,7 @@ namespace ChaosDivinity.Physics
 {
     public delegate void CollisionHandleEvent(PhysicObject sender, EventArgs p);
     public delegate void InInterationHandleEvent(PhysicObject sender, EventArgs p);
-    public delegate void IsDisturbed(PhysicObject p);
+    public delegate void IsDisturbedHandleEvent(PhysicObject sender, PhysicObject p);
     public abstract class PhysicObject
     {
         public Canvas Container { get; set; }
@@ -19,24 +19,25 @@ namespace ChaosDivinity.Physics
         public double MinimumObjectInteractiveDist { get; set; }
         public bool IsInteractive { get; set; }
 
-        public IsDisturbed InterationEvent;
+        public IsDisturbedHandleEvent InterationEvent;
 
         public Movement StartMovingProcess;
 
         public Collision CollisionUp;
+
         public CollisionHandleEvent StartCollisionManager;
 
         public Position Posi { get; }
         public double Radius { get; set; }
         public PhysicObject()
         {
-            Posi           = new Position();
-            InMoment       = new ObjectMoment();
-            InMoment.Down  = true;
-            InMoment.Left  = true;
-            InMoment.Up    = true;
+            Posi = new Position();
+            InMoment = new ObjectMoment();
+            InMoment.Down = true;
+            InMoment.Left = true;
+            InMoment.Up = true;
             InMoment.Right = true;
-            
+
         }
 
         public void SetPosition()
@@ -49,35 +50,52 @@ namespace ChaosDivinity.Physics
         public void SetRadius()
         {
             if (Container == null) return;
-            this.Radius = (Container.Width/2 + Container.Height/2) / 3;
+            this.Radius = (Container.Width / 2 + Container.Height / 2) / 2;
         }
-        public void OnCollision()
+        public virtual void OnCollision()
         {
             StartCollisionManager?.Invoke(this, EventArgs.Empty);
         }
-        public virtual void CollisionEvent(PhysicObject sender, EventArgs p)
+
+        public virtual void OnDisturberd(PhysicObject p, PhysicObject obj)
         {
-            PhysicObject obj= (PhysicObject)sender;
-            obj.CollisionUp.UpdateColisions();
+            InterationEvent?.DynamicInvoke(obj, p);
         }
 
-        public virtual void SetPhysics(List<PhysicObject> _worldlist)
+        public virtual void OnInteraction(PhysicObject p, PhysicObject obj)
         {
-            
+            InterationEvent?.DynamicInvoke(this, p);
         }
-        public virtual void OnInteraction()
+        public virtual void CollisionEvent(PhysicObject sender, EventArgs p)
         {
-            InterationEvent?.DynamicInvoke(this, EventArgs.Empty);
+            PhysicObject obj = sender;
+            obj.CollisionUp.UpdateColisions();
         }
 
         public void EndExistence()
         {
             if (Container == null) return;
             Canvas p = (Canvas)Container.Parent;
-            p.Children.Remove(Container);            
+            p.Children.Remove(Container);
         }
 
-        
-        
+        public virtual void SetPhysics(List<PhysicObject> _worldlist)
+        {
+            CollisionUp = new Collision(_worldlist, this);
+            StartCollisionManager += new CollisionHandleEvent(CollisionEvent);
+        }
+
+        public virtual void DisturbedEvent(PhysicObject sender, PhysicObject p)
+        {
+
+        }
+
+        public virtual void InInterationEvent(PhysicObject sender, PhysicObject p)
+        {
+
+        }
+
+
+
     }
 }

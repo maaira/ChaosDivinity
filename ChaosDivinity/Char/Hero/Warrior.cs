@@ -16,6 +16,12 @@ namespace ChaosDivinity.Char
             this.MoveToRight = "ms-appx:///Assets/Warrior/walkRight.gif";
             this.StopLeft = "ms-appx:///Assets/Warrior/idleLeft.gif";
             this.StopRight = "ms-appx:///Assets/Warrior/idleRight.gif";
+
+            listOfSkills = new List<Skill>();
+            listOfSkills.Add(new Skill(" Investida de Zeus ", 5, 5, 1, 10, 0, 35, 0, 50));
+            listOfSkills.Add(new Skill(" Força de Apolo ", 20, 25, 3, 5, 0, 0, 0, 100));
+            listOfSkills.Add(new Skill(" Critico de Hades ", 30, 12, 7, 0, 0, 0, 0, 200));
+            listOfSkills.Add(new Skill(" Poder de Tanos ", 35, 10, 10, 50, 0, 0, 0, 300));
         }
 
         public override void LvUp()
@@ -25,7 +31,6 @@ namespace ChaosDivinity.Char
             Xp_total *= 2;
             Hp_total += 0;
             Mp_total += 0;
-            dmg += 0;
             Hp_atual = Hp_total;
             Mp_atual = Mp_total;
             if (IsLvUP() == true)
