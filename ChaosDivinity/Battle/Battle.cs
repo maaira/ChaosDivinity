@@ -1,7 +1,7 @@
-﻿
-namespace ChaosDivinity.Battle
+﻿namespace ChaosDivinity.Battle
 {
-    class Battle
+    public class Battle
     {
+
     }
 }
