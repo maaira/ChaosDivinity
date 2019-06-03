@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using ChaosDivinity.Inventory;
 using ChaosDivinity.Item;
 
-namespace ChaosDivinity.NPCNamespace
+namespace ChaosDivinity.NPC
 {
     class ListItemShop
     {

@@ -52,7 +52,7 @@ namespace ChaosDivinity.Char
         private void ArmoInit()
         {
             this.Armo = new EquippedSlot[4];
-            this.Armo[0] = new EquippedSlot(Classification.TypeOf.Armor, this);
+            this.Armo[0] = new EquippedSlot(Classification.TypeOf.Armo, this);
             this.Armo[1] = new EquippedSlot(Classification.TypeOf.Acessorio, this);
             this.Armo[2] = new EquippedSlot(Classification.TypeOf.Acessorio, this);
             this.Armo[3] = new EquippedSlot(Classification.TypeOf.Acessorio, this);
