@@ -23,11 +23,5 @@ namespace ChaosDivinity.Char
 
         }
 
-        public void Action(){
-            
-        }
-
-
-
     }
 }
