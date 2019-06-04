@@ -3,37 +3,24 @@
 namespace ChaosDivinity.Char
 {
     public abstract class Character : PhysicObject
-    {
-        protected string nameChar;
-        protected int hp_atual, hp_total;
-        protected int mp_atual, mp_total;
-        protected int dmg;
-        protected int lvl;
-                
-        public string Nome { get => nameChar; set => nameChar = value; }
-        public int Hp_atual { get => hp_atual; set => hp_atual = value; }
-        public int Hp_total { get => hp_total; set => hp_total = value; }
-        public int Mp_atual { get => mp_atual; set => mp_atual = value; }
-        public int Mp_total { get => mp_total; set => mp_total = value; }
-        public int Damage { get => dmg; set => dmg = value; }
-        public int Lvl { get => lvl; set => lvl = value; }
+    {                        
+        public string Nome { get; set ; }
+        public int Hp_atual { get ; set; }
+        public int Hp_total { get ; set ; }
+        public int Mp_atual { get ; set ; }
+        public int Mp_total { get ; set; }
+        public int Damage { get ; set ; }
+        public int Lvl { get ; set; }
                 
         public Character(string nomeChar, int hp_atual, int hp_total, int mp_atual, int mp_total, int lvl) : base()
         {
-            this.nameChar = nomeChar;
-            this.hp_atual = hp_atual;
-            this.hp_total = hp_total;
-            this.mp_atual = mp_atual;
-            this.mp_total = mp_total;
-            this.lvl = lvl;
-
+            this.Nome = nomeChar;
+            this.Hp_atual = hp_atual;
+            this.Hp_total = hp_total;
+            this.Mp_atual = mp_atual;
+            this.Mp_total = mp_total;
+            this.Lvl = lvl;
         }
-
-        public void Action(){
-            
-        }
-
-
 
     }
 }

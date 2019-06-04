@@ -16,6 +16,7 @@ namespace ChaosDivinity.Char
             this.MoveToRight = "ms-appx:///Assets/Warrior/walkRight.gif";
             this.StopLeft = "ms-appx:///Assets/Warrior/idleLeft.gif";
             this.StopRight = "ms-appx:///Assets/Warrior/idleRight.gif";
+
         }
 
         public override void LvUp()
@@ -25,7 +26,6 @@ namespace ChaosDivinity.Char
             Xp_total *= 2;
             Hp_total += 0;
             Mp_total += 0;
-            dmg += 0;
             Hp_atual = Hp_total;
             Mp_atual = Mp_total;
             if (IsLvUP() == true)

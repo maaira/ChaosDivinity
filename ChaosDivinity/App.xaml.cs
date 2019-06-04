@@ -62,12 +62,12 @@ namespace ChaosDivinity
                     {
                         rootFrame.Navigate(typeof(MenuHome), e.Arguments);
                     }
-                    catch(AggregateException ex)
+                    catch (AggregateException ex)
                     {
                         Debug.WriteLine(ex.Source);
                         Debug.WriteLine(ex.Message);
                     }
-                    
+
                 }
                 // Ensure the current window is active
                 Window.Current.Activate();

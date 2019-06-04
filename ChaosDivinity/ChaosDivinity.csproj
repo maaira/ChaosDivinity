@@ -4,7 +4,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
-    <ProjectGuid>{90E03317-3913-4CC2-9ED4-029FF182400B}</ProjectGuid>
+    <ProjectGuid>{57E7FB2B-804A-43D0-B61E-C8AD8510F554}</ProjectGuid>
     <OutputType>AppContainerExe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>ChaosDivinity</RootNamespace>
@@ -12,7 +12,7 @@
     <DefaultLanguage>en-US</DefaultLanguage>
     <TargetPlatformIdentifier>UAP</TargetPlatformIdentifier>
     <TargetPlatformVersion Condition=" '$(TargetPlatformVersion)' == '' ">10.0.17763.0</TargetPlatformVersion>
-    <TargetPlatformMinVersion>10.0.16299.0</TargetPlatformMinVersion>
+    <TargetPlatformMinVersion>10.0.17763.0</TargetPlatformMinVersion>
     <MinimumVisualStudioVersion>14</MinimumVisualStudioVersion>
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{A5A43C5B-DE2A-4C0C-9213-0A381AF9435A};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
@@ -29,7 +29,6 @@
     <UseVSHostingProcess>false</UseVSHostingProcess>
     <ErrorReport>prompt</ErrorReport>
     <Prefer32Bit>true</Prefer32Bit>
-    <LangVersion>7.3</LangVersion>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
     <OutputPath>bin\x86\Release\</OutputPath>
@@ -42,7 +41,6 @@
     <ErrorReport>prompt</ErrorReport>
     <Prefer32Bit>true</Prefer32Bit>
     <UseDotNetNativeToolchain>true</UseDotNetNativeToolchain>
-    <LangVersion>7.3</LangVersion>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|ARM'">
     <DebugSymbols>true</DebugSymbols>
@@ -126,47 +124,40 @@
     <Compile Include="Char\Hero\Hero.cs" />
     <Compile Include="Char\Hero\Mage.cs" />
     <Compile Include="Char\Hero\Rogue.cs" />
-    <Compile Include="Char\Skill.cs" />
     <Compile Include="Char\Hero\Warrior.cs" />
-    <Compile Include="Delegate\Delegate.cs" />
+    <Compile Include="Char\Skill.cs" />
     <Compile Include="Enum\Classification.cs" />
-    <Compile Include="Inventory\EqquipedSlot.cs" />
+    <Compile Include="Inventory\EquippedSlot.cs" />
     <Compile Include="Inventory\Inventory.cs" />
     <Compile Include="Inventory\InventorySlot.cs" />
     <Compile Include="Item\Consumable.cs" />
     <Compile Include="Item\DBItem.cs" />
     <Compile Include="Item\Equipment.cs" />
+    <Compile Include="Item\ItemGame.cs" />
     <Compile Include="Manager\ChestManager.cs" />
+    <Compile Include="Manager\MapManager.cs" />
+    <Compile Include="Manager\PersoManager.cs" />
+    <Compile Include="MapObjects\Chest.cs" />
     <Compile Include="MapObjects\FlyoutManager.cs" />
+    <Compile Include="MapObjects\Gateway.cs" />
     <Compile Include="Market\Market.cs" />
     <Compile Include="NPC\ListItemShop.cs" />
     <Compile Include="NPC\ManagementQuest.cs" />
     <Compile Include="NPC\NPC.cs" />
     <Compile Include="NPC\NPCFlyout.cs" />
-    <Compile Include="Item\Item.cs" />
-    <Compile Include="Manager\PersoManager.cs" />
-    <Compile Include="MapObjects\Chest.cs" />
-    <Compile Include="MapObjects\Gateway.cs" />
     <Compile Include="NPC\Quest.cs" />
     <Compile Include="NPC\QuestList.cs" />
-    <Compile Include="Physics\PhysicOnject\ObjectInteraction.cs" />
-    <Compile Include="Physics\PhysicOnject\ObjectMoment.cs" />
-    <Compile Include="Physics\PhysicOnject\PhysicObject.cs" />
-    <Compile Include="Physics\PhysicOnject\Position.cs" />
-    <Compile Include="VisualGame\Maps\City.xaml.cs">
-      <DependentUpon>City.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Manager\MapManager.cs" />
-    <Compile Include="Physics\Collision\Collision.cs" />
-    <Compile Include="Physics\Move\HeroMovement.cs" />
-    <Compile Include="Physics\Move\Movement.cs" />
+    <Compile Include="Physic\Collision\Collision.cs" />
+    <Compile Include="Physic\Move\HeroMovement.cs" />
+    <Compile Include="Physic\Move\Movement.cs" />
+    <Compile Include="Physic\PhysicObject\ObjectInteraction.cs" />
+    <Compile Include="Physic\PhysicObject\ObjectMoment.cs" />
+    <Compile Include="Physic\PhysicObject\PhysicObject.cs" />
+    <Compile Include="Physic\PhysicObject\Position.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="VisualGame\Menu\MenuClass.xaml.cs">
-      <DependentUpon>MenuClass.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="VisualGame\Menu\MenuHome.xaml.cs">
-      <DependentUpon>MenuHome.xaml</DependentUpon>
-    </Compile>
+    <Compile Include="VisualGame\Maps\City.xaml.cs" />
+    <Compile Include="VisualGame\Menus\MenuClass.xaml.cs" />
+    <Compile Include="VisualGame\Menus\MenuHome.xaml.cs" />
   </ItemGroup>
   <ItemGroup>
     <AppxManifest Include="Package.appxmanifest">
@@ -206,18 +197,19 @@
     <Content Include="Assets\Musicas\ClickSound.mp3" />
     <Content Include="Assets\NPC\Dino.gif" />
     <Content Include="Assets\NPC\Poring.gif" />
-    <Content Include="Assets\Pots\bluePotGiant.png" />
-    <Content Include="Assets\Pots\bluePotMedium.png" />
-    <Content Include="Assets\Pots\bluePotSmall.png" />
-    <Content Include="Assets\Pots\redPotGiant.png" />
-    <Content Include="Assets\Pots\redPotMedium.png" />
-    <Content Include="Assets\Pots\redPotSmall.png" />
     <Content Include="Assets\Rogue\RogueAtaque.gif" />
     <Content Include="Assets\Rogue\RogueStopLeft.gif" />
     <Content Include="Assets\Rogue\RogueStopRight.gif" />
     <Content Include="Assets\Rogue\RogueToLeft.gif" />
     <Content Include="Assets\Rogue\RogueToRight.gif" />
     <Content Include="Properties\Default.rd.xml" />
+    <Content Include="Assets\LockScreenLogo.scale-200.png" />
+    <Content Include="Assets\SplashScreen.scale-200.png" />
+    <Content Include="Assets\Square150x150Logo.scale-200.png" />
+    <Content Include="Assets\Square44x44Logo.scale-200.png" />
+    <Content Include="Assets\Square44x44Logo.targetsize-24_altform-unplated.png" />
+    <Content Include="Assets\StoreLogo.png" />
+    <Content Include="Assets\Wide310x150Logo.scale-200.png" />
   </ItemGroup>
   <ItemGroup>
     <ApplicationDefinition Include="App.xaml">
@@ -228,13 +220,13 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="VisualGame\Menu\MenuClass.xaml">
-      <SubType>Designer</SubType>
+    <Page Include="VisualGame\Menus\MenuClass.xaml">
       <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
     </Page>
-    <Page Include="VisualGame\Menu\MenuHome.xaml">
-      <SubType>Designer</SubType>
+    <Page Include="VisualGame\Menus\MenuHome.xaml">
       <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
     </Page>
   </ItemGroup>
   <ItemGroup>
@@ -244,8 +236,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Char\Interactives\" />
-    <Folder Include="VisualGame\VisualInventory\" />
-    <Folder Include="VisualGame\VisualMarket\" />
   </ItemGroup>
   <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '14.0' ">
     <VisualStudioVersion>14.0</VisualStudioVersion>

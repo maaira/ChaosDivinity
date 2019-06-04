@@ -10,6 +10,7 @@ namespace ChaosDivinity.Assets
     {
         public static Image ImageSet(string path)
         {
+            if (path == null) return null;
             Image img = new Image();
             BitmapImage bitmapImage = new BitmapImage();
             img.Width = bitmapImage.DecodePixelWidth = 70;
