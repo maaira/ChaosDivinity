@@ -134,11 +134,9 @@
     <Compile Include="Item\DBItem.cs" />
     <Compile Include="Item\Equipment.cs" />
     <Compile Include="Item\ItemGame.cs" />
-    <Compile Include="Manager\ChestManager.cs" />
     <Compile Include="Manager\MapManager.cs" />
     <Compile Include="Manager\PersoManager.cs" />
     <Compile Include="MapObjects\Chest.cs" />
-    <Compile Include="MapObjects\FlyoutManager.cs" />
     <Compile Include="MapObjects\Gateway.cs" />
     <Compile Include="Market\Market.cs" />
     <Compile Include="NPC\ListItemShop.cs" />
@@ -150,7 +148,6 @@
     <Compile Include="Physic\Collision\Collision.cs" />
     <Compile Include="Physic\Move\HeroMovement.cs" />
     <Compile Include="Physic\Move\Movement.cs" />
-    <Compile Include="Physic\PhysicObject\ObjectInteraction.cs" />
     <Compile Include="Physic\PhysicObject\ObjectMoment.cs" />
     <Compile Include="Physic\PhysicObject\PhysicObject.cs" />
     <Compile Include="Physic\PhysicObject\Position.cs" />
