@@ -19,8 +19,9 @@ namespace ChaosDivinity.Char
         public int Draquimas { get => draquimas; set => draquimas = value; }
         public float Xp_atual { get; set; }
         public float Xp_total { get; set; }
-        public List<Skill> ListofSkill { get; }
-        
+
+        public Dictionary<int, Skill> ListOfISkill;
+
         public int Power { get; set; }
         public int Agility { get; set; }
         public int Sort { get; set; }
@@ -30,8 +31,9 @@ namespace ChaosDivinity.Char
 
         public string MoveToRight { get; set; }
         public string MoveToLeft { get; set; }
-        //protected string MoveUp { get; set; }
-        //protected string MoveDown { get; set; }
+
+        protected string MoveUp { get; set; }
+        protected string MoveDown { get; set; }
         public string StopLeft { get; set; }
         public string StopRight { get; set; }
 

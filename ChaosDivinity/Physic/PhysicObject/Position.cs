@@ -1,4 +1,9 @@
+<<<<<<< Updated upstream
 ﻿namespace ChaosDivinity.Physics
+=======
+﻿
+namespace ChaosDivinity.Physics
+>>>>>>> Stashed changes
 {
     public class Position
     {

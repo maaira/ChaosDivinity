@@ -1,5 +1,4 @@
 ﻿using ChaosDivinity.Assets;
-using ChaosDivinity.Char;
 using ChaosDivinity.Inventory;
 using ChaosDivinity.Physics;
 using System;
