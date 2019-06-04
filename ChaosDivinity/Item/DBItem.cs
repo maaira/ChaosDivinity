@@ -231,7 +231,7 @@ namespace ChaosDivinity.Item
             Equipment eq8 = new Equipment()
             {
                 ID = "14",
-                Name = "Espada dE hihiirokane",
+                Name = "Espada de Hihiirokane",
                 Description = "Nego...se o mob resistir a essa, nada mais te derruba. Q8",
                 Power = 50,
                 Agility = 40,
