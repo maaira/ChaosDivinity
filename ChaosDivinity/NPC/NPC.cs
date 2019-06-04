@@ -1,9 +1,4 @@
 ﻿using ChaosDivinity.Physics;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace ChaosDivinity.NPCNamespace
 {
@@ -24,12 +19,12 @@ namespace ChaosDivinity.NPCNamespace
             this.TPN = Type;
         }
 
-        public void NPCAction() 
+        public void NPCAction()
         {
             switch (this.TPN)
             {
                 case TypeNPC.NPCTrade:
-                    //
+                    
                     break;
 
                 case TypeNPC.NPCTalk:
@@ -59,6 +54,5 @@ namespace ChaosDivinity.NPCNamespace
         void Trade(TypeNPC TP);
         void Conversation(TypeNPC TP);
     }
-
 
 }
