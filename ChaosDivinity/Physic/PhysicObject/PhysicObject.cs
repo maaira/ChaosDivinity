@@ -6,7 +6,6 @@ using Windows.UI.Xaml.Controls;
 namespace ChaosDivinity.Physics
 {
     public delegate void CollisionHandleEvent(PhysicObject sender, EventArgs p);
-    public delegate void InInterationHandleEvent(PhysicObject sender, EventArgs p);
     public delegate void IsDisturbedHandleEvent(PhysicObject sender, PhysicObject p);
     public abstract class PhysicObject
     {
@@ -14,7 +13,6 @@ namespace ChaosDivinity.Physics
         public string Path { get; set; }
         public ObjectMoment InMoment { get; set; }
         public bool IsMoving { get; set; }
-        public bool Interaction { get; set; }
         public PhysicObject MinimumObjectInteractive { get; set; }
         public double MinimumObjectInteractiveDist { get; set; }
         public bool IsInteractive { get; set; }
@@ -62,10 +60,6 @@ namespace ChaosDivinity.Physics
             InterationEvent?.DynamicInvoke(obj, p);
         }
 
-        public virtual void OnInteraction(PhysicObject p, PhysicObject obj)
-        {
-            InterationEvent?.DynamicInvoke(this, p);
-        }
         public virtual void CollisionEvent(PhysicObject sender, EventArgs p)
         {
             PhysicObject obj = sender;
@@ -87,13 +81,13 @@ namespace ChaosDivinity.Physics
 
         public virtual void DisturbedEvent(PhysicObject sender, PhysicObject p)
         {
-
+            return;
         }
 
-        public virtual void InInterationEvent(PhysicObject sender, PhysicObject p)
-        {
-
-        }
+       public virtual void InInteraction(PhysicObject intetacted)
+       {
+            return;
+       }
 
 
 

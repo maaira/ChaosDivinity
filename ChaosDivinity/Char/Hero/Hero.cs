@@ -30,8 +30,8 @@ namespace ChaosDivinity.Char
 
         public string MoveToRight { get; set; }
         public string MoveToLeft { get; set; }
-        //protected string MoveUp { get; set; }
-        //protected string MoveDown { get; set; }
+        protected string MoveUp { get; set; }
+        protected string MoveDown { get; set; }
         public string StopLeft { get; set; }
         public string StopRight { get; set; }
 

@@ -57,6 +57,10 @@ namespace ChaosDivinity.PhysicCollision
                         p.MinimumObjectInteractiveDist = radius;
                     }
                 }
+                else
+                {
+                    p.MinimumObjectInteractive = null;
+                }
 
                 if (p.Posi.X < obj.Posi.X)
                 {

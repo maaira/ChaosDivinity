@@ -125,6 +125,7 @@
     <Compile Include="Char\Hero\Mage.cs" />
     <Compile Include="Char\Hero\Rogue.cs" />
     <Compile Include="Char\Hero\Warrior.cs" />
+    <Compile Include="Char\Interactives\Enemies.cs" />
     <Compile Include="Char\Skill.cs" />
     <Compile Include="Enum\Classification.cs" />
     <Compile Include="Inventory\EquippedSlot.cs" />
@@ -200,19 +201,16 @@
     <Content Include="Assets\Rogue\RogueToLeft.gif" />
     <Content Include="Assets\Rogue\RogueToRight.gif" />
     <Content Include="Properties\Default.rd.xml" />
-    <Content Include="Assets\LockScreenLogo.scale-200.png" />
-    <Content Include="Assets\SplashScreen.scale-200.png" />
-    <Content Include="Assets\Square150x150Logo.scale-200.png" />
-    <Content Include="Assets\Square44x44Logo.scale-200.png" />
-    <Content Include="Assets\Square44x44Logo.targetsize-24_altform-unplated.png" />
-    <Content Include="Assets\StoreLogo.png" />
-    <Content Include="Assets\Wide310x150Logo.scale-200.png" />
   </ItemGroup>
   <ItemGroup>
     <ApplicationDefinition Include="App.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Page Include="VisualGame\Battle\Battle.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="VisualGame\Maps\City.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -231,9 +229,7 @@
       <Version>6.2.8</Version>
     </PackageReference>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Char\Interactives\" />
-  </ItemGroup>
+  <ItemGroup />
   <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '14.0' ">
     <VisualStudioVersion>14.0</VisualStudioVersion>
   </PropertyGroup>
