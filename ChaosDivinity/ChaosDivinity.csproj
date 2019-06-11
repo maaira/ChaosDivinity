@@ -153,6 +153,9 @@
     <Compile Include="Physic\PhysicObject\PhysicObject.cs" />
     <Compile Include="Physic\PhysicObject\Position.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="VisualGame\Battle\Battle.xaml.cs">
+      <DependentUpon>Battle.xaml</DependentUpon>
+    </Compile>
     <Compile Include="VisualGame\Maps\City.xaml.cs" />
     <Compile Include="VisualGame\Menus\MenuClass.xaml.cs" />
     <Compile Include="VisualGame\Menus\MenuHome.xaml.cs" />
@@ -229,7 +232,9 @@
       <Version>6.2.8</Version>
     </PackageReference>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="VisualGame\Inventory\" />
+  </ItemGroup>
   <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '14.0' ">
     <VisualStudioVersion>14.0</VisualStudioVersion>
   </PropertyGroup>
