@@ -12,6 +12,7 @@ namespace ChaosDivinity.Physics
         public Canvas Container { get; set; }
         public string Path { get; set; }
         public ObjectMoment InMoment { get; set; }
+        public Page OriginScene { get; set; }
         public bool IsMoving { get; set; }
         public PhysicObject MinimumObjectInteractive { get; set; }
         public double MinimumObjectInteractiveDist { get; set; }
@@ -35,7 +36,18 @@ namespace ChaosDivinity.Physics
             InMoment.Left = true;
             InMoment.Up = true;
             InMoment.Right = true;
+            this.Container = new Canvas();
 
+        }
+
+        public void SetPy(int x, int y, int eight , int withd)
+        {
+            Container.Width = withd;
+            Container.Height = eight;
+            Container.SetValue(Canvas.LeftProperty,x);
+            Container.SetValue(Canvas.TopProperty, y);
+            SetPosition();
+            SetRadius();
         }
 
         public void SetPosition()
@@ -57,7 +69,7 @@ namespace ChaosDivinity.Physics
 
         public virtual void OnDisturberd(PhysicObject p, PhysicObject obj)
         {
-            InterationEvent?.DynamicInvoke(obj, p);
+            InterationEvent?.DynamicInvoke(p, obj);
         }
 
         public virtual void CollisionEvent(PhysicObject sender, EventArgs p)
