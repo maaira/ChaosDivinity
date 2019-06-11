@@ -5,3 +5,4 @@
 - Quest (Caique)
 - Inventory/Market(Front)(Caique)
 - Data Base (Sledz)
+- Imagens (Bacon)
