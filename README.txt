@@ -1,6 +1,6 @@
 - NPC's (Caique)
 - Chest (Maira)
-- Craft ???
+- Craft (Maira)
 - Battle (Maira)
 - Quest (Caique)
 - Inventory/Market(Front)(Caique)
