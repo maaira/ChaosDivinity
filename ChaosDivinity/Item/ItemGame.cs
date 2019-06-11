@@ -13,10 +13,6 @@ namespace ChaosDivinity.Item
         public int SellValue { get; set; }
         public int Level { get ; set ; }
         public string ID { get; set; }
-
-       
-
-
-
+        
     }
 }

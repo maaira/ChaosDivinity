@@ -1,16 +1,21 @@
 ﻿using ChaosDivinity.Physics;
+using ChaosDivinity.Char;
+using System.Collections.Generic;
+using ChaosDivinity.Inventory;
 
 namespace ChaosDivinity.NPCNamespace
 {
 
-    public enum TypeNPC { NPCTrade, NPCTalk };
+    public enum TypeNPC { NPCTrader = 1, NPCQuester = 2 };
 
-    class NPC : PhysicObject, IActions
+    public class NPC : PhysicObject
     {
         public string Name { get; set; }
         public uint IDNpc { get; set; }
         public string Description { get; set; }
         public TypeNPC TPN { get; set; }
+        //InObject == null -> Dentro do PhysicObject
+        public Dictionary<int, InventorySlot> BagShop;
 
         public NPC(uint ID, string Name, TypeNPC Type)
         {
@@ -19,40 +24,59 @@ namespace ChaosDivinity.NPCNamespace
             this.TPN = Type;
         }
 
-        public void NPCAction()
+        public override void InInteraction(PhysicObject intetacted)
         {
-            switch (this.TPN)
-            {
-                case TypeNPC.NPCTrade:
-                    
-                    break;
-
-                case TypeNPC.NPCTalk:
-                    //
-                    break;
-            }
+            return;
         }
-
-        public void Trade(TypeNPC TP)
-        {
-            //
-        }
-
-        public void Conversation(TypeNPC TP)
-        {
-            //
-        }
-    }
-
-    class MyFunction //dar as funções ao NPCs
-    {
-
     }
 
     public interface IActions //ações que os NPCs vão fazer
     {
-        void Trade(TypeNPC TP);
-        void Conversation(TypeNPC TP);
+        void StartFunction();
+        void EndFunction();
+        string TypeNpc();
+    }
+
+    //*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-* NPC de Negociação *-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*
+    public sealed class Trader : IActions
+    {
+
+        public void StartFunction()
+        {
+            throw new System.NotImplementedException();
+        }
+
+        public void EndFunction()
+        {
+            throw new System.NotImplementedException();
+        }
+
+        public string TypeNpc()
+        {
+            return "Trader";
+        }
+
+    }
+
+    //*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-* NPC de Quest *-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*
+    public sealed class Quester : IActions
+    {
+
+        public void StartFunction()
+        {
+            throw new System.NotImplementedException();
+        }
+
+        public void EndFunction()
+        {
+            throw new System.NotImplementedException();
+        }
+
+        public string TypeNpc()
+        {
+            return "Quester";
+        }
+
     }
 
 }
