@@ -1,4 +1,5 @@
-﻿namespace ChaosDivinity.Physics
+
+namespace ChaosDivinity.Physics
 {
     public class Position
     {

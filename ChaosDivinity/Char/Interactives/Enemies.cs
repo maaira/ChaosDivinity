@@ -1,24 +1,27 @@
 ﻿
-using ChaosDivinity.Interface;
 using ChaosDivinity.Physics;
+using ChaosDivinity.VisualGame.Battle;
+using Windows.UI.Xaml.Controls;
 
 namespace ChaosDivinity.Char
 {
-    public class Enemies : Hero
+    public class Enemies : Character
     {
-        public Enemies(string nomeChar, int hp_atual, int hp_total, int mp_atual, int mp_total, int lvl, int power, int agility, int sort, int intelligence, int vitality, Classification.Perso classGroup) : base(nomeChar, hp_atual, hp_total, mp_atual, mp_total, lvl, power, agility, sort, intelligence, vitality, classGroup)
+        public Enemies(string nomeChar, int hp_atual, int hp_total, int mp_atual, int mp_total, int lvl) : base(nomeChar, hp_atual, hp_total, mp_atual, mp_total, lvl)
         {
-            
-        }
 
-        public object Frame { get; private set; }
+        }
 
         public override void DisturbedEvent(PhysicObject sender, PhysicObject p)
         {
-            if (sender is Hero && p is Enemies)
-            {
-                
-            }
+            Canvas c1 = this.Container;
+            Canvas c2 = c1.Parent as Canvas;
+            Canvas c3 = c2.Parent as Canvas;
+            Page p2 = c3.Parent as Page;
+            p.MinimumObjectInteractive = sender;
+
+            p2.Frame.Navigate(typeof(Battle), p);
+            
         }
     }
 }

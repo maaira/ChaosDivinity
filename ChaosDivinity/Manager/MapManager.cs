@@ -1,5 +1,6 @@
 ﻿using ChaosDivinity.Assets;
 using ChaosDivinity.Char;
+using ChaosDivinity.Interface;
 using ChaosDivinity.Item;
 using ChaosDivinity.Manager;
 using ChaosDivinity.MapObjects;
@@ -26,6 +27,7 @@ namespace ChaosDivinity.Managers
             this.h = hero;
             InitChest(Tela);
             InitPerso(hero, Tela, Perso);
+            InitEnemes(Tela);
 
         }
 
@@ -39,15 +41,14 @@ namespace ChaosDivinity.Managers
 
         }
 
-        public static void InitiMob(Canvas MOB)
+        public static void InitiMob(Canvas Tela)
         {
-
-            NPC p = new NPC(10, "Teste", TypeNPC.NPCTrader);
-            p.Container = MOB;
-            p.SetRadius();
+            NPC p = new NPC(10, "Teste", TypeNPC.NPCTrade);
+            p.SetPy(50, 100, 70,70);
+               
             p.Container.Children.Add(ImageView.ImageSet("ms-appx:///Assets/Mage/MageStopLeft.gif"));
-            p.SetPosition();
             if (p != null) _worldObject.Add(p);
+            Tela.Children.Add(p.Container);
 
             NPC nTrader = new NPC(50, "Maga Malvadinha", TypeNPC.NPCTrader);
             nTrader.Container = MOB;
@@ -65,19 +66,24 @@ namespace ChaosDivinity.Managers
 
         }
 
+        public void InitEnemes(Canvas tela)
+        {
+            Enemies p = new Enemies("",10,10,10, 10, 10);
+            p.Path = "ms-appx:///Assets/Mage/MageStopLeft.gif";
+            p.Container.Children.Add(ImageView.ImageSet(p.Path));
+            p.SetPy(500,710,70,70);
+            tela.Children.Add(p.Container);
+            if (p != null) _worldObject.Add(p);
+            p.InterationEvent += p.DisturbedEvent;
+        }
         public void InitChest(Canvas Tela)
         {
             Chest p = new Chest();
             p.Item = p.RandomPremium(DBItem.DBItens());
             p.Item.Path = "ms-appx:///Assets/Mage/MageStopLeft.gif";
-            p.Path = "ms-appx:///Assets/Mage/MageStopLeft.gif";
-            p.Container = new Canvas();
+            p.Path = "ms-appx:///Assets/Mage/MageStopLeft.gif";            
             p.Container.Children.Add(ImageView.ImageSet(p.Path));
-            p.Container.SetValue(Canvas.LeftProperty, 700);
-            p.Container.SetValue(Canvas.TopProperty, 710);
-            p.Container.Width = 70;
-            p.Container.Height = 70;
-            p.SetPosition();
+            p.SetPy(710,700, 70,70);
             Tela.Children.Add(p.Container);
             if (p != null) _worldObject.Add(p);
             p.InterationEvent += p.DisturbedEvent;
