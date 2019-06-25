@@ -194,6 +194,8 @@
     <Content Include="Assets\Musicas\City.mp3" />
     <Content Include="Assets\Musicas\ClickSound.mp3" />
     <Content Include="Assets\NPC\Dino.gif" />
+    <Content Include="Assets\NPC\NPC_QUESTER_OFFICIAL.gif" />
+    <Content Include="Assets\NPC\NPC_TRADER_OFFICIAL.gif" />
     <Content Include="Assets\NPC\Poring.gif" />
     <Content Include="Assets\Rogue\RogueAtaque.gif" />
     <Content Include="Assets\Rogue\RogueStopLeft.gif" />
