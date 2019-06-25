@@ -4,7 +4,7 @@ using ChaosDivinity.Item;
 
 namespace ChaosDivinity.NPCNamespace
 {
-    class ListItemShop
+    public class ListItemShopDB
     {
         //*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-* Loja de Poções *-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*
         static private Dictionary<int, InventorySlot> PotsShop;
