@@ -12,7 +12,7 @@ namespace ChaosDivinity.Item
         public int MarketValue { get; set; }
         public int SellValue { get; set; }
         public int Level { get ; set ; }
-        public string ID { get; set; }
+        public string ID { get ; }
 
        
 

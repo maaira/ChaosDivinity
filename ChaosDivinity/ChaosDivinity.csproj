@@ -120,12 +120,13 @@
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
     <Compile Include="Assets\ImageView.cs" />
+    <Compile Include="Battle.cs" />
     <Compile Include="Char\Char.cs" />
     <Compile Include="Char\Hero\Hero.cs" />
     <Compile Include="Char\Hero\Mage.cs" />
     <Compile Include="Char\Hero\Rogue.cs" />
     <Compile Include="Char\Hero\Warrior.cs" />
-    <Compile Include="Char\Interactives\Enemies.cs" />
+    <Compile Include="Char\Interactives\Enemie.cs" />
     <Compile Include="Char\Skill.cs" />
     <Compile Include="Enum\Classification.cs" />
     <Compile Include="Inventory\EquippedSlot.cs" />
@@ -135,9 +136,11 @@
     <Compile Include="Item\DBItem.cs" />
     <Compile Include="Item\Equipment.cs" />
     <Compile Include="Item\ItemGame.cs" />
+    <Compile Include="Manager\ChestManager.cs" />
     <Compile Include="Manager\MapManager.cs" />
     <Compile Include="Manager\PersoManager.cs" />
     <Compile Include="MapObjects\Chest.cs" />
+    <Compile Include="MapObjects\FlyoutManager.cs" />
     <Compile Include="MapObjects\Gateway.cs" />
     <Compile Include="Market\Market.cs" />
     <Compile Include="NPC\ListItemShop.cs" />
@@ -153,9 +156,6 @@
     <Compile Include="Physic\PhysicObject\PhysicObject.cs" />
     <Compile Include="Physic\PhysicObject\Position.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="VisualGame\Battle\Battle.xaml.cs">
-      <DependentUpon>Battle.xaml</DependentUpon>
-    </Compile>
     <Compile Include="VisualGame\Maps\City.xaml.cs" />
     <Compile Include="VisualGame\Menus\MenuClass.xaml.cs" />
     <Compile Include="VisualGame\Menus\MenuHome.xaml.cs" />
@@ -204,16 +204,19 @@
     <Content Include="Assets\Rogue\RogueToLeft.gif" />
     <Content Include="Assets\Rogue\RogueToRight.gif" />
     <Content Include="Properties\Default.rd.xml" />
+    <Content Include="Assets\LockScreenLogo.scale-200.png" />
+    <Content Include="Assets\SplashScreen.scale-200.png" />
+    <Content Include="Assets\Square150x150Logo.scale-200.png" />
+    <Content Include="Assets\Square44x44Logo.scale-200.png" />
+    <Content Include="Assets\Square44x44Logo.targetsize-24_altform-unplated.png" />
+    <Content Include="Assets\StoreLogo.png" />
+    <Content Include="Assets\Wide310x150Logo.scale-200.png" />
   </ItemGroup>
   <ItemGroup>
     <ApplicationDefinition Include="App.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Page Include="VisualGame\Battle\Battle.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
     <Page Include="VisualGame\Maps\City.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -232,9 +235,7 @@
       <Version>6.2.8</Version>
     </PackageReference>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="VisualGame\Inventory\" />
-  </ItemGroup>
+  <ItemGroup />
   <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '14.0' ">
     <VisualStudioVersion>14.0</VisualStudioVersion>
   </PropertyGroup>

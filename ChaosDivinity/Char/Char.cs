@@ -20,7 +20,14 @@ namespace ChaosDivinity.Char
             this.Mp_atual = mp_atual;
             this.Mp_total = mp_total;
             this.Lvl = lvl;
+
         }
+
+        public void Action(){
+            
+        }
+
+
 
     }
 }

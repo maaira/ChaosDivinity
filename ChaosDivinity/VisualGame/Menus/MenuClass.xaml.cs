@@ -21,36 +21,39 @@ namespace ChaosDivinity.VisualGame.Menu
         private void InitWarrior(object sender, RoutedEventArgs e)
         {
 
-            Warrior w = new Warrior("Ayddra", 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, Classification.Perso.Warrior);
+            Warrior w = new Warrior("Ayddra", 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, Classification.Perso.Warrior)
+            {
+                Path = "ms-appx:///Assets/Mage/MageStopLeft.gif"
+            };
 
             this.Frame.Navigate(typeof(City), w);
 
-            // song.Source = MediaSource.CreateFromUri(new Uri(""));
-            // song.Play();
         }
 
         private void InitMage(object sender, RoutedEventArgs e)
         {
 
-            Mage m = new Mage("Ayddra", 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, Classification.Perso.Mage);
+            Mage m = new Mage("Ayddra", 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, Classification.Perso.Mage)
+            {
+                Path = "ms-appx:///Assets/Mage/MageStopLeft.gif"
+            };
             this.Frame.Navigate(typeof(City), m);
 
         }
 
         private void InitRogue(object sender, RoutedEventArgs e)
         {
-            Rogue r = new Rogue("Ayddra", 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, Classification.Perso.Rogue);
+            Rogue r = new Rogue("Ayddra", 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, Classification.Perso.Rogue)
+            {
+                Path = "ms-appx:///Assets/Mage/MageStopLeft.gif"
+            };
             this.Frame.Navigate(typeof(City), r);
 
-            //song.Source = MediaSource.CreateFromUri(new Uri(""));
-            //song.Play();
         }
         private void GoBack(object sender, RoutedEventArgs e)
         {
             this.Frame.Navigate(typeof(MenuHome));
 
-            //song.Source = MediaSource.CreateFromUri(new Uri(""));
-            //song.Play();
         }
     }
 }

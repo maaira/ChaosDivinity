@@ -25,7 +25,7 @@ namespace ChaosDivinity.Managers
         {
 
             this.h = hero;
-            InitChest(Tela);
+            //InitChest(Tela);
             InitPerso(hero, Tela, Perso);
             InitEnemes(Tela);
 
@@ -44,8 +44,8 @@ namespace ChaosDivinity.Managers
         public static void InitiMob(Canvas Tela)
         {
             NPC p = new NPC(10, "Teste", TypeNPC.NPCTrade);
-            p.SetPy(50, 100, 70,70);
-            
+            p.SetPy(50, 100, 70, 70);
+
             p.Container.Children.Add(ImageView.ImageSet("ms-appx:///Assets/Mage/MageStopLeft.gif"));
             if (p != null) _worldObject.Add(p);
             Tela.Children.Add(p.Container);
@@ -54,12 +54,16 @@ namespace ChaosDivinity.Managers
 
         public void InitEnemes(Canvas tela)
         {
-            Enemies p = new Enemies("",10,10,10, 10, 10);
+            Enemies p = new Enemies("", 10, 10, 10, 10, 10, 10, 10);
+            p.ListofSkill.Add(1, new Skill("Brilho de Sabedoria", 5, 0, 0, 0, 30, p));
+            p.ListofSkill.Add(2, new Skill("Cura", 0, 0, 10, 10, 0, p));
+            p.ListofSkill.Add(3, new Skill("Brilho de Sabedoria", 12, 2, 10, 0, 0, p));
             p.Path = "ms-appx:///Assets/Mage/MageStopLeft.gif";
             p.Container.Children.Add(ImageView.ImageSet(p.Path));
-            p.SetPy(500,710,70,70);
+            p.SetPy(500, 710, 70, 70);
             tela.Children.Add(p.Container);
             if (p != null) _worldObject.Add(p);
+            p.IsInteractive = true;
             p.InterationEvent += p.DisturbedEvent;
         }
         public void InitChest(Canvas Tela)
@@ -67,9 +71,9 @@ namespace ChaosDivinity.Managers
             Chest p = new Chest();
             p.Item = p.RandomPremium(DBItem.DBItens());
             p.Item.Path = "ms-appx:///Assets/Mage/MageStopLeft.gif";
-            p.Path = "ms-appx:///Assets/Mage/MageStopLeft.gif";            
+            p.Path = "ms-appx:///Assets/Mage/MageStopLeft.gif";
             p.Container.Children.Add(ImageView.ImageSet(p.Path));
-            p.SetPy(710,700, 70,70);
+            p.SetPy(710, 700, 70, 70);
             Tela.Children.Add(p.Container);
             if (p != null) _worldObject.Add(p);
             p.InterationEvent += p.DisturbedEvent;

@@ -11,8 +11,8 @@
     <Canvas Name ="Principle" HorizontalAlignment="Left" Height="1080" VerticalAlignment="Top" Width="1920">
 
         <Canvas Name ="Background" HorizontalAlignment="Left" Height="3240" VerticalAlignment="Top" Width="4872" Canvas.Top="0" Canvas.Left="0" >
-                    
-            
+
+
             <Image                     
                     Source="ms-appx:///Assets/Maps/Map1/Map001.png"
                     Width="2436"
@@ -36,47 +36,26 @@
             <Canvas Name ="MOB" Height="100" Canvas.Left="530" Canvas.Top="390" Width="100"/>
             <Canvas Name ="MOB2" Height="100" Canvas.Left="1160" Canvas.Top="645" Width="100"/>
             <Canvas Name ="MOB3" Height="100" Canvas.Left="1290" Canvas.Top="390" Width="100"/>
+
+        </Canvas>
+        <Canvas x:Name="UpBar" Height="135" Width="1920" FocusVisualPrimaryBrush="Black" Background="{ThemeResource SystemAltLowColor}"/>
+        <RelativePanel x:Name="Hero" Height="100" Width="960">
             
-            <Image 
-                    Name="Dino"
-                    Source="ms-appx:///Assets/NPC/Dino.gif"
-                    Width="234"
-                    Height="178" Canvas.Left="444" Canvas.Top="180" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"/>
+            <Canvas x:Name="Hero_img" Height="80" Width="80"/>
+            <TextBlock x:Name="XP" RelativePanel.RightOf="Hero_img" Width="400" />
+            <TextBlock x:Name="Name" RelativePanel.RightOf="Hero_img" RelativePanel.Below="XP" Width="400" />
+            <TextBlock x:Name="Life" RelativePanel.RightOf="Hero_img" Width="200"  RelativePanel.Below="Name"/>
+            <TextBlock x:Name="Sorte" RelativePanel.RightOf="Hero_img" RelativePanel.Below="Life" Width="200"/>
+            <TextBlock x:Name="Força" RelativePanel.RightOf="Hero_img" RelativePanel.Below="Sorte" Width="200" />
+            <TextBlock x:Name="Inteligencia" RelativePanel.RightOf="Life" RelativePanel.Below="Name" Width="200" />
+            <TextBlock x:Name="Agilidade" RelativePanel.RightOf="Sorte" RelativePanel.Below="Inteligencia"  Width="200"/>
+            <TextBlock x:Name="Vitalidade" Width="200" RelativePanel.RightOf="Força"  RelativePanel.Below="Agilidade"/>
 
-            <Button Name="DinoButton" Content="Dino" HorizontalAlignment="Left" Height="30" Canvas.Left="527" Margin="0,0,0,0" Canvas.Top="336" VerticalAlignment="Top" Width="60"/>
-            <Grid Name="ShopGrid" HorizontalAlignment="Stretch" Height="300" Canvas.Left="1090" Canvas.Top="300" VerticalAlignment="Stretch" Width="300">
-
-                <Image Name="RedPotion" Stretch="Fill" Source="ms-appx:///Assets/ItensShop/TWW_Red_Potion_Artwork.png" HorizontalAlignment="Left" Height="100" VerticalAlignment="Top" Width="100"/>
-                <Image Name="BluePotion" Stretch="Fill" Source="ms-appx:///Assets/ItensShop/Pocao_Azul.png"  HorizontalAlignment="Left" Height="100" VerticalAlignment="Top" Width="100" Margin="200,200,0,0"/>
-                <Image Name="Apple" Stretch="Fill" Source="ms-appx:///Assets/ItensShop/Apple.png"  HorizontalAlignment="Center" Height="100" VerticalAlignment="Top" Width="100" Margin="0,200,0,0"/>
-                <Image Name="Espada_Pandora" Stretch="Fill" Source="ms-appx:///Assets/ItensShop/Espada_De_Pandora.png"  HorizontalAlignment="Left" Height="100" VerticalAlignment="Top" Width="100" Margin="-5,200,0,0"/>
-                <Image Name="Cajado_Demetriz" Stretch="Fill" Source="ms-appx:///Assets/ItensShop/Cajado_Demetriz.png"  HorizontalAlignment="Left" Height="100" VerticalAlignment="Center" Width="100" Margin="200,0,0,0"/>
-                <Image Name="Oraculo" Stretch="Fill" Source="ms-appx:///Assets/ItensShop/Oraculo.png"  HorizontalAlignment="Center" Height="100" VerticalAlignment="Center" Width="100" Margin="0,0,0,0"/>
-                <Image Name="Arco" Stretch="Fill" Source="ms-appx:///Assets/ItensShop/Arco.png"  HorizontalAlignment="Left" Height="100" VerticalAlignment="Center" Width="100" Margin="-5,0,0,0"/>
-                <Image Name="Sombras_das_Noites" Stretch="Fill" Source="ms-appx:///Assets/ItensShop/Sombra_Noites.png"  HorizontalAlignment="Left" Height="100" VerticalAlignment="Top" Width="100" Margin="200,0,0,0"/>
-                <Image Name="Raio" Stretch="Fill" Source="ms-appx:///Assets/ItensShop/Raio.png"  HorizontalAlignment="Center" Height="100" VerticalAlignment="Top" Width="100" Margin="0,0,0,0"/>
-
-            </Grid>
-
-        </Canvas>
-
-        
-        <Image  
-                    Name="quick_menu"
-                    Source="ms-appx:///Assets/Menu/equip_menu.png"
-                    Width="1500"
-                    Height="80" Canvas.Top="660" HorizontalAlignment="Stretch" Canvas.Left="0" VerticalAlignment="Stretch"/>
-        
-        <Canvas Opacity="1" Name="Inventory" Height="497" Canvas.Left="545" Canvas.Top="150" Width="320" HorizontalAlignment="Left" VerticalAlignment="Top">
-            <Image Source="ms-appx:///Assets/Menu/inventory.png" Margin="0,0,-305,0" Width="305" HorizontalAlignment="Left"/>
-            <Image Source="ms-appx:///Assets/Menu/equip2.png" Margin="-285,48,0,48" Width="249" HorizontalAlignment="Left"/>
-
-            <ProgressBar Name="Hp_equip" Height="14" Canvas.Left="10" Canvas.Top="70" Foreground="Red" Margin="-215,324,76,-318" />
-            <ProgressBar Name="Mp_equip" Height="14" Canvas.Left="10" Canvas.Top="70" Foreground="Blue" Margin="-215,371,76,-365" />
-
-            <Button Height="20" Width="25" Click="ExitInventory" HorizontalAlignment="Left" Canvas.Top="5" Canvas.Left="270"/>
-
-        </Canvas>
+        </RelativePanel>
+        <RelativePanel x:Name="Enemie" Height="80" Width="960" Canvas.Left="961">
+            <Canvas x:Name="Enemie_img" Height="80" Width="80"/>
+            <TextBlock x:Name="Life2" RelativePanel.RightOf="Enemie_img"  />
+        </RelativePanel>
+        <TextBlock x:Name="Warning" Canvas.Top="110"  />
     </Canvas>
-
 </Page>

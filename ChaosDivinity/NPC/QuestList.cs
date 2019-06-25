@@ -13,10 +13,10 @@ namespace ChaosDivinity.NPCNamespace
         //A função que contém a lista das quest e os carrega no início do jogo
         public static void LoadQuestList()
         {
-            
+
             allQuests = new Dictionary<uint, Quest>();
 
-            Quest First_Quest = new ConversationQuest("First Quest", 1 )
+            Quest First_Quest = new ConversationQuest("First Quest", 1)
             {
                 ID = 1,
                 Description = "Pirmeiro Missão do Chaos Divinity",
@@ -68,7 +68,7 @@ namespace ChaosDivinity.NPCNamespace
                 XPQuest = 500,
                 MoneyQuest = 1000,
                 Verification = false
-            }; 
+            };
 
             allQuests.Add(1, First_Quest);
             allQuests.Add(2, Second_Quest);
