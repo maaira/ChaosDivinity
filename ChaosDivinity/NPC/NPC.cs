@@ -3,7 +3,7 @@
 namespace ChaosDivinity.NPCNamespace
 {
 
-    public enum TypeNPC { NPCTrade, NPCTalk };
+    public enum TypeNPC { NPCTrader, NPCTalk };
 
     class NPC : PhysicObject, IActions
     {
@@ -23,7 +23,7 @@ namespace ChaosDivinity.NPCNamespace
         {
             switch (this.TPN)
             {
-                case TypeNPC.NPCTrade:
+                case TypeNPC.NPCTrader:
 
                     break;
 
