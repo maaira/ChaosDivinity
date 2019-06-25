@@ -50,9 +50,9 @@ namespace ChaosDivinity.NPCNamespace
         //Realiza as contagem e completa a quest
         public void CounterActionCompleteQuest(int entityUniversalID)
         {
-            if(entityUniversalID == IDEntity)
+            if (entityUniversalID == IDEntity)
             {
-                if(CountForEntity == QuantityRequestedEntity)
+                if (CountForEntity == QuantityRequestedEntity)
                 {
                     CompleteVerificarionQuest();
                 }
@@ -78,7 +78,7 @@ namespace ChaosDivinity.NPCNamespace
 
         public void TalkNpcComplet(int NpcGenericId)
         {
-            if(NpcGenericId == NpcQuestID)
+            if (NpcGenericId == NpcQuestID)
             {
                 CompleteVerificarionQuest();
             }
@@ -119,12 +119,12 @@ namespace ChaosDivinity.NPCNamespace
         {
             if (VerificationTalkNpc(NpcGenericId))
             {
-                if(ItemGenericId == ItemQuestId && QuantityItemGeneric == QuantityRequestedItem)
+                if (ItemGenericId == ItemQuestId && QuantityItemGeneric == QuantityRequestedItem)
                 {
                     CompleteVerificarionQuest();
                 }
             }
-            
+
         }
 
     }

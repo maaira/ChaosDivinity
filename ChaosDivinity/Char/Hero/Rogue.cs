@@ -15,6 +15,9 @@ namespace ChaosDivinity.Char
             this.StopLeft = "ms-appx:///Assets/Rogue/RogueStopLeft.gif";
             this.StopRight = "ms-appx:///Assets/Rogue/RogueStopRight.gif";
 
+            ListofSkill.Add(Windows.System.VirtualKey.Number1, new Skill("Ataque Sorrateira", 5, 0, 0, 0, 30, this));
+            ListofSkill.Add(Windows.System.VirtualKey.Number2, new Skill("Roubo das Trevas", 0, 0, 10, 10, 0, this));
+            ListofSkill.Add(Windows.System.VirtualKey.Number3, new Skill("Selando a Besta", 12, 2, 10, 0, 0, this));
         }
 
         public override void LvUp()

@@ -20,7 +20,7 @@ namespace ChaosDivinity.Physics
         BitmapImage bitmapImage = new BitmapImage();
         Thread Update;
 
-        public HeroMovement(Canvas Tela,Hero hero)
+        public HeroMovement(Canvas Tela, Hero hero)
         {
 
             this.Hero = hero;
@@ -41,25 +41,25 @@ namespace ChaosDivinity.Physics
         public void EventFunc(CoreWindow sender, KeyEventArgs e)
         {
 
-            if (e.VirtualKey == Windows.System.VirtualKey.A )
+            if (e.VirtualKey == Windows.System.VirtualKey.A)
             {
                 Hero.IsMoving = true;
                 left = true;
-                
+
             }
-            if (e.VirtualKey == Windows.System.VirtualKey.D )
+            if (e.VirtualKey == Windows.System.VirtualKey.D)
             {
                 Hero.IsMoving = true;
                 right = true;
-                
+
             }
-            if (e.VirtualKey == Windows.System.VirtualKey.W  )
+            if (e.VirtualKey == Windows.System.VirtualKey.W)
             {
                 Hero.IsMoving = true;
                 up = true;
-               
+
             }
-            if (e.VirtualKey == Windows.System.VirtualKey.S )
+            if (e.VirtualKey == Windows.System.VirtualKey.S)
             {
                 Hero.IsMoving = true;
                 down = true;
@@ -75,7 +75,7 @@ namespace ChaosDivinity.Physics
                 ImageSetWhileMove(Hero.StopLeft);
                 Hero.IsMoving = false;
                 left = false;
-                
+
             }
             if (e.VirtualKey == Windows.System.VirtualKey.D)
             {
@@ -136,7 +136,7 @@ namespace ChaosDivinity.Physics
                 Hero.SetPosition();
                 Hero.OnCollision();
             }
-            if (up &&  Hero.InMoment.Up)
+            if (up && Hero.InMoment.Up)
             {
                 TelaY -= delta_move;
                 m_tela_y += delta_move_;

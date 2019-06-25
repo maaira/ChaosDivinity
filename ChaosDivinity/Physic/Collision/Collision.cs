@@ -2,6 +2,7 @@
 using System.Numerics;
 using ChaosDivinity.Physics;
 using System;
+using System.Diagnostics;
 
 namespace ChaosDivinity.PhysicCollision
 {
@@ -43,23 +44,26 @@ namespace ChaosDivinity.PhysicCollision
                 radius = Math.Sqrt(Math.Pow((p.Posi.X - obj.Posi.X), 2) + Math.Pow((p.Posi.Y - obj.Posi.Y), 2));
                 radius_collider = p.Radius / 2 + obj.Radius / 2;
 
-                if (radius <= radius_collider && obj.IsInteractive)
+                if (radius < radius_collider && obj.IsInteractive)
                 {
                     if (p.MinimumObjectInteractive == null && radius <= radius_collider)
                     {
                         p.MinimumObjectInteractive = obj;
-                        p.MinimumObjectInteractiveDist = radius;
+                        obj.MinimumObjectInteractive = p;
+                        p.MinimumObjectInteractiveDist = obj.MinimumObjectInteractiveDist = radius;
                     }
 
                     else if (p.MinimumObjectInteractiveDist > radius && radius <= radius_collider)
                     {
                         p.MinimumObjectInteractive = obj;
-                        p.MinimumObjectInteractiveDist = radius;
+                        obj.MinimumObjectInteractive = p;
+                        p.MinimumObjectInteractiveDist = obj.MinimumObjectInteractiveDist = radius;
                     }
                 }
                 else
                 {
                     p.MinimumObjectInteractive = null;
+                    obj.MinimumObjectInteractive = null;
                 }
 
                 if (p.Posi.X < obj.Posi.X)

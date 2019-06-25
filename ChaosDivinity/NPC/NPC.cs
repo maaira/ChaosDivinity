@@ -24,7 +24,7 @@ namespace ChaosDivinity.NPCNamespace
             switch (this.TPN)
             {
                 case TypeNPC.NPCTrade:
-                    
+
                     break;
 
                 case TypeNPC.NPCTalk:

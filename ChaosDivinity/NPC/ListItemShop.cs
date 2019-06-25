@@ -109,7 +109,7 @@ namespace ChaosDivinity.NPCNamespace
             return AccessoryShop;
         }
 
-        public enum TypeShop { PotsShop , ArmorShop, WeaponShop, StaffShop , DaggerShop, AccessoryShop };
+        public enum TypeShop { PotsShop, ArmorShop, WeaponShop, StaffShop, DaggerShop, AccessoryShop };
 
     }
 }
