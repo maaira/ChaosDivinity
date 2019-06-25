@@ -2,14 +2,21 @@
 using ChaosDivinity.Char;
 using System.Collections.Generic;
 using ChaosDivinity.Inventory;
+using Windows.UI.Xaml.Controls;
+using ChaosDivinity.Assets;
+using Windows.UI.Xaml.Controls.Primitives;
+using ChaosDivinity.NPCNamespace;
 
-namespace ChaosDivinity.NPCNamespace
+namespace ChaosDivinity
 {
 
     public enum TypeNPC { NPCTrader = 1, NPCQuester = 2 };
+  
 
     public class NPC : PhysicObject
     {
+        public ListItemShopDB ListShop;
+        public Flyout Flt { get; set; }
         public string Name { get; set; }
         public uint IDNpc { get; set; }
         public string Description { get; set; }
@@ -19,15 +26,28 @@ namespace ChaosDivinity.NPCNamespace
 
         public NPC(uint ID, string Name, TypeNPC Type)
         {
+            Flt = new Flyout();
             this.Name = Name;
             this.IDNpc = ID;
             this.TPN = Type;
         }
 
-        public override void InInteraction(PhysicObject intetacted)
+        public override void DisturbedEvent(PhysicObject sender, PhysicObject physicObject)
         {
-            return;
+            StackPanel s = new StackPanel();
+           // s.Children.Add(ImageView.ImageSet(ListShop));
+            TextBlock t = new TextBlock()
+            {
+                Text = "Click J to activate the NPC function.",
+            };
+            s.Children.Add(t);
+            Flt.Content = s;
+            FlyoutBase.SetAttachedFlyout(sender.Container, Flt);
+            FlyoutBase.ShowAttachedFlyout(sender.Container);
+            
         }
+
+        //foreach (ListItemShopDB element in ListItemShopDB)
     }
 
     public interface IActions //ações que os NPCs vão fazer
@@ -44,7 +64,7 @@ namespace ChaosDivinity.NPCNamespace
 
         public void StartFunction()
         {
-            throw new System.NotImplementedException();
+            
         }
 
         public void EndFunction()
