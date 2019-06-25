@@ -6,6 +6,7 @@ using Windows.UI.Xaml.Controls;
 using ChaosDivinity.Assets;
 using Windows.UI.Xaml.Controls.Primitives;
 using ChaosDivinity.NPCNamespace;
+using ChaosDivinity.Item;
 
 namespace ChaosDivinity
 {
@@ -35,10 +36,10 @@ namespace ChaosDivinity
         public override void DisturbedEvent(PhysicObject sender, PhysicObject physicObject)
         {
             StackPanel s = new StackPanel();
-           // s.Children.Add(ImageView.ImageSet(ListShop));
+            //s.Children.Add(ImageView.ImageSet());
             TextBlock t = new TextBlock()
             {
-                Text = "Click J to activate the NPC function.",
+                Text = "NPC",
             };
             s.Children.Add(t);
             Flt.Content = s;
@@ -64,7 +65,7 @@ namespace ChaosDivinity
 
         public void StartFunction()
         {
-            
+            throw new System.NotImplementedException();
         }
 
         public void EndFunction()
