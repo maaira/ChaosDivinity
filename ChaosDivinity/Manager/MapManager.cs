@@ -27,7 +27,7 @@ namespace ChaosDivinity.Managers
             InitChest(Tela);
             InitPerso(hero, Tela, Perso);
             InitEnemes(Tela);
-            InitiMob(Tela);
+
         }
 
         public static void InitPerso(Hero hero, Canvas Tela, Canvas Perso)
@@ -44,10 +44,24 @@ namespace ChaosDivinity.Managers
         {
             NPC p = new NPC(10, "Teste", TypeNPC.NPCTrader);
             p.SetPy(50, 100, 70, 70);
-
             p.Container.Children.Add(ImageView.ImageSet("ms-appx:///Assets/Mage/MageStopLeft.gif"));
             if (p != null) _worldObject.Add(p);
             Tela.Children.Add(p.Container);
+            p.InterationEvent += p.DisturbedEvent;
+
+            NPC nTrader = new NPC(50, "Maga Malvadinha", TypeNPC.NPCTrader);
+            nTrader.SetPy(300, 120, 70, 70);
+            nTrader.Container.Children.Add(ImageView.ImageSet("ms-appx:///Assets/NPC/NPC_TRADER_OFFICIAL.gif"));
+            if (nTrader != null) _worldObject.Add(nTrader);
+            Tela.Children.Add(nTrader.Container);
+            nTrader.InterationEvent += nTrader.DisturbedEvent;
+
+            NPC nQuester = new NPC(60, "Polvinho Show", TypeNPC.NPCQuester);
+            nQuester.SetPy(140, 220, 70, 70);
+            nQuester.Container.Children.Add(ImageView.ImageSet("ms-appx:///Assets/NPC/NPC_QUESTER_OFFICIAL.gif"));
+            if (nQuester != null) _worldObject.Add(nQuester);
+            Tela.Children.Add(nQuester.Container);
+            nQuester.InterationEvent += nQuester.DisturbedEvent;
 
             NPC p1 = new NPC(10, "Teste", TypeNPC.NPCTrader);
             p.SetPy(50, 100, 70, 70);

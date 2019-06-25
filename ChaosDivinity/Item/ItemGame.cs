@@ -14,9 +14,5 @@ namespace ChaosDivinity.Item
         public int Level { get ; set ; }
         public string ID { get; set; }
 
-       
-
-
-
     }
 }

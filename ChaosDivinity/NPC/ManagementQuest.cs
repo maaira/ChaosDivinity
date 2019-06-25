@@ -65,7 +65,7 @@ namespace ChaosDivinity.NPCNamespace
             }
             else
             {
-                Debug.WriteLine("Se fudeu");
+                Debug.WriteLine("Quest nao foi");
             }
         }
 

@@ -55,5 +55,10 @@ namespace ChaosDivinity.Assets
             return bitmapImage;
             
         }
+
+        internal static UIElement ImageSet()
+        {
+            throw new NotImplementedException();
+        }
     }
 }
