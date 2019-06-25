@@ -1,6 +1,5 @@
 ﻿using ChaosDivinity.Assets;
 using ChaosDivinity.Char;
-using ChaosDivinity.Interface;
 using ChaosDivinity.Item;
 using ChaosDivinity.Manager;
 using ChaosDivinity.MapObjects;
@@ -25,10 +24,9 @@ namespace ChaosDivinity.Managers
         {
 
             this.h = hero;
-            //InitChest(Tela);
+            InitChest(Tela);
             InitPerso(hero, Tela, Perso);
             InitEnemes(Tela);
-            InitiMob(Tela);
 
         }
 
@@ -45,7 +43,7 @@ namespace ChaosDivinity.Managers
         public static void InitiMob(Canvas Tela)
         {
             NPC p = new NPC(10, "Teste", TypeNPC.NPCTrader);
-            p.SetPy(50, 100, 70,70);
+            p.SetPy(50, 100, 70, 70);
             p.Container.Children.Add(ImageView.ImageSet("ms-appx:///Assets/Mage/MageStopLeft.gif"));
             if (p != null) _worldObject.Add(p);
             Tela.Children.Add(p.Container);
@@ -65,14 +63,20 @@ namespace ChaosDivinity.Managers
             Tela.Children.Add(nQuester.Container);
             nQuester.InterationEvent += nQuester.DisturbedEvent;
 
+            NPC p1 = new NPC(10, "Teste", TypeNPC.NPCTrader);
+            p.SetPy(50, 100, 70, 70);
+            p.Container.Children.Add(ImageView.ImageSet("ms-appx:///Assets/Mage/MageStopLeft.gif"));
+            if (p1 != null) _worldObject.Add(p1);
+            Tela.Children.Add(p1.Container);
+
         }
 
         public void InitEnemes(Canvas tela)
         {
             Enemies p = new Enemies("", 10, 10, 10, 10, 10, 10, 10);
-            p.ListofSkill.Add(1, new Skill("Brilho de Sabedoria", 5, 0, 0, 0, 30, p));
-            p.ListofSkill.Add(2, new Skill("Cura", 0, 0, 10, 10, 0, p));
-            p.ListofSkill.Add(3, new Skill("Brilho de Sabedoria", 12, 2, 10, 0, 0, p));
+            p.ListofSkill.Add(1, new Skill("Brilho de Sabedoria", 5, 0, 0, 0,1 , p));
+            p.ListofSkill.Add(2, new Skill("Cura", 0, 0, 10, 1, 0, p));
+            p.ListofSkill.Add(3, new Skill("Brilho de Sabedoria", 12, 2, 1, 0, 0, p));
             p.Path = "ms-appx:///Assets/Mage/MageStopLeft.gif";
             p.Container.Children.Add(ImageView.ImageSet(p.Path));
             p.SetPy(500, 710, 70, 70);

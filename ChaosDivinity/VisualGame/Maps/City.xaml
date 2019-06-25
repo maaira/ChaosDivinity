@@ -40,9 +40,10 @@
         </Canvas>
         <Canvas x:Name="UpBar" Height="135" Width="1920" FocusVisualPrimaryBrush="Black" Background="{ThemeResource SystemAltLowColor}"/>
         <RelativePanel x:Name="Hero" Height="100" Width="960">
-            
+
             <Canvas x:Name="Hero_img" Height="80" Width="80"/>
-            <TextBlock x:Name="XP" RelativePanel.RightOf="Hero_img" Width="400" />
+            <TextBlock x:Name="XP" RelativePanel.RightOf="Hero_img" Width="200" />
+            <TextBlock x:Name="Lv" RelativePanel.RightOf="XP" Width="200" />
             <TextBlock x:Name="Name" RelativePanel.RightOf="Hero_img" RelativePanel.Below="XP" Width="400" />
             <TextBlock x:Name="Life" RelativePanel.RightOf="Hero_img" Width="200"  RelativePanel.Below="Name"/>
             <TextBlock x:Name="Sorte" RelativePanel.RightOf="Hero_img" RelativePanel.Below="Life" Width="200"/>
@@ -55,7 +56,43 @@
         <RelativePanel x:Name="Enemie" Height="80" Width="960" Canvas.Left="961">
             <Canvas x:Name="Enemie_img" Height="80" Width="80"/>
             <TextBlock x:Name="Life2" RelativePanel.RightOf="Enemie_img"  />
+            <TextBlock x:Name="Lv2" RelativePanel.RightOf="Enemie_img" RelativePanel.Below="Life2" />
         </RelativePanel>
         <TextBlock x:Name="Warning" Canvas.Top="110"  />
+        <Canvas x:Name="SkillBar" Height="135" Width="706" FocusVisualPrimaryBrush="Black" Background="{ThemeResource SystemAltLowColor}" Canvas.Top="940">
+            <RelativePanel x:Name="s1" Height="135" Width="200" Canvas.Left="0">
+                <TextBlock x:Name="n1" />
+                <TextBlock x:Name="Custo_mp" RelativePanel.Below="n1"/>
+                <TextBlock x:Name="Lv_requerido" RelativePanel.Below="Custo_mp"/>
+                <TextBlock x:Name="Hp_up" RelativePanel.Below="Lv_requerido"/>
+                <TextBlock x:Name="Mp_up" RelativePanel.Below="Hp_up"/>
+                <TextBlock x:Name="Skill_dmg" RelativePanel.Below="Mp_up"/>
+
+            </RelativePanel>
+
+            <RelativePanel x:Name="s2" Height="135" Width="200" Canvas.Left="200">
+                <TextBlock x:Name="n2" />
+                <TextBlock x:Name="Custo_mp2" RelativePanel.Below="n2" />
+                <TextBlock x:Name="Lv_requerido2" RelativePanel.Below="Custo_mp2"/>
+                <TextBlock x:Name="Hp_up2" RelativePanel.Below="Lv_requerido2"/>
+                <TextBlock x:Name="Mp_up2" RelativePanel.Below="Hp_up2"/>
+                <TextBlock x:Name="Skill_dmg2" RelativePanel.Below="Mp_up2"/>
+
+            </RelativePanel>
+            <RelativePanel x:Name="s3" Height="135" Width="200" Canvas.Left="400">
+                <TextBlock x:Name="n3" />
+                <TextBlock x:Name="Custo_mp3" RelativePanel.Below="n3" />
+                <TextBlock x:Name="Lv_requerido3" RelativePanel.Below="Custo_mp3"/>
+                <TextBlock x:Name="Hp_up3" RelativePanel.Below="Lv_requerido3"/>
+                <TextBlock x:Name="Mp_up3" RelativePanel.Below="Hp_up3"/>
+                <TextBlock x:Name="Skill_dmg3" RelativePanel.Below="Mp_up3"/>
+
+            </RelativePanel>
+
+        </Canvas>
+
+        <Canvas x:Name="Inventory" Height="670" Width="706" FocusVisualPrimaryBrush="Black" Background="{ThemeResource SystemAltLowColor}" Canvas.Top="410" Canvas.Left="1204">
+            
+        </Canvas>
     </Canvas>
 </Page>
