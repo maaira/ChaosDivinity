@@ -16,7 +16,10 @@ namespace ChaosDivinity.Char
             this.MoveToRight = "ms-appx:///Assets/Warrior/walkRight.gif";
             this.StopLeft = "ms-appx:///Assets/Warrior/idleLeft.gif";
             this.StopRight = "ms-appx:///Assets/Warrior/idleRight.gif";
-
+            
+            ListofSkill.Add(Windows.System.VirtualKey.Number1, new Skill("Força de Apolo", 5, 0, 0, 0, 30, this));
+            ListofSkill.Add(Windows.System.VirtualKey.Number2, new Skill("Benção dos Anjos", 0, 0, 10, 10, 0, this));
+            ListofSkill.Add(Windows.System.VirtualKey.Number3, new Skill("Furia de Guerrero", 12, 2, 10, 0, 0, this));
         }
 
         public override void LvUp()

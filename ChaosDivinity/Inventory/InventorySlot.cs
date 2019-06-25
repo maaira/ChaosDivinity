@@ -1,4 +1,5 @@
 ﻿using ChaosDivinity.Item;
+using ChaosDivinity.Physics;
 
 namespace ChaosDivinity.Inventory
 {

@@ -13,6 +13,19 @@ namespace ChaosDivinity.Physics
         public bool Left { get; set; }
         public bool Up { get; set; }
         public bool Down { get; set; }
+
+        public void RevertMoment()
+        {
+            Right = !Right;
+            Left = !Left;
+            Up = !Up;
+            Down = !Down;
+        }
+
+        public void NegMoment()
+        {
+            Right = Left = Up = Down = false;
+        }
     }
 
 

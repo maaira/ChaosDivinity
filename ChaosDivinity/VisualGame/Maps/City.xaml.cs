@@ -1,8 +1,11 @@
-﻿using ChaosDivinity.Char;
+﻿using ChaosDivinity.Assets;
+using ChaosDivinity.Char;
 using ChaosDivinity.Managers;
 using ChaosDivinity.NPCNamespace;
-using ChaosDivinity.Physics;
+using ChaosDivinity.VisualGame.Menu;
+using System;
 using System.Diagnostics;
+using System.Threading.Tasks;
 using Windows.Media.Core;
 using Windows.Media.Playback;
 using Windows.UI.Core;
@@ -17,21 +20,14 @@ namespace ChaosDivinity.VisualGame.Maps
     public sealed partial class City : Page
     {
         private Hero hero;
-        private bool isInventoryOpen;
         private MediaPlayer song = new MediaPlayer();
-
-
         public City()
         {
             this.InitializeComponent();
-            this.AddEventToShop();
             QuestList.LoadQuestList();
-            SetAllMenusReady();
-            Window.Current.CoreWindow.KeyDown += KeySentinel;
+            Window.Current.CoreWindow.KeyDown += SkillAsync;
             song.Source = MediaSource.CreateFromUri(new System.Uri("ms-appx:///Assets/Musicas/City.mp3"));
             song.Play();
-
-
         }
 
         protected override void OnNavigatedTo(NavigationEventArgs e)
@@ -39,7 +35,7 @@ namespace ChaosDivinity.VisualGame.Maps
             if (e.Parameter is Hero)
             {
 
-                hero = (Hero)e.Parameter;
+                hero = e.Parameter as Hero;
                 Debug.WriteLine(hero.Nome);
             }
 
@@ -51,26 +47,8 @@ namespace ChaosDivinity.VisualGame.Maps
         private void Init(FrameworkElement sender, object args)
         {
             MapManager m = new MapManager();
+            UpdateUpBar();
             m.Map(hero, Background, Perso, MOB, MOB2, MOB3);
-
-        }
-
-        private void AddEventToShop()
-        {
-            foreach (UIElement element in ShopGrid.Children)
-            {
-                if (element is Image)
-                {
-                    element.PointerPressed += SlotShop;
-                }
-            }
-        }
-
-        private void ClickVerificationNPC()
-        {
-
-
-
         }
 
         private void SlotShop(object sender, PointerRoutedEventArgs e)
@@ -78,40 +56,61 @@ namespace ChaosDivinity.VisualGame.Maps
             Debug.WriteLine("Imagem clicada : " + ((Image)sender).Name);
         }
 
-        private void ExitInventory(object sender, RoutedEventArgs e)
+        private void UpdateUpBar()
         {
-
-            Principle.Children.Remove(Inventory);
-            isInventoryOpen = false;
+            if (hero == null) return;
+            Hero_img.Children.Add(ImageView.ImageSet(hero.Path));
+            XP.Text = "Experiencia: " + hero.Xp_atual + " | " + hero.Xp_total;
+            Name.Text = hero.Nome.ToUpper();
+            Life.Text = "Life : " + hero.Hp_atual + " | " + hero.Hp_total++;
+            Inteligencia.Text = "Inteligencia : " + hero.Intelligence;
+            Agilidade.Text = "Agilidade" + hero.Agility;
+            Força.Text = "Força : " + hero.Power;
+            Vitalidade.Text = "Vitalidade : " + hero.Vitality;
+            Sorte.Text = "Sorte : " + hero.Sort;
+            if (hero.MinimumObjectInteractive == null) return;
+            //Debug.WriteLine(hero.MinimumObjectInteractive);
+            Enemie_img.Children.Add(ImageView.ImageSet(hero.MinimumObjectInteractive.Path));
+            Life2.Text = "Life : " + ((Enemies)hero.MinimumObjectInteractive).Mp_atual + " | " + ((Enemies)hero.MinimumObjectInteractive).Mp_total;
+            Warning.Text = "Atenção, lute com o inimigo para poder prosseguir!!! Boa sorte guerreiro.";
+            
         }
 
-        private void SetAllMenusReady()
+        public void SkillAsync(CoreWindow sender, KeyEventArgs e)
         {
-
-            Principle.Children.Remove(quick_menu);
-            Principle.Children.Add(quick_menu);
-
-            Principle.Children.Remove(Inventory);
-            isInventoryOpen = false;
-
-        }
-
-        private void KeySentinel(CoreWindow sender, KeyEventArgs e)
-        {
-            switch (e.VirtualKey)
+            if (e.VirtualKey == Windows.System.VirtualKey.Number1 || e.VirtualKey == Windows.System.VirtualKey.Number2 || e.VirtualKey == Windows.System.VirtualKey.Number3)
             {
-                case Windows.System.VirtualKey.I:
-                  
+                if (hero.ListofSkill[e.VirtualKey] == null || hero.MinimumObjectInteractive == null) return;
 
-                    if (isInventoryOpen) Principle.Children.Remove(Inventory);
-                    else Principle.Children.Add(Inventory);
+                ((Enemies)hero.MinimumObjectInteractive).Hp_atual -= hero.ListofSkill[e.VirtualKey].Executar();
+                Task.Delay(TimeSpan.FromSeconds(5));
+                UpdateUpBar();
+                if (((Enemies)hero.MinimumObjectInteractive).Hp_atual <= 0)
+                {
+                    hero.MinimumObjectInteractive.EndExistence();
+                    Warning.Text = "Voce ganhou!!!Derretou o inimigo!!!";
 
-                    isInventoryOpen ^= true;
+                }
 
-                    break;
+                Task.Delay(TimeSpan.FromSeconds(5));
+
+                Random rnd = new Random();
+                int id_random = rnd.Next(1, 3);
+                hero.Hp_atual -= ((Enemies)hero.MinimumObjectInteractive).ListofSkill[id_random].Executar();
+                Task.Delay(TimeSpan.FromSeconds(5));
+                if (hero.Hp_atual <= 0)
+                {
+                    this.Frame.Navigate(typeof(MenuClass));
+                    Warning.Text = "Voce perdeu, o jogo reiniciara...";
+
+                }
+                Task.Delay(TimeSpan.FromSeconds(5));
+                UpdateUpBar();
             }
+            
         }
 
+        
 
     }
 }

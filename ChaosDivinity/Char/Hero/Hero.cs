@@ -11,17 +11,14 @@ namespace ChaosDivinity.Char
     public abstract class Hero : Character
     {
         protected BackPack mochila = new BackPack();
-        protected int draquimas = 500;
-        protected List<Skill> listOfSkills;
         protected EquippedSlot[] Armo { get; set; }
 
         public BackPack BackPack { get; }
-        public int Draquimas { get => draquimas; set => draquimas = value; }
+        public int Draquimas { get ; set ; }
         public float Xp_atual { get; set; }
         public float Xp_total { get; set; }
-
-        public Dictionary<int, Skill> ListOfISkill;
-
+        public Dictionary<Windows.System.VirtualKey,Skill> ListofSkill { get; set; }
+        
         public int Power { get; set; }
         public int Agility { get; set; }
         public int Sort { get; set; }
@@ -31,8 +28,8 @@ namespace ChaosDivinity.Char
 
         public string MoveToRight { get; set; }
         public string MoveToLeft { get; set; }
-        protected string MoveUp { get; set; }
-        protected string MoveDown { get; set; }
+        //protected string MoveUp { get; set; }
+        //protected string MoveDown { get; set; }
         public string StopLeft { get; set; }
         public string StopRight { get; set; }
 
@@ -46,8 +43,9 @@ namespace ChaosDivinity.Char
             this.Intelligence = intelligence;
             this.Vitality = vitality;
             this.ClassGroup = classGroup;
-            
+            Draquimas = 500;
             ArmoInit();
+            ListofSkill = new Dictionary<Windows.System.VirtualKey, Skill>();
         }
 
         private void ArmoInit()
@@ -86,11 +84,7 @@ namespace ChaosDivinity.Char
             }
         }
 
-        public void InteractionEvent(PhysicObject sender, EventArgs p)
-        {
-
-        }
-
+        
         public override void CollisionEvent(PhysicObject sender, EventArgs p)
         {
             PhysicObject obj = (PhysicObject)sender;
@@ -164,6 +158,7 @@ namespace ChaosDivinity.Char
         {
             return false;
         }
+
 
     }
 }

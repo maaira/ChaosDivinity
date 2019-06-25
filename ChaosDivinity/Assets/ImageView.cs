@@ -32,9 +32,28 @@ namespace ChaosDivinity.Assets
             return img;
         }
 
-        internal static FrameworkElement ImageSet(object path)
+        public static BitmapImage BitMapSet(string path)
         {
-            throw new NotImplementedException();
+            if (path == null) return null;
+            Image img = new Image();
+            BitmapImage bitmapImage = new BitmapImage();
+            img.Width = bitmapImage.DecodePixelWidth = 80;
+
+            try
+            {
+
+                bitmapImage.UriSource = new Uri(path);
+
+            }
+            catch (UriFormatException e)
+            {
+
+                Debug.WriteLine(e.Source);
+                Debug.WriteLine(e.Message);
+
+            }
+            return bitmapImage;
+            
         }
     }
 }

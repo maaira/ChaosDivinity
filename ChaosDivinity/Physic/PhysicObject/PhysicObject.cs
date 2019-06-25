@@ -1,6 +1,7 @@
 ﻿using ChaosDivinity.PhysicCollision;
 using System;
 using System.Collections.Generic;
+using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 
 namespace ChaosDivinity.Physics
@@ -14,6 +15,7 @@ namespace ChaosDivinity.Physics
         public ObjectMoment InMoment { get; set; }
         public Page OriginScene { get; set; }
         public bool IsMoving { get; set; }
+        public bool InBattle { get; set; }
         public PhysicObject MinimumObjectInteractive { get; set; }
         public double MinimumObjectInteractiveDist { get; set; }
         public bool IsInteractive { get; set; }
@@ -40,11 +42,11 @@ namespace ChaosDivinity.Physics
 
         }
 
-        public void SetPy(int x, int y, int eight , int withd)
+        public void SetPy(int x, int y, int eight, int withd)
         {
             Container.Width = withd;
             Container.Height = eight;
-            Container.SetValue(Canvas.LeftProperty,x);
+            Container.SetValue(Canvas.LeftProperty, x);
             Container.SetValue(Canvas.TopProperty, y);
             SetPosition();
             SetRadius();
@@ -81,8 +83,10 @@ namespace ChaosDivinity.Physics
         public void EndExistence()
         {
             if (Container == null) return;
-            Canvas p = (Canvas)Container.Parent;
-            p.Children.Remove(Container);
+            Canvas c = Container;
+            Canvas v = Container.Parent as Canvas ;
+            v.Children.Remove(c);
+           
         }
 
         public virtual void SetPhysics(List<PhysicObject> _worldlist)
@@ -96,10 +100,10 @@ namespace ChaosDivinity.Physics
             return;
         }
 
-       public virtual void InInteraction(PhysicObject intetacted)
-       {
+        public virtual void InInteraction(PhysicObject intetacted)
+        {
             return;
-       }
+        }
 
 
 

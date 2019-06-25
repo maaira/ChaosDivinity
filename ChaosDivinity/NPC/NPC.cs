@@ -37,6 +37,7 @@ namespace ChaosDivinity.NPCNamespace
         string TypeNpc();
     }
 
+
     //*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-* NPC de Negociação *-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*
     public sealed class Trader : IActions
     {
