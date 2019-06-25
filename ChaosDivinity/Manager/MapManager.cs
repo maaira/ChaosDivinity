@@ -43,26 +43,23 @@ namespace ChaosDivinity.Managers
 
         public static void InitiMob(Canvas Tela)
         {
-            NPC p = new NPC(10, "Teste", TypeNPC.NPCTrade);
+            NPC p = new NPC(10, "Teste", TypeNPC.NPCTrader);
             p.SetPy(50, 100, 70,70);
-               
             p.Container.Children.Add(ImageView.ImageSet("ms-appx:///Assets/Mage/MageStopLeft.gif"));
             if (p != null) _worldObject.Add(p);
             Tela.Children.Add(p.Container);
 
             NPC nTrader = new NPC(50, "Maga Malvadinha", TypeNPC.NPCTrader);
-            nTrader.Container = MOB;
-            nTrader.SetRadius();
+            nTrader.SetPy(60, 120, 100, 100);
             nTrader.Container.Children.Add(ImageView.ImageSet("ms-appx:///Assets/NPC/NPC_TRADER_OFFICIAL.gif"));
-            nTrader.SetPosition();
             if (nTrader != null) _worldObject.Add(nTrader);
+            Tela.Children.Add(nTrader.Container);
 
             NPC nQuester = new NPC(60, "Polvinho Show", TypeNPC.NPCQuester);
-            nQuester.Container = MOB;
-            nQuester.SetRadius();
+            nQuester.SetPy(60, 120, 100, 100);
             nQuester.Container.Children.Add(ImageView.ImageSet("ms-appx:///Assets/NPC/NPC_QUESTER_OFFICIAL.gif"));
-            nQuester.SetPosition();
             if (nQuester != null) _worldObject.Add(nQuester);
+            Tela.Children.Add(nQuester.Container);
 
         }
 
@@ -87,36 +84,6 @@ namespace ChaosDivinity.Managers
             Tela.Children.Add(p.Container);
             if (p != null) _worldObject.Add(p);
             p.InterationEvent += p.DisturbedEvent;
-
-            Chest nTrader = new Chest(); //Maga Malvadinha
-            nTrader.Item = nTrader.RandomPremium(DBItem.DBItens());
-            nTrader.Item.Path = "ms-anTradernTraderx:///Assets/NPC/NPC_TRADER_OFFICIAL.gif";
-            nTrader.Path = "ms-appx:///Assets/NPC/NPC_TRADER_OFFICIAL.gif";
-            nTrader.Container = new Canvas();
-            nTrader.Container.Children.Add(ImageView.ImageSet(nTrader.Path));
-            nTrader.Container.SetValue(Canvas.LeftProperty, 600);
-            nTrader.Container.SetValue(Canvas.TopProperty, 850);
-            nTrader.Container.Width = 80;
-            nTrader.Container.Height = 80;
-            nTrader.SetPosition();
-            Tela.Children.Add(nTrader.Container);
-            if (nTrader != null) _worldObject.Add(nTrader);
-            nTrader.InterationEvent += nTrader.DisturbedEvent;
-
-            Chest nQuester = new Chest(); //Polvinho Show
-            nQuester.Item = nQuester.RandomPremium(DBItem.DBItens());
-            nQuester.Item.Path = "ms-anQuesternQuesterx:///Assets/NPC/NPC_QUESTER_OFFICIAL.gif";
-            nQuester.Path = "ms-appx:///Assets/NPC/NPC_QUESTER_OFFICIAL.gif";
-            nQuester.Container = new Canvas();
-            nQuester.Container.Children.Add(ImageView.ImageSet(nQuester.Path));
-            nQuester.Container.SetValue(Canvas.LeftProperty, 500);
-            nQuester.Container.SetValue(Canvas.TopProperty, 500);
-            nQuester.Container.Width = 50;
-            nQuester.Container.Height = 50;
-            nQuester.SetPosition();
-            Tela.Children.Add(nQuester.Container);
-            if (nQuester != null) _worldObject.Add(nQuester);
-            nQuester.InterationEvent += nQuester.DisturbedEvent;
 
         }
 
