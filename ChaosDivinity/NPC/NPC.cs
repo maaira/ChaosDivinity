@@ -11,8 +11,8 @@ using ChaosDivinity.Item;
 namespace ChaosDivinity
 {
 
+
     public enum TypeNPC { NPCTrader = 1, NPCQuester = 2 };
-  
 
     public class NPC : PhysicObject
     {
@@ -39,7 +39,8 @@ namespace ChaosDivinity
             //s.Children.Add(ImageView.ImageSet());
             TextBlock t = new TextBlock()
             {
-                Text = "NPC",
+
+               Text = "NPC",
             };
             s.Children.Add(t);
             Flt.Content = s;
