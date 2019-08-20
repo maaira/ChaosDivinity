@@ -25,7 +25,7 @@ namespace ChaosDivinity.Managers
         {
 
             this.h = hero;
-            //InitChest(Tela);
+            InitChest(Tela);
             InitPerso(hero, Tela, Perso);
             InitEnemes(Tela);
             InitiMob(Tela);
